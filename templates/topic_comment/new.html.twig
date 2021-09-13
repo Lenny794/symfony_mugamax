@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TopicComment{% endblock %}
+
+{% block body %}
+    <h1>Create new TopicComment</h1>
+
+    {{ include('topic_comment/_form.html.twig') }}
+
+    <a href="{{ path('topic_comment_index') }}">back to list</a>
+{% endblock %}

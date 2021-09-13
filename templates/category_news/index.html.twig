@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CategoryNews index{% endblock %}
+
+{% block body %}
+    <h1>CategoryNews index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category_news in category_news %}
+            <tr>
+                <td>{{ category_news.id }}</td>
+                <td>{{ category_news.name }}</td>
+                <td>
+                    <a href="{{ path('category_news_show', {'id': category_news.id}) }}">show</a>
+                    <a href="{{ path('category_news_edit', {'id': category_news.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('category_news_new') }}">Create new</a>
+{% endblock %}

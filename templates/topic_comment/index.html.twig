@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TopicComment index{% endblock %}
+
+{% block body %}
+    <h1>TopicComment index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Content</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for topic_comment in topic_comments %}
+            <tr>
+                <td>{{ topic_comment.id }}</td>
+                <td>{{ topic_comment.content }}</td>
+                <td>
+                    <a href="{{ path('topic_comment_show', {'id': topic_comment.id}) }}">show</a>
+                    <a href="{{ path('topic_comment_edit', {'id': topic_comment.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('topic_comment_new') }}">Create new</a>
+{% endblock %}

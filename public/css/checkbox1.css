@@ -1,0 +1,82 @@
+:root{
+  --checkboxVraiGrosB: #34495E;
+  --checkboxVraiPetitR: #1e90ff;
+  --checkboxFauxGrosB: #DDDDDD;
+  --checkboxFauxPetitR: #7F8C9A;
+}
+
+/* Checkbox */
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  opacity: 0.01;
+  display: block;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  
+}
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before,
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '';
+  position: absolute;
+  display: block;
+}
+
+/* Faux Gros Boutton */
+[type="checkbox"]:not(:checked) + label::before,
+[type="checkbox"]:checked + label::before {
+    left: 170px;
+    top: -14px;
+    width: 51px;
+    height: 27.85px;
+    background: var(--checkboxFauxGrosB);
+    border-radius: 1em;
+    transition: background-color .2s;
+    margin: auto;
+    margin-top: auto;
+    margin-top: -17px;
+    display: block;
+}
+
+/* Faux Petit Rond */
+[type="checkbox"]:not(:checked) + label::after,
+[type="checkbox"]:checked + label::after {
+    width: 20px;
+    height: 20px;
+    transition: all .2s;
+    border-radius: 50%;
+    background: var(--checkboxFauxPetitR);
+    top: -10px;
+    left: 175px;
+    margin: auto;
+    margin-top: auto;
+    margin-top: -17px;
+    display: block;
+}
+
+/* Vrai Gros Boutton */
+[type="checkbox"]:checked + label:before {
+  background:var(--checkboxVraiGrosB); 
+  display: block;
+}
+
+/* Vrai Petit Rond */
+[type="checkbox"]:checked + label::after {
+    background: var(--checkboxVraiPetitR);
+    left: 195px;
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    margin: auto;
+    margin-top: auto;
+    margin-top: -17px;
+    display: block;
+}
+

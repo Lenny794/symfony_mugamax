@@ -1,0 +1,1076 @@
+:root{
+    --primary: #35416d;
+    --secondary: #1e90ff;
+    --success: #ee2128;
+    --siteText: #eeeeee;
+    --background: #232728;
+    --background2: #3c3c3c;
+    --block:#262f39;
+    --block2:#23292f;
+    --block-border:#3f4b57;
+}
+/* Onglet de paramètre utilisateur à gauche */
+a{
+    text-decoration:none;
+    color: var(--siteText);
+}
+a:hover{
+    color: var(--secondary);
+}
+
+body{
+    background-color: var(--background);
+    color: var(--siteText);
+    cursor: auto;
+    font-family: "LatoWeb", sans-serif;
+}
+#main{
+    --bs-gutter-x: 3.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
+}
+
+
+/* Block espace utilisateur*/
+#containerParam{
+    background-color: var(--block);
+    border-radius: 2rem;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5); 
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: #3f4b57;
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;   
+}
+@media only screen and (max-width: 767px) {
+    #containerParam {
+        padding-bottom: 55px; 
+    }
+}
+
+#containerParam2{
+    margin-right: -9rem;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-left: calc(var(--bs-gutter-x) * -.5);    
+}
+@media only screen and (max-width: 1440px) and (min-width: 768px){
+    #containerParam2 {
+        margin-right: -9rem;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 740px) {
+    #containerParam2 {
+        margin-right: -7rem;
+    }
+}
+@media only screen and (max-width: 739px) and (min-width: 707px) {
+    #containerParam2 {
+        margin-right: -6rem;
+    }
+}
+@media only screen and (max-width: 706px) and (min-width: 677px) {
+    #containerParam2 {
+        margin-right: -5rem;
+    }
+}
+@media only screen and (max-width: 676px) and (min-width: 644px) {
+    #containerParam2 {
+        margin-right: -4rem;
+    }
+}
+@media only screen and (max-width: 643px) and (min-width: 614px) {
+    #containerParam2 {
+        margin-right: -3rem;
+    }
+}
+@media only screen and (max-width: 613px) and (min-width: 580px) {
+    #containerParam2 {
+        margin-right: -2rem;
+    }
+}
+@media only screen and (max-width: 579px) {
+    #containerParam2 {
+        margin-right: -1rem;
+    }
+}
+@media only screen and (max-width: 576px) {
+    #containerParam2 {
+        margin-right: 0rem;
+    }
+}
+/* ******************************* ! PAGE PROFIL ******************************* */
+#containerParam3{
+    margin-bottom: -48px;
+    padding-bottom: 849px;
+    margin-top: -24px;
+    flex: 0 0 auto;
+    width: 66.66666667%;
+    background-color: #00000013;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    background-color: #23292f;
+    border-radius: 2rem;
+    border-color: #3f4b57; 
+}
+@media only screen and (max-width: 767px) {
+    #containerParam3 {
+        padding-bottom: 31px;
+        border-right-width: 0px;
+        margin-bottom: -48px;
+        margin-top: -24px;
+        flex: 0 0 auto;
+        width: 66.66666667%;
+        border-right-style: solid;
+        background-color: #23292f;
+        border-radius: 2rem;
+        border-color: #3f4b57;
+    }
+}
+/* ********************************** FIN PAGE PROFIL ************************************* */
+
+/* **************************** PAGE SÉCURITÉ ********************* */
+/* Block espace utilisateur*/
+
+#containerParam3NotifSecu{
+    margin-bottom: -48px;
+    padding-bottom: 380px;
+    margin-top: -24px;
+    flex: 0 0 auto;
+    width: 66.66666667%;
+    background-color: #00000013;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    background-color: #23292f;
+    border-radius: 2rem;
+    border-color: #3f4b57; 
+}
+@media only screen and (max-width: 767px) {
+    #containerParam3NotifSecu {
+        padding-bottom: 31px;
+        border-right-width: 0px;
+        margin-bottom: -48px;
+        margin-top: -24px;
+        flex: 0 0 auto;
+        width: 66.66666667%;
+        border-right-style: solid;
+        background-color: #23292f;
+        border-radius: 2rem;
+        border-color: #3f4b57;
+    }
+}
+/* **************************** FIN PAGE SÉCURITÉ ********************* */
+
+#leftPanelMain{
+    color: var(--siteText);
+    cursor: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    height: 456px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    resize: none;
+    user-select: none;
+    width: 14rem;
+    z-index: 20;
+}
+
+#leftPanelDragMain{
+    box-sizing: border-box;
+    color: var(--siteText);
+    cursor: ew-resize;
+    display: block;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 0.1px;
+    height: 456px;
+    left: 252px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    position: absolute;
+    resize: none;
+    right: 0px;
+    top: 0px;
+    user-select: none;
+    width: 4px;
+    z-index: 999;    
+}
+
+#treePanel{
+    background-color: var(--menu);
+}
+
+/* Paramètre*/
+#paramètreHeader{
+    align-items: center;
+    color: var(--siteText);
+    cursor: auto;
+    display: flex;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 58px;
+    padding-left: 12px;
+    padding-right: 20px;
+    padding-top: 14px;
+    resize: none;
+    user-select: none;
+}
+
+#spanParamètreTitle{
+    color: var(--siteText);
+    cursor: auto;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 20px;
+    outline-color: rgb(255, 255, 255);
+    outline-style: none;
+    outline-width: 0px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 3px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    resize: none;
+    text-overflow: ellipsis;
+    user-select: none;
+}
+
+/* paramètre compte */
+#paremètreCompte{
+    color: var(--siteText);
+    cursor: pointer;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 0px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    position: relative;
+    resize: none;
+    transition-duration: 0.5s;
+    user-select: none;
+}
+
+#paramètreCompteHeadTitle{
+    align-items: center;
+    background-color: rgb(34, 36, 38);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: flex;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 2px;
+    min-height: 32px;
+    outline-color: rgb(255, 255, 255);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    resize: none;
+    user-select: none;
+    border-left-width: 0.1px;
+    border-left-style: solid;
+    border-right-width: 0.1px;
+    border-right-style: solid;
+    border-top-width: 0.1px;
+    border-top-style: solid;
+    border-bottom-width: 0.1px;
+    border-bottom-style: solid;
+    background-color: var(--block);
+    border-color: #575757; 
+}
+#paramètreCompteHeadTitle:hover{
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+/* icon Compte */
+#iconChevronCompte{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    height: 16px;
+    transform: matrix(0, 1, -1, 0, 0, 0);
+    user-select: none;
+    width: 16px;
+}
+
+#iconUserCompte{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    height: 24px;
+    user-select: none;
+    width: 24px;
+}
+
+#spanCompte{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    outline-color: rgb(255, 255, 255);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 0px;
+    resize: none;
+    user-select: none;
+}
+
+#spanCompte:hover{
+   color:var(--siteText);
+}
+/* sous-menu paramètre compte */
+#subMenuCompte{
+    box-sizing: border-box;
+    color: var(--siteText);
+    cursor: pointer;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    max-height: 250px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    overflow-y: hidden;
+    resize: none;
+    transition-delay: 0s, 0s;
+    transition-duration: 0.3s, 0.3s;
+    transition-property: max-height, padding;
+    transition-timing-function: ease-in-out, ease-in-out;
+    user-select: none;
+}
+
+/* onglet profil */
+#tabProfil{
+    align-items: center;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-sizing: border-box;
+    color: var(--siteText);
+    cursor: pointer;
+    display: flex;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 1px;
+    min-height: 32px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 2px;
+    padding-inline-start: 50px;
+    padding-left: 50px;
+    padding-right: 4px;
+    padding-top: 2px;
+    resize: none;
+    user-select: none;
+}
+/* onglet préférence */
+#tabPréférence{
+    align-items: center;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-sizing: border-box;
+    color: var(--siteText);
+    cursor: pointer;
+    display: flex;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 1px;
+    min-height: 32px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 2px;
+    padding-inline-start: 50px;
+    padding-left: 50px;
+    padding-right: 4px;
+    padding-top: 2px;
+    resize: none;
+    user-select: none;   
+}
+
+/* onglet supprimer compte */
+#tabDeleteAcc{
+    align-items: center;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-sizing: border-box;
+    color: var(--siteText);
+    cursor: pointer;
+    display: flex;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 1px;
+    min-height: 32px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 2px;
+    padding-inline-start: 50px;
+    padding-left: 50px;
+    padding-right: 4px;
+    padding-top: 2px;
+    resize: none;
+    user-select: none;   
+}
+/* Paramètre notification */
+#paramètreNotif{
+    color: var(--siteText);
+    cursor: pointer;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 0px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    position: relative;
+    resize: none;
+    transition-duration: 0.5s;
+    user-select: none;    
+}
+
+#paramètreNotifHeadTitle{
+    align-items: center;
+    background-color: rgb(34, 36, 38);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: flex;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 2px;
+    min-height: 32px;
+    outline-color: rgb(255, 255, 255);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    resize: none;
+    user-select: none;
+    border-left-width: 0.1px;
+    border-left-style: solid;
+    border-right-width: 0.1px;
+    border-right-style: solid;
+    border-top-width: 0.1px;
+    border-top-style: solid;
+    border-bottom-width: 0.1px;
+    border-bottom-style: solid;
+    background-color: var(--block);
+    border-color: #575757; 
+}
+#paramètreNotifHeadTitle:hover{
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+
+/* icon notification */
+#iconChevronNotif{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    height: 16px;
+    transform: matrix(0, 1, -1, 0, 0, 0);
+    user-select: none;
+    width: 16px;
+}
+
+#IconBellNofif{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    height: 24px;
+    user-select: none;
+    width: 24px;
+}
+
+#spanNofif{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    outline-color: rgb(255, 255, 255);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 0px;
+    resize: none;
+    user-select: none;
+}
+#spanNotif:hover{
+    color:var(--siteText);
+}
+
+/* sous-menu paramètre */
+#subMenuNotif{
+    box-sizing: border-box;
+    color: var(--siteText);
+    cursor: pointer;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    max-height: 250px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    overflow-y: hidden;
+    resize: none;
+    transition-delay: 0s, 0s;
+    transition-duration: 0.3s, 0.3s;
+    transition-property: max-height, padding;
+    transition-timing-function: ease-in-out, ease-in-out;
+    user-select: none;
+}
+
+#tabNotifAcc{
+    align-items: center;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-sizing: border-box;
+    color: var(--siteText);
+    cursor: pointer;
+    display: flex;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 1px;
+    min-height: 32px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 2px;
+    padding-inline-start: 50px;
+    padding-left: 50px;
+    padding-right: 4px;
+    padding-top: 2px;
+    resize: none;
+    user-select: none;
+}
+
+#tabNotifEmail{
+    align-items: center;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-sizing: border-box;
+    color: var(--siteText);
+    cursor: pointer;
+    display: flex;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 1px;
+    min-height: 32px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 2px;
+    padding-inline-start: 50px;
+    padding-left: 50px;
+    padding-right: 4px;
+    padding-top: 2px;
+    resize: none;
+    user-select: none;
+}
+/* Paramètre Sécurité */
+#paramèteSécurité{
+    color: var(--siteText);
+    cursor: pointer;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 0px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    position: relative;
+    resize: none;
+    transition-duration: 0.5s;
+    user-select: none;
+}
+
+#paramètreSécuritéHeadTitle{
+    align-items: center;
+    background-color: rgb(34, 36, 38);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: flex;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 2px;
+    min-height: 32px;
+    outline-color: rgb(255, 255, 255);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    resize: none;
+    user-select: none;
+    border-left-width: 0.1px;
+    border-left-style: solid;
+    border-right-width: 0.1px;
+    border-right-style: solid;
+    border-top-width: 0.1px;
+    border-top-style: solid;
+    border-bottom-width: 0.1px;
+    border-bottom-style: solid;
+    background-color: var(--block);
+    border-color: #575757; 
+}
+#paramètreSécuritéHeadTitle:hover{
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+
+
+/* icon sécurité */
+#iconChevronSécurité{
+    color: var(--siteText);
+    cursor: pointer;
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    height: 16px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    user-select: none;
+    width: 16px;
+}
+
+#iconShieldSécurité{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    height: 24px;
+    user-select: none;
+    width: 24px;
+}
+
+#spanSécurité{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    outline-color: rgb(255, 255, 255);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 0px;
+    resize: none;
+    user-select: none;
+}
+#spanSécurité:hover{
+    color:var(--siteText);
+}
+/* sous-menu paramètre sécurité */
+#subMenuSécurité{
+    box-sizing: border-box;
+    color: var(--siteText);
+    cursor: pointer;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    max-height: 250px;
+    outline-color: rgba(255, 255, 255, 0.7);
+    outline-style: none;
+    outline-width: 0px;
+    overflow-y: hidden;
+    resize: none;
+    transition-delay: 0s, 0s;
+    transition-duration: 0.3s, 0.3s;
+    transition-property: max-height, padding;
+    transition-timing-function: ease-in-out, ease-in-out;
+    user-select: none;
+}
+
+#tabChangePass{
+    align-items: center;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-sizing: border-box;
+    color: var(--siteText);
+    cursor: pointer;
+    display: flex;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 1px;
+    min-height: 32px;
+    outline-color: var(--siteText);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 2px;
+    padding-inline-start: 50px;
+    padding-left: 50px;
+    padding-right: 4px;
+    padding-top: 2px;
+    resize: none;
+    user-select: none;
+}
+
+#tabChangeEmail{
+    align-items: center;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-sizing: border-box;
+    color: var(--siteText);
+    cursor: pointer;
+    display: flex;
+    font-family: "LatoWeb", sans-serif;
+    font-size: 14px;
+    margin-bottom: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 1px;
+    min-height: 32px;
+    outline-color: var(--siteText);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 2px;
+    padding-inline-start: 50px;
+    padding-left: 50px;
+    padding-right: 4px;
+    padding-top: 2px;
+    resize: none;
+    user-select: none;
+}
+
+/* ************************************ */
+
+/* Block de droite Profil */
+
+#fmAccMainContainer{
+    border-left-width: 0px;
+    border-left-style: solid;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    border-top-width: 0px;
+    border-top-style: solid;
+    margin-top: 0px;
+    margin-bottom: -4px;
+}
+
+/* Block de droite Notidication */
+
+#fmAccMainContainer2{
+    text-align: start;
+    
+    border-left-width: 0px;
+    border-left-style: solid;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    border-top-width: 0px;
+    border-top-style: solid;
+    margin-top: 0px;
+    margin-bottom: -4px;
+}
+
+#accProfilSettingRight{
+    margin-left: -11px;
+}
+#accProfilSettingleft{
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+    margin-top: -14px;
+    margin-left: -2px;    
+}
+
+
+#accProfilSettingleft{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#accTitleTxtleft{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#accVosPlateform{
+    height: 40px;
+}
+
+#accPlaystation{
+    margin-top: 0rem;
+    font-size: 22px;
+    width: 15rem;
+}
+.fa-playstation::before{
+    color: #2f87f9;
+}
+
+#accXbox{
+    margin-top: 1rem;
+    font-size: 22px;
+    width: 15rem;
+}
+.fa-xbox::before{
+    color: #8edb41;
+}
+
+#accNintendo{
+    margin-top: 1rem;
+    font-size: 22px;
+    width: 15rem;
+}
+
+#accSteam{
+    margin-top: 1rem;
+    font-size: 22px;
+    width: 15rem;
+}
+.fa-steam::before{
+    color: #637b86;
+}
+
+#accTwitch{
+    margin-top: 1rem;
+    font-size: 22px;
+}
+.fa-twitch::before{
+    color: #9b58da;
+}
+
+.form-control{
+    display: block;
+
+    color: var(--siteText);
+    background-color: transparent;
+  
+    border: 1px solid var(--siteText);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 1.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+/* input Pseudo */
+#inputPseudo:hover{
+    background-color: var(--secondary);
+    color: var(--siteText);
+}
+#divPseudo{
+    margin-bottom: auto;
+    margin-bottom: 1rem;
+}
+/* input Prénom */
+#inputPrénom:hover{
+    background-color: var(--secondary);
+    color: var(--siteText);
+}
+#divPrénom{
+    margin: auto;
+    margin-bottom: auto;
+    margin-bottom: 2rem;
+}
+/* input Nom */
+#inputNom:hover{
+    background-color: var(--secondary);
+    color: var(--siteText);
+}
+#divNom{
+    margin: auto;
+    margin-bottom: auto;
+    margin-bottom: 2rem;
+}
+/* input date de naissance */
+#inputDay{
+    margin-bottom: 2rem;
+}
+#inputDay:hover{
+    background-color: var(--secondary);
+    color: var(--siteText);
+}
+#inputMonth{
+    text-align:start;
+    margin-bottom: 2rem;
+}
+#inputMonth:hover{
+
+    background-color: var(--secondary);
+    color: var(--siteText);
+}
+#inputYear{
+    text-align: start;
+    margin-bottom: 1rem;
+}
+#inputYear:hover{
+    background-color: var(--secondary);
+    color: var(--siteText);
+}
+#labelBirthay{  
+    margin-bottom: 1rem;
+}
+/* input Pays */
+#labelCountry{
+    margin-bottom: 1rem;
+}
+#inputCountry:hover{
+    background-color: var(--secondary);
+    color: var(--siteText);
+}
+
+/* Supprimer Compte */
+#deleteAcc{
+    margin-top: -4rem;
+    flex: 0 0 auto;
+    width: 100%;
+}
+@media only screen and (max-width: 767px) {
+    #deleteAcc {
+    margin-top: -0rem;   
+    }
+}
+
+#deleteButtonSettingRight{
+    margin-top: -37px;    
+}
+@media only screen and (max-width: 767px) {
+    #deleteButtonSettingRight {
+    margin-top: 0rem;   
+    }
+}
+
+.buttonDeleteAcc{
+    height: 2rem;
+    background-color: #d23535;
+    color: white;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-left: 4rem;
+    border-left-width: 2px;
+    border-left-style: solid;
+}
+.buttonDeleteAcc:hover{
+    background-color: #e94949;
+    color: var(--background);
+
+}
+
+.red{
+    color: var(--success);
+}

@@ -1,0 +1,212 @@
+:root{
+    --primary: #35416d;
+    --secondary: #1e90ff;
+    --success: #ee2128;
+    --siteText: #eeeeee;
+    --background: #232728;
+    --background2: #3c3c3c;
+    --block:#262f39;
+    --block2:#23292f;
+    --block-border:#3f4b57;
+}
+
+header{
+    background: url(Medias/joshua-coleman-8bjxE-Re1bw-unsplash_original.jpg) center no-repeat;
+    background-size: cover;
+    height: 30vh;
+    margin-bottom: -25px;
+}
+
+body{
+    overflow-x: hidden;
+    color: var(--siteText);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: rgb(31, 34, 35);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+html, body, input, textarea, select, button {
+    border-color: #968b7a;
+    color: #ffffff;
+}
+html, body, input, textarea, select, button {
+    background-color: #1f2223;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.hrAdjust{
+    margin-left: 6rem;
+    margin-right: 6rem;   
+}
+
+#imgTop {
+    width: 200px;
+    height: 200px;
+    border: 1px #23282d solid;
+    text-align: center; 
+    justify-content: center;
+}
+
+h2{
+    font-size: 20px;
+    color: var(--siteText);
+}
+
+h3{
+    font-size: 20px;
+    color: var(--siteText);
+}
+p{
+    color: var(--siteText);
+}
+/* Nav avec les plateformes de jeux */
+#bannerGame{
+    margin-left: 5rem;
+    margin-right: 5rem;
+    background-color: var(--block2) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem !important;
+    border-color: var(--block-border);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;  
+    margin-bottom: 3px;
+}
+.link-secondary{
+    color: var(--siteText);
+}
+
+/* Bannière Actualité en haut de page */
+.txtMyactu{
+    color: var(--siteText);
+    font-size: 12px;
+}
+#myActu{
+    margin-left: 5rem;
+    margin-right: 5rem;
+
+}
+#myActu4{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#myActu5{
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.bg-light{
+    background-color: transparent !important;
+}
+
+#myActuBlock{
+    background-color: var(--block2) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem !important;
+    border-color: var(--block-border);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;  
+    margin-bottom: 33px;
+}
+
+#blockActu{
+    background-color: var(--block2);
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: var(--block-border);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;  
+    margin-bottom: 33px; 
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: var(--background);
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    background-color: var(--block2) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem !important;
+    border-color: var(--block-border);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;  
+    margin-bottom: 33px;
+}
+.card img{
+    background-color: var(--block2) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-color: var(--block-border);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+    margin-bottom: 33px;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+
+#à-ProposBlock{
+    background-color: var(--block2) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem !important;
+    border-color: var(--block-border);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;  
+    margin-bottom: 33px;
+}
+
+#mondeBlock{
+    background-color: var(--block2) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem !important;
+    border-color: var(--block-border);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;  
+    margin-bottom: 33px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+

@@ -1,0 +1,36 @@
+/* Font-Familly */
+@font-face {
+    font-family: "Staatliches-Regular";
+    src: url("/font/Staatliches/Staatliches-Regular.ttf") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: "Oswald-VariableFont";
+    src: url("/font/Oswald/Oswald-VariableFont_wght.ttf") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Bebas_Neue";
+    src: url("/font/Bebas_Neue/BebasNeue-Regular.ttf") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: url("/font/Lobster/Lobster-Regular.ttf") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+h3, h2, h1, h4, h5{
+    font-family: "Staatliches-Regular";
+}
+
+p, option, div, footer{
+    font-family: "Lobster"!;
+}

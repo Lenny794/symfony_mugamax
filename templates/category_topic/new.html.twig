@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CategoryTopic{% endblock %}
+
+{% block body %}
+    <h1>Create new CategoryTopic</h1>
+
+    {{ include('category_topic/_form.html.twig') }}
+
+    <a href="{{ path('category_topic_index') }}">back to list</a>
+{% endblock %}

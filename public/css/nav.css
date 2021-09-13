@@ -1,0 +1,438 @@
+:root{
+    --primary: #35416d;
+    --secondary: #1e90ff;
+    --success: #ee2128;
+    --siteText: #eeeeee;
+    --background: #232728;
+    --background2: #3c3c3c;
+    --nav-block:#262f39;
+    --nav-block2:#23292f;
+    --nav-block-border:#3f4b57;
+}
+
+#navStyle{
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    vertical-align: middle;
+    padding: 0;
+    min-width: 20rem;
+    max-width: 73.5rem;
+    background-color: var(--nav-block) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: #3f4b57;
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+}
+.logo-menu{
+    display: flex;
+    margin: 0 0px;
+    width: 145px;
+    height: 34px;
+    border-right-width: 1.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-bottom-width: 1.1px;
+    border-bottom-style: solid;
+    border-top-width: 1.1px;
+    border-top-style: solid;
+    border-left-width: 1.1px;
+    border-left-style: solid;
+    border-color: #3f4b57;    
+}
+
+.navbar {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 0rem;
+	padding-bottom: 0rem;
+}
+
+#navBlock{
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;    
+}
+
+@media only screen and (max-width: 991px) {
+    #navBlock {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/*********Onglet navigation*********/
+
+/*********Jeux*********/
+#nav-jeux{
+    color: var(--siteText)
+}
+#nav-jeux:hover{
+    background-color: var(--secondary);
+    transition: 0.5s all;
+    color: var(--siteText);
+}
+
+#nav-JeuxDropdown{
+    border-right-width: 0.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-color: #3f4b57;
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-left-width: 1.1px;
+    border-left-style: solid;
+    border-top-right-radius: unset;
+    border-top-left-radius: unset;
+    left: 14px;
+    bottom: -343px;
+    background-color: var(--nav-block);
+}
+
+/* Onglet Jeux navJ1Ps4 navJ2Ps5 navJ3Xo navJ4Xsx navJ5Pc navJ6Ns navJ7Ios navJ8ïod */
+#navJ1Ps4{  
+    text-align: center;
+    color: var(--siteText);
+    background-color: var(--nav-block);
+    border-top-width: 1.433px !important;
+    padding-top: 0.5rem !important;
+    border-right-width: 2.433px !important;
+    border-left-width: 1.433px !important;
+    border-bottom-width: 0.533px !important;
+    margin-top: -10px;
+    margin-bottom: 0px !important;
+    border: var(--nav-block-border);
+    border-style: solid;
+}
+
+#navJ1Ps4:hover{
+    color: var(--siteText) !important;
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+#navJ2Ps5{
+    text-align: center;
+    color: var(--siteText);
+    background-color: var(--nav-block);
+    border-top-width: 2.433px !important;
+    padding-top: 0.5rem !important;
+    border-right-width: 2.433px !important;
+    border-left-width: 1.433px !important;
+    border-bottom-width: 0.533px !important;
+    margin-bottom: 0px !important;
+    border: var(--nav-block-border);
+    border-style: solid;
+}
+#navJ2Ps5:hover{
+    color: var(--siteText) !important;
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+#navJ3Xo{
+    text-align: center;
+    color: var(--siteText);
+    background-color: var(--nav-block);
+    border-top-width: 2.433px !important;
+    padding-top: 0.5rem !important;
+    border-right-width: 2.433px !important;
+    border-left-width: 1.433px !important;
+    border-bottom-width: 0.533px !important;
+    margin-bottom: 0px !important;
+    border: var(--nav-block-border);
+    border-style: solid;
+}
+#navJ3Xo:hover{
+    color: var(--siteText) !important;
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+#navJ4Xsx{
+    text-align: center;
+    color: var(--siteText);
+    background-color: var(--nav-block);
+    border-top-width: 2.433px !important;
+    padding-top: 0.5rem !important;
+    border-right-width: 2.433px !important;
+    border-left-width: 1.433px !important;
+    border-bottom-width: 0.533px !important;
+    margin-bottom: 0px !important;
+    border: var(--nav-block-border);
+    border-style: solid;
+}
+#navJ4Xsx:hover{
+    color: var(--siteText) !important;
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+#navJ5Pc{
+    text-align: center;
+    color: var(--siteText);
+    background-color: var(--nav-block);
+    border-top-width: 2.433px !important;
+    padding-top: 0.5rem !important;
+    border-right-width: 2.433px !important;
+    border-left-width: 1.433px !important;
+    border-bottom-width: 0.533px !important;
+    margin-bottom: 0px !important;
+    border: var(--nav-block-border);
+    border-style: solid;
+}
+#navJ5Pc:hover{
+    color: var(--siteText) !important;
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+#navJ6Ns{
+    text-align: center;
+    color: var(--siteText);
+    background-color: var(--nav-block);
+    border-top-width: 2.433px !important;
+    padding-top: 0.5rem !important;
+    border-right-width: 2.433px !important;
+    border-left-width: 1.433px !important;
+    border-bottom-width: 0.533px !important;
+    margin-bottom: 0px !important;
+    border: var(--nav-block-border);
+    border-style: solid;
+}
+#navJ6Ns:hover{
+    color: var(--siteText) !important;
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+#navJ7Ios{
+    text-align: center;
+    color: var(--siteText);
+    background-color: var(--nav-block);
+    border-top-width: 2.433px !important;
+    padding-top: 0.5rem !important;
+    border-right-width: 2.433px !important;
+    border-left-width: 1.433px !important;
+    border-bottom-width: 0.533px !important;
+    margin-bottom: 0px !important;
+    border: var(--nav-block-border);
+    border-style: solid;
+}
+#navJ7Ios:hover{
+    color: var(--siteText) !important;
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+#navJ8ïod{
+    text-align: center;
+    color: var(--siteText);
+    background-color: var(--nav-block);
+    border-top-width: 2.433px !important;
+    padding-top: 0.5rem !important;
+    border-right-width: 2.433px !important;
+    border-left-width: 1.433px !important;
+    border-bottom-width: -0.467px !important;
+    margin-bottom: 0px !important;
+    border: var(--nav-block-border);
+    border-style: solid;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+#navJ8ïod:hover{
+    color: var(--siteText) !important;
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: absolute;
+    background-color: var(--background);
+}
+
+/*********Vidéo*********/
+#nav-vidéos{
+    color: var(--siteText);
+}
+#nav-vidéos:hover{
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+
+/*********Actualité*********/
+#nav-actualités{
+    color: var(--siteText);
+}
+#nav-actualités:hover{
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+
+/*********Forums*********/
+#nav-forums{
+    color: var(--siteText);
+}
+#nav-forums:hover{
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+
+/*********Se connecter*********/
+#identifMyAccount a{
+    text-decoration:none;
+    font-size: 10px;
+}
+#nav-connect{
+    color: var(--siteText);
+}
+#nav-connect:hover{
+    background-color: var(--secondary);
+    transition: 0.5s all;
+}
+#identifMyAccount{
+    padding: 0.5rem 22px;
+    
+    position: absolute;
+}
+
+#identifMyAccount div{
+    text-decoration:none;
+    font-size: 12px;
+    color: var(--siteText);
+}
+
+#identifMyAccount button{
+    bottom: 8px;
+    right: 31px;
+    height: 40px;
+    width: 114px;   
+    text-decoration:none;
+    border-radius: 7px 7px;
+    text-align: center;
+    font-size: 15px;
+    background-color: var(--secondary);
+    color: var(--siteText);
+    border-color: #9fdbffba;
+}
+
+#identifMyAccount a{
+    color: var(--secondary);
+}
+#identifMyAccount a:hover{
+    color: var(--success);
+}
+
+/* Boutton recherche */
+#buttonSearch{
+    background-color: var(--secondary);
+    color: var(--siteText);
+    border-color: var(--secondary);
+}
+#buttonSearch:hover{
+    color: var(--secondary);
+    background-color: var(--background);
+    transition: 0.5s all;
+}
+.form-control::placeholder{
+    color: var(--background);
+}
+
+.form-control{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 2.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;   
+}
+
+#navBlock{
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;    
+}
+
+@media only screen and (max-width: 991px) {
+    #navBlock {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* ********Mon compte************ */
+#navMonCompte i{
+    color: #45e5ff;
+    font-size: 41px;
+    margin: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-left: auto;
+    margin-left: 4px;
+    margin-top: -6px;
+    background: transparent;
+    border: var(--siteText);
+    border-radius: 24%;
+    border-top-width: 1px;
+    border-top-style: solid;
+    padding-left: 7px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+    padding-top: 0px;
+    padding-bottom: -8px;
+    padding-right: 8px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+#navMonCompte i:hover{
+    font-size: 35px;
+    transform:rotate(360deg);
+    transition: transform 500ms ease-in-out;
+}
+/* Luminosité */
+
+#getBrightness{
+    color: rgb(226, 226, 226);
+    font-size: 25px;
+    margin: auto;
+        margin-top: auto;
+        margin-left: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-left: auto;
+    margin-left: 37px;
+    margin-top: -5px;   
+}
+
+#getBrightness:hover{
+    color: #ffffff;
+    font-size: 27px;
+    transform:rotate(220deg);
+    transition: transform 500ms ease-in-out;
+    
+}
+@media only screen and (max-width: 991px) {
+    #getBrightness:hover {
+        transform:rotate(0deg);
+        transition: transform 0ms ease-in-out;
+    }
+  }

@@ -1,0 +1,161 @@
+:root{
+    --primary: #35416d;
+    --secondary: #1e90ff;
+    --secondary2:#0073b7;
+    --success: #d1383d;
+    --success2: #fa9c66;
+    --success3: #517379;
+    --sucesss4: #7c34b8;
+    --success5: #93d34a;
+    --success6: #517ad3;
+    --siteText1: #eeeeee;
+    --siteText2: #d1d1d1;
+    --background: #232728;
+    --background2: #3c3c3c;
+    --nav-block:#262f39;
+    --nav-block2:#23292f;
+    --nav-block-border:#3f4b57;
+}
+
+footer{
+    background-color: rgba(36, 35, 35, 0.774);
+}
+footer a:hover{
+    font-size: 15px;
+    transition: all (2000ms);
+ 
+}
+
+footer.container{
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    border-right-width: 1.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-bottom-width: 1.1px;
+    border-bottom-style: solid;
+    border-top-width: 1.1px;
+    border-top-style: solid;
+    border-left-width: 1.1px;
+    border-left-style: solid;
+    border-color: #3f4b57;
+    background-color: var(--background);
+    border-color: var(--nav-block-border); 
+      
+}
+
+.fa-angle-double-up{
+    font-size: 3rem;
+    color: var(--secondary);
+}
+
+.fa-angle-double-up:hover{
+    color: var(--secondary2);
+}
+
+#Réseaux-Sociaux{
+    margin-bottom: 0px;
+    margin-top: 0rem;
+    flex: 0 0 auto;
+    width: 50%;    
+}
+
+#À-Propos{
+    margin-bottom: 0px;
+    margin-top: -3rem;
+    flex: 0 0 auto;
+    width: 50%;    
+}
+.bg-light{
+    background-color: var(--background) !important;    
+}
+
+.text-center > p:nth-child(1){
+    background-color: var(--background);
+}
+
+footer div .col-12{
+    margin-top: 16px;   
+}
+
+/* Icone Footer */
+
+.fa-youtube{
+color: rgb(204, 56, 56);
+}
+.fa-twitch{
+color: var(--sucesss4);
+}
+.fa-discord{
+color: var(--success6);
+}
+.fa-facebook-square{
+color: rgb(38, 106, 231);
+}
+.fa-twitter{
+color: rgb(24, 164, 207);
+}
+.fa-instagram{
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    text-align: center;
+    border-radius: 3px;
+    color: rgb(236, 236, 236);
+    font-size: 16px;
+    line-height: 17px;
+    vertical-align: middle;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+}
+.fa-tiktok{
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    text-align: center;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 13px;
+    line-height: 17px;
+    vertical-align: middle;
+    background: #080808;
+    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+}
+.fa-user-friends{
+color: var(--success2);
+}
+.fa-shield-alt{
+color: #0073b7;
+}
+.fa-handshake{
+color:rgb(180, 168, 112);
+}
+.fa-map-marker-alt{
+color: rgb(63, 107, 124);
+}
+.fa-newspaper{
+color: #64a2d4;
+}
+.fa-rss{
+color: #ca8b2b;
+}
+.fa-video{
+color: #a73f3f;
+}
+.bi-controller{
+color: var(--siteText1);
+}
+
+/* Chevron */
+
+.fa-angle-double-up:hover{
+    font-size: 50px;
+    transform:scale(1.5);
+    transition: transform 500ms ease-in-out;
+    color: #55a1ec;
+    
+}

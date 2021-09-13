@@ -1,0 +1,41 @@
+:root{
+    --primary: #35416d;
+    --secondary: #1e90ff;
+    --success: #ee2128;
+    --siteText: #eeeeee;
+    --background: #232728;
+    --background2: #3c3c3c;
+}
+/* *************** */
+
+#content{
+    background-color: var(--primary);
+}
+
+#content div h1, p, iframe{
+    margin: 35px;   
+}
+.annonce{
+    background-color: rgb(117, 68, 68);
+    width: 100%;
+}
+.annonce img{
+    height: 100px;
+    border-radius: 50%; 
+}
+
+.maDiv1{
+    background-color: transparent;
+    width: 280px;
+    height: 10rem;
+}
+.maDiv2{
+    background-color: transparent;
+    width: 10px;
+    height: 4rem;
+}
+
+
+input {
+	position: relative;
+}
