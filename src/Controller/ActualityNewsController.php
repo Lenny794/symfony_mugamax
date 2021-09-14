@@ -16,11 +16,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class ActualityNewsController extends AbstractController
 {
     /**
-     * @Route("/", name="actuality_news_index", methods={"GET"})
+     * @Route("/", name="actuality_news", methods={"GET"})
      */
     public function index(ActualityNewsRepository $actualityNewsRepository): Response
     {
-        return $this->render('actuality_news/index.html.twig', [
+        return $this->render('actuality_news/actuality_page.html.twig', [
             'actuality_news' => $actualityNewsRepository->findAll(),
         ]);
     }
@@ -39,7 +39,7 @@ class ActualityNewsController extends AbstractController
             $entityManager->persist($actualityNews);
             $entityManager->flush();
 
-            return $this->redirectToRoute('actuality_news_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('actuality_news', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('actuality_news/new.html.twig', [
@@ -69,7 +69,7 @@ class ActualityNewsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('actuality_news_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('actuality_news', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('actuality_news/edit.html.twig', [

@@ -45,13 +45,13 @@
                     </ul>
                 </li>
                 <li>
-                    <a id="nav-vidéos" class="nav-link active" href="vidéos.html">Vidéos</a>
+                    <a id="nav-vidéos" class="nav-link active" href="#">Vidéos</a>
                 </li>
                 <li>
-                    <a id="nav-actualités" class="nav-link active" href="actualité.html">Actualités</a>
+                    <a id="nav-actualités" class="nav-link active" href="{{ path('actuality_news') }}">Actualités</a>
                 </li>
                 <li>
-                    <a id="nav-forums" class="nav-link active" href="page-forum.html">Forums</a>
+                    <a id="nav-forums" class="nav-link active" href="{{ path('topic_page') }}">Forums</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a id="nav-connect" style="font-size: 12px;" class="nav-link dropdown-toggle active" href="#"
@@ -60,7 +60,7 @@
                     </a>
 
                     <ul id="identifMyAccount" class="txtMyactu dropdown-menu active" aria-labelledby="navbarDropdown">
-                        <li><button type="button" onclick="location.href = {{ path('app_login') }}"></a>Identifiez-vous</button>
+                        <li><button type="button" type="button" onclick="location.href = {{ path('app_login') }};" ></a>Identifiez-vous</button>
                             <div> Nouvel utilisateur?
                             <a href="{{ path('app_register') }}">créer un compte</a>
                             </div>

@@ -16,11 +16,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class TopicController extends AbstractController
 {
     /**
-     * @Route("/", name="topic_index", methods={"GET"})
+     * @Route("/", name="topic_page", methods={"GET"})
      */
     public function index(TopicRepository $topicRepository): Response
     {
-        return $this->render('topic/index.html.twig', [
+        return $this->render('topic/topic_page.html.twig', [
             'topics' => $topicRepository->findAll(),
         ]);
     }
@@ -39,7 +39,7 @@ class TopicController extends AbstractController
             $entityManager->persist($topic);
             $entityManager->flush();
 
-            return $this->redirectToRoute('topic_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('topic_page', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('topic/new.html.twig', [
@@ -69,7 +69,7 @@ class TopicController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('topic_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('topic_page', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('topic/edit.html.twig', [
@@ -89,6 +89,6 @@ class TopicController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('topic_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('topic_page', [], Response::HTTP_SEE_OTHER);
     }
 }
