@@ -2,11 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ActualityNewsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ActualityNewsRepository;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * @ORM\Entity(repositoryClass=ActualityNewsRepository::class)
+ * @ORM\HasLifecycleCallbacks
  */
 class ActualityNews
 {
@@ -46,6 +48,17 @@ class ActualityNews
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="actualityNews")
      */
     private $user;
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function prePersist()
+    {
+        if(empty($this->createdAt))
+        {
+            $this->createdAt = new DateTime();
+        }
+    }
 
     public function getId(): ?int
     {

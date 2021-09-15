@@ -21,39 +21,46 @@
 {% block title %}Actualité News{% endblock %}
 
 {% block body %}
-    {# <h1>ActualityNews index</h1>
+    {# <div class="container my-4">
+        <div id="blockLeftAndRight" class="row">
+            <div id="signUp" class="col-md-6 mt-4">
+                <h1>Liste actualité</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Content</th>
-                <th>Image</th>
-                <th>CreatedAt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for actuality_news in actuality_news %}
-            <tr>
-                <td>{{ actuality_news.id }}</td>
-                <td>{{ actuality_news.titre }}</td>
-                <td>{{ actuality_news.content }}</td>
-                <td>{{ actuality_news.image }}</td>
-                <td>{{ actuality_news.createdAt ? actuality_news.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('actuality_news_show', {'id': actuality_news.id}) }}">show</a>
-                    <a href="{{ path('actuality_news_edit', {'id': actuality_news.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Titre</th>
+                            <th>Contenu</th>
+                            <th>Image</th>
+                            <th>Publié le</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for actuality_news in actuality_news %}
+                        <tr>
+                            <td>{{ actuality_news.id }}</td>
+                            <td>{{ actuality_news.titre }}</td>
+                            <td>{{ actuality_news.content }}</td>
+                            <td>{{ actuality_news.image }}</td>
+                            <td>{{ actuality_news.createdAt ? actuality_news.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                            <td>
+                                <a href="{{ path('actuality_news_show', {'id': actuality_news.id}) }}">Afficher</a>
+                                <a href="{{ path('actuality_news_edit', {'id': actuality_news.id}) }}">Modifier</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="6">Aucun enregistrement trouvé</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <a href="{{ path('actuality_news_new') }}">Créer nouvelle catégorie</a>
+                </table>
+            </div>
+        </div>        
+    </div>
 
     <a href="{{ path('actuality_news_new') }}">Create new</a> #}
 

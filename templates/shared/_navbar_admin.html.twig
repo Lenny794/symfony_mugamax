@@ -1,0 +1,101 @@
+<div class="container flex-column flex-md-row justify-content-center">
+    <div id="navBlock" class="container-fluid">
+        <a href="{{ path('admin_home') }}">
+            <img class="logo-menu" src="{{ asset('logoMugamax/logo_small.png') }}" alt="" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a id="nav-jeux" idstyle="font-size: 12px;" class="nav-link dropdown-toggle active" href="#"
+                    id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Jeux
+                    </a>
+                    <ul id="nav-JeuxDropdown" class="dropdown-menu active" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a id="navJ1Ps4" class="nav-link active" aria-current="page" href="#">Playstation 4</a>
+                        </li>
+                        <li>
+                            <a id="navJ2Ps5" class="nav-link active" aria-current="page" href="#">Playstation 5</a>
+                        </li>
+                        <li>
+                            <a id="navJ3Xo" class="nav-link active" aria-current="page" href="#">Xbox
+                            One</a>
+                        </li>
+                        <li>
+                            <a id="navJ4Xsx" class="nav-link active" aria-current="page" href="#">Xbox
+                            Serie x</a>
+                        </li>
+                        <li>
+                            <a id="navJ5Pc" class="nav-link active" aria-current="page" href="#">Pc</a>
+                        </li>
+                        <li>
+                            <a id="navJ6Ns" class="nav-link active" aria-current="page" href="#">Nintendo
+                            Switch</a>
+                        </li>
+                        <li>
+                            <a id="navJ7Ios" class="nav-link active" aria-current="page" href="#">Ios</a>
+                        </li>
+                        <li>
+                            <a id="navJ8ïod" class="nav-link active" aria-current="page" href="#">Androïd</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a id="nav-vidéos" class="nav-link active" href="#">Vidéos</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="nav-actualités" idstyle="font-size: 12px;" class="nav-link dropdown-toggle active" href="#"
+                    id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Actualités
+                    </a>
+                    <ul id="nav-ActuDropdown" class="dropdown-menu active" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a id="navJ1Ps4" class="nav-link active" aria-current="page" href="{{ path('category_news_new') }}">Créer catégorie</a>
+                        </li>
+                        <li>
+                            <a id="navJ2Ps5" class="nav-link active" aria-current="page" href="{{ path('category_news_index') }}">Liste catégorie</a>
+                        <li>
+                        <li>
+                            <a id="navJ2Ps5" class="nav-link active" aria-current="page" href="{{ path('actuality_news_new') }}">Créer actualité</a>
+                        <li>
+                        <li>
+                            <a id="navJ8ïod" class="nav-link active" aria-current="page" href="{{ path('actuality_news_index') }}">Liste actualité</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a id="nav-actualités" class="nav-link active" href=""></a>
+                </li>
+                <li>
+                    <a id="nav-forums" class="nav-link active" href="{{ path('topic_page') }}">Forums</a>
+                </li>
+                <li class="nav-item">
+                    <a id="nav-adminhome" class="nav-link active" href="{{ path('home') }}">Revenir à l'accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a id="nav-logout" class="nav-link active" href="{{ path('app_logout') }}">Se déconnecter</a>
+                </li>
+                <li>
+                    <a id="navMonCompte" class="nav-link active" href="{{ path('user_account') }}"><i
+                        class="fas fa-ghost"></i>
+                    </a>
+                </li>
+                <li>
+                    <a id="getBrightness" class="nav-link active" href="#"><i
+                        class="fas fa-adjust"></i>
+                    </a>
+                </li>
+            </ul>
+            <form id="searchBtn" class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+
+                <button id="buttonSearch" class="btn btn-outline-success" type="submit"><i
+                    class="bi bi-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

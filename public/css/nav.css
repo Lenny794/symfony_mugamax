@@ -11,7 +11,7 @@
 }
 
 #navStyle{
-    height: 100%;
+    /* height: 100%; */
     margin: 0 auto;
     position: relative;
     vertical-align: middle;
@@ -275,7 +275,25 @@
     background-color: var(--secondary);
     transition: 0.5s all;
 }
-
+#nav-ActuDropdown{
+    border-right-width: 0.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-color: #3f4b57;
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-left-width: 1.1px;
+    border-left-style: solid;
+    border-top-right-radius: unset;
+    border-top-left-radius: unset;
+    left: 14px;
+    bottom: -173px;
+    background-color: var(--nav-block);
+}
 /*********Forums*********/
 #nav-forums{
     color: var(--siteText);
@@ -328,6 +346,13 @@
 }
 #identifMyAccount a:hover{
     color: var(--success);
+}
+/*********home/logout*********/
+#nav-adminhome{
+    color: var(--siteText);
+}
+#nav-logout{
+    color: var(--siteText);
 }
 
 /* Boutton recherche */

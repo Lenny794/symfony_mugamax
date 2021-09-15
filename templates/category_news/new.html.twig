@@ -1,11 +1,29 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
 {% block title %}New CategoryNews{% endblock %}
 
 {% block body %}
-    <h1>Create new CategoryNews</h1>
-
-    {{ include('category_news/_form.html.twig') }}
-
-    <a href="{{ path('category_news_index') }}">back to list</a>
+    <div class="container my-4">
+        <div id="blockLeftAndRight" class="row">
+            <div id="signUp" class="col-md-6 mt-4">
+                <h1>Créer une catégorie</h1>
+                {{ include('category_news/_form.html.twig') }}
+                <br>
+                <div>
+                    <a href="{{ path('category_news_index') }}">Retour à la liste</a>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    <footer class="text-center bg-light py-6 mt-4">
+        <div>
+            <img src="{{ asset('logoMugamax/logo_small_icon_only_inverted.png') }}" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="d-block mb-2">
+            </img>&copy; Mugamax - 2021 - All Right Reserved
+        </div>
+    </footer>
 {% endblock %}

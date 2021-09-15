@@ -1,38 +1,53 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
 {% block title %}ActualityNews{% endblock %}
 
 {% block body %}
-    <h1>ActualityNews</h1>
+    <div class="container my-4">
+        <div id="blockLeftAndRight" class="row">
+            <div id="signUp" class="col-md-6 mt-4">
+                <h1>Actualité</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ actuality_news.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ actuality_news.titre }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ actuality_news.content }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ actuality_news.image }}</td>
-            </tr>
-            <tr>
-                <th>CreatedAt</th>
-                <td>{{ actuality_news.createdAt ? actuality_news.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ actuality_news.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Titre</th>
+                            <td>{{ actuality_news.titre }}</td>
+                        </tr>
+                        <tr>
+                            <th>Contenu</th>
+                            <td>{{ actuality_news.content }}</td>
+                        </tr>
+                        <tr>
+                            <th>Image</th>
+                            <td>{{ actuality_news.image }}</td>
+                        </tr>
+                        <tr>
+                            <th>Publié le</th>
+                            <td>{{ actuality_news.createdAt ? actuality_news.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <a href="{{ path('actuality_news_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('actuality_news_index') }}">back to list</a>
-
-    <a href="{{ path('actuality_news_edit', {'id': actuality_news.id}) }}">edit</a>
+    <a href="{{ path('actuality_news_edit', {'id': actuality_news.id}) }}">Modifier</a>
 
     {{ include('actuality_news/_delete_form.html.twig') }}
+{% endblock %}
+{% block footer %}
+    <footer class="text-center bg-light py-6 mt-4">
+        <div>
+            <img src="{{ asset('logoMugamax/logo_small_icon_only_inverted.png') }}" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="d-block mb-2">
+            </img>&copy; Mugamax - 2021 - All Right Reserved
+        </div>
+    </footer>
 {% endblock %}

@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/category/news")
+ * @Route("/admin")
  */
 class CategoryNewsController extends AbstractController
 {
     /**
-     * @Route("/", name="category_news_index", methods={"GET"})
+     * @Route("/category/liste", name="category_news_index", methods={"GET"})
      */
     public function index(CategoryNewsRepository $categoryNewsRepository): Response
     {
@@ -26,7 +26,7 @@ class CategoryNewsController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="category_news_new", methods={"GET","POST"})
+     * @Route("/category/news/create", name="category_news_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -49,7 +49,7 @@ class CategoryNewsController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="category_news_show", methods={"GET"})
+     * @Route("/category/news/{id}", name="category_news_show", methods={"GET"})
      */
     public function show(CategoryNews $categoryNews): Response
     {
@@ -59,7 +59,7 @@ class CategoryNewsController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="category_news_edit", methods={"GET","POST"})
+     * @Route("/category/news/{id}/edit", name="category_news_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, CategoryNews $categoryNews): Response
     {
@@ -79,7 +79,7 @@ class CategoryNewsController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="category_news_delete", methods={"POST"})
+     * @Route("/category/news/{id}", name="category_news_delete", methods={"POST"})
      */
     public function delete(Request $request, CategoryNews $categoryNews): Response
     {

@@ -1,38 +1,44 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}CategoryNews index{% endblock %}
+{% block title %}Actualité News{% endblock %}
 
 {% block body %}
     <div class="container my-4">
         <div id="blockLeftAndRight" class="row">
             <div id="signUp" class="col-md-6 mt-4">
-                <h1>Liste catégorie</h1>
+                <h1>Liste actualité</h1>
 
                 <table class="table">
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Nom</th>
-                            <th>Actions</th>
+                            <th>Titre</th>
+                            <th>Contenu</th>
+                            <th>Image</th>
+                            <th>Publié le</th>
+                            <th>actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                    {% for category_news in category_news %}
+                    {% for actuality_news in actuality_news %}
                         <tr>
-                            <td>{{ category_news.id }}</td>
-                            <td>{{ category_news.name }}</td>
+                            <td>{{ actuality_news.id }}</td>
+                            <td>{{ actuality_news.titre }}</td>
+                            <td>{{ actuality_news.content }}</td>
+                            <td>{{ actuality_news.image }}</td>
+                            <td>{{ actuality_news.createdAt ? actuality_news.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                             <td>
-                                <a href="{{ path('category_news_show', {'id': category_news.id}) }}">Afficher</a>
-                                <a href="{{ path('category_news_edit', {'id': category_news.id}) }}">Modifier</a>
+                                <a href="{{ path('actuality_news_show', {'id': actuality_news.id}) }}">Afficher</a>
+                                <a href="{{ path('actuality_news_edit', {'id': actuality_news.id}) }}">Modifier</a>
                             </td>
                         </tr>
                     {% else %}
                         <tr>
-                            <td colspan="3">Aucun enregistrement trouvé</td>
+                            <td colspan="6">Aucun enregistrement trouvé</td>
                         </tr>
                     {% endfor %}
                     </tbody>
-                    <a href="{{ path('category_news_new') }}">Créer nouvelle catégorie</a>
+                    <a href="{{ path('actuality_news_new') }}">Créer nouvelle actualité</a>
                 </table>
             </div>
         </div>        
@@ -48,4 +54,3 @@
         </div>
     </footer>
 {% endblock %}
-

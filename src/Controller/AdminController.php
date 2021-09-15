@@ -11,16 +11,16 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/user")
+ * @Route("/admin")
  */
 class AdminController extends AbstractController
 {
     /**
-     * @Route("/", name="user_account", methods={"GET"})
+     * @Route("/home", name="admin_home", methods={"GET"})
      */
     public function index(UserRepository $userRepository): Response
     {
-        return $this->render('user/userAccount.html.twig', [
+        return $this->render('admin/admin_home.html.twig', [
             'users' => $userRepository->findAll(),
         ]);
     }

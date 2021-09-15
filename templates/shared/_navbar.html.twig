@@ -48,25 +48,41 @@
                     <a id="nav-vidéos" class="nav-link active" href="#">Vidéos</a>
                 </li>
                 <li>
-                    <a id="nav-actualités" class="nav-link active" href="{{ path('actuality_news') }}">Actualités</a>
+                    <a id="nav-actualités" class="nav-link active" href="{{ path('actuality_news_index') }}">Actualités</a>
                 </li>
                 <li>
                     <a id="nav-forums" class="nav-link active" href="{{ path('topic_page') }}">Forums</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a id="nav-connect" style="font-size: 12px;" class="nav-link dropdown-toggle active" href="#"
-                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Bienvenue, identifiez-vous<br><strong style="font-size: 14px;">Connecter-vous</strong>
-                    </a>
+                {% if app.user %}
 
-                    <ul id="identifMyAccount" class="txtMyactu dropdown-menu active" aria-labelledby="navbarDropdown">
-                        <li><button type="button" type="button" onclick="location.href = {{ path('app_login') }};" ></a>Identifiez-vous</button>
-                            <div> Nouvel utilisateur?
-                            <a href="{{ path('app_register') }}">créer un compte</a>
-                            </div>
+                    {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+
+                        <li class="nav-item">
+                            <a id="nav-adminhome" class="nav-link" href="{{ path('admin_home') }}">Administration</a>
                         </li>
-                    </ul>
-                </li>
+                    
+                    {% endif %}
+
+                        <li class="nav-item">
+                            <a id="nav-logout" class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
+                        </li>
+                
+                {% else %}
+                    <li class="nav-item dropdown">
+                        <a id="nav-connect" style="font-size: 12px;" class="nav-link dropdown-toggle active" href="#"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Bienvenue, identifiez-vous<br><strong style="font-size: 14px;">Connecter-vous</strong>
+                        </a>
+
+                        <ul id="identifMyAccount" class="txtMyactu dropdown-menu active" aria-labelledby="navbarDropdown">
+                            <li><button type="button" onclick="location.href = {{ path('app_login') }};" ></a>Identifiez-vous</button>
+                                <div> Nouvel utilisateur?
+                                <a href="{{ path('app_register') }}">créer un compte</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                {% endif %}
                 <li>
                     <a id="navMonCompte" class="nav-link active" href="{{ path('user_account') }}"><i
                         class="fas fa-ghost"></i>

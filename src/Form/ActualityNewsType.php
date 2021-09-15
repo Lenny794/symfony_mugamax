@@ -4,6 +4,8 @@ namespace App\Form;
 
 use App\Entity\ActualityNews;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,10 +14,13 @@ class ActualityNewsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre')
-            ->add('content')
+            ->add('titre', TextType::class, [
+                'label' => 'Titre'
+            ])
+            ->add('content', TextareaType::class, [
+                'label' => 'Contenu'
+            ])
             ->add('image')
-            ->add('createdAt')
             ->add('categoryNews')
             ->add('user')
         ;

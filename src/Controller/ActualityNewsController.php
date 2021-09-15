@@ -11,22 +11,22 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/actuality/news")
+ * @Route("/admin")
  */
 class ActualityNewsController extends AbstractController
 {
     /**
-     * @Route("/", name="actuality_news", methods={"GET"})
+     * @Route("actuality/liste", name="actuality_news_index", methods={"GET"})
      */
     public function index(ActualityNewsRepository $actualityNewsRepository): Response
     {
-        return $this->render('actuality_news/actuality_page.html.twig', [
+        return $this->render('actuality_news/index.html.twig', [
             'actuality_news' => $actualityNewsRepository->findAll(),
         ]);
     }
 
     /**
-     * @Route("/new", name="actuality_news_new", methods={"GET","POST"})
+     * @Route("/actuality/news/create", name="actuality_news_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -39,7 +39,7 @@ class ActualityNewsController extends AbstractController
             $entityManager->persist($actualityNews);
             $entityManager->flush();
 
-            return $this->redirectToRoute('actuality_news', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('actuality_news_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('actuality_news/new.html.twig', [
@@ -49,7 +49,7 @@ class ActualityNewsController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="actuality_news_show", methods={"GET"})
+     * @Route("/actuality/news/{id}", name="actuality_news_show", methods={"GET"})
      */
     public function show(ActualityNews $actualityNews): Response
     {
@@ -59,7 +59,7 @@ class ActualityNewsController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="actuality_news_edit", methods={"GET","POST"})
+     * @Route("/actuality/news/{id}/edit", name="actuality_news_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, ActualityNews $actualityNews): Response
     {
@@ -69,7 +69,7 @@ class ActualityNewsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('actuality_news', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('actuality_news_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('actuality_news/edit.html.twig', [
@@ -79,7 +79,7 @@ class ActualityNewsController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="actuality_news_delete", methods={"POST"})
+     * @Route("/actuality/news/{id}", name="actuality_news_delete", methods={"POST"})
      */
     public function delete(Request $request, ActualityNews $actualityNews): Response
     {

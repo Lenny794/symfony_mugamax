@@ -8,6 +8,10 @@
 }
 /* *************** */
 
+.table{
+    color: var(--siteText);
+}
+
 #content{
     background-color: var(--primary);
 }
