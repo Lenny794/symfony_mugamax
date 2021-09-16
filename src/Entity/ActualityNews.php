@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ActualityNewsRepository;
-use Symfony\Component\Validator\Constraints\DateTime;
+
 
 /**
  * @ORM\Entity(repositoryClass=ActualityNewsRepository::class)

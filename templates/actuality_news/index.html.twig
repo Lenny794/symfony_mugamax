@@ -4,10 +4,9 @@
 
 {% block body %}
     <div class="container my-4">
-        <div id="blockLeftAndRight" class="row">
-            <div id="signUp" class="col-md-6 mt-4">
+        <div class="row">
+            <div id="signUp" class="col-md-10 mt-4">
                 <h1>Liste actualité</h1>
-
                 <table class="table">
                     <thead>
                         <tr>
@@ -25,8 +24,10 @@
                             <td>{{ actuality_news.id }}</td>
                             <td>{{ actuality_news.titre }}</td>
                             <td>{{ actuality_news.content }}</td>
-                            <td>{{ actuality_news.image }}</td>
-                            <td>{{ actuality_news.createdAt ? actuality_news.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                            <td>
+                                <img src=" {{ asset(actuality_news.image) }}" style=" height: 100px; object-fit; contain;" alt="">
+                            </td>
+                            <td>{{ actuality_news.createdAt ? actuality_news.createdAt|date('d-m-Y') : '' }}</td>
                             <td>
                                 <a href="{{ path('actuality_news_show', {'id': actuality_news.id}) }}">Afficher</a>
                                 <a href="{{ path('actuality_news_edit', {'id': actuality_news.id}) }}">Modifier</a>
