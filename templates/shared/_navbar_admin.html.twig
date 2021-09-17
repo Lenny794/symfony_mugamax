@@ -66,11 +66,24 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a id="nav-actualités" class="nav-link active" href=""></a>
-                </li>
-                <li>
-                    <a id="nav-forums" class="nav-link active" href="{{ path('topic_page') }}">Forums</a>
+                <li class="nav-item dropdown">
+                    <a id="nav-forums" idstyle="font-size: 12px;" class="nav-link dropdown-toggle active" href="#"
+                    id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Forums
+                    </a>
+                    <ul id="nav-ActuDropdown" class="dropdown-menu active" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a id="navJ1Ps4" class="nav-link active" aria-current="page" href="{{ path('category_topic_new') }}">Créer catégorie</a>
+                        </li>
+                        <li>
+                            <a id="navJ2Ps5" class="nav-link active" aria-current="page" href="{{ path('category_topic_index') }}">Liste catégorie</a>
+                        <li>
+                        <li>
+                            <a id="navJ2Ps5" class="nav-link active" aria-current="page" href="{{ path('topic_new') }}">Créer topic</a>
+                        <li>
+                        <li>
+                            <a id="navJ8ïod" class="nav-link active" aria-current="page" href="{{ path('topic_index') }}">Liste topic</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a id="nav-adminhome" class="nav-link active" href="{{ path('home') }}">Revenir à l'accueil</a>

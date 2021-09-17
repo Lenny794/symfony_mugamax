@@ -51,7 +51,7 @@
                     <a id="nav-actualités" class="nav-link active" href="{{ path('actuality_news_index') }}">Actualités</a>
                 </li>
                 <li>
-                    <a id="nav-forums" class="nav-link active" href="{{ path('topic_page') }}">Forums</a>
+                    <a id="nav-forums" class="nav-link active" href="{{ path('topic_index') }}">Forums</a>
                 </li>
                 {% if app.user %}
 
@@ -75,7 +75,8 @@
                         </a>
 
                         <ul id="identifMyAccount" class="txtMyactu dropdown-menu active" aria-labelledby="navbarDropdown">
-                            <li><button type="button" onclick="location.href = {{ path('app_login') }};" ></a>Identifiez-vous</button>
+                            <li>
+                                <button type="button" onclick="location.href = 'login'" ></a>Identifiez-vous</button>
                                 <div> Nouvel utilisateur?
                                 <a href="{{ path('app_register') }}">créer un compte</a>
                                 </div>

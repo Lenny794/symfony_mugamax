@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoryNewsController extends AbstractController
 {
     /**
-     * @Route("/category/liste", name="category_news_index", methods={"GET"})
+     * @Route("/category/news/liste", name="category_news_index", methods={"GET"})
      */
     public function index(CategoryNewsRepository $categoryNewsRepository): Response
     {

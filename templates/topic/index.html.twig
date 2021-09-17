@@ -1,0 +1,180 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {#{{ encore_entry_link_tags('app') }}#}
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Icon Bootstrap -->   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/page-forum.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+{% endblock %}
+
+
+{% block title %}Topic{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <section class="content">
+            <div class="row">
+                <!-- Naviguer -->
+                <div class="col-md-3">
+                    <div class="grid support">
+                        <div id="blockLeft" class="grid-body">
+                            <h2>Naviguer</h2>
+                            <hr>
+                            <ul>
+                                <li class="active"><a href="#">Communauté</a></li>
+                                <li><a href="#">Mes posts</a></li>
+                                <li><a href="#">Mes commentaires</a></li>
+                            </ul>
+                            <hr>
+                            <!-- ***************Étiquettes***************** -->
+                            <p><strong>Étiquettes</strong></p>
+                            <ul class="support-label">
+                                <li><a class="étiquettesTab-Suggestion"><i class="fas fa-question-circle"></i> [Suggestion]</a></li>
+                                
+                                <li><a class="étiquettesTab-News-Jeux"><i class="fas fa-folder"></i> [News Jeux]</a></li>
+
+                                <li><a class="étiquettesTab-News-Astuce"><i class="fas fa-folder"></i> [News Astuce]</a></li>
+                                
+                                <li><a class="étiquettesTab-News-Débat"><i class="fas fa-folder"></i> [News Débat]</a></li>
+                                
+                                <li><a class="étiquettesTab-Test"><i class="fas fa-dice-d6"></i> [Test]</a></li>
+                                
+                                <li><a class="étiquettesTab-Tuto-Tech"><i class="fas fa-cog"></i> [Tuto Tech]</a></li>
+                            </ul>
+                            <!-- *************** Fin Étiquettes ***************** -->
+                        </div>
+                    </div>
+                </div>
+                <!-- *************** Début Topic***************** -->
+                <div id="blockRight" class="col-md-9">
+                    <div class="grid support-content">
+                        <div class="grid-body">
+                            <h2>Topic</h2>
+                            <hr>
+                            <div id="ButtonTrier" class="btn-group dropdown">
+                                <button type="button" onclick="dropdown()" class="dropbtn btn btn-default dropdown-toggle">
+                                     <strong>Trier par :</strong> <span class="caret"></span>
+                                </button>
+                                <div id="myDropdown" class="dropdown-content" role="menu">
+                                    <a href="#"><i class="fa fa-check"></i> Récent</a>
+                                    <a href="#"><i class="fa"> </i> dernière Ajout</a>
+                                    <a href="#"><i class="fa"> </i> Ajouter Récement</a>
+                                    <a href="#"><i class="fa"> </i> Ancien</a>
+                                    <a href="#"><i class="fa"> </i> Les Plus Commentés</a>
+                                    <a href="#"><i class="fa"> </i> Dernier Commentaire</a>
+                                </div>
+                            </div>
+                            <!-- Commence Nouvelle Étiquettes -->
+                            <button type="button" class="btn btn-success pull-right" onclick="location.href = 'forum/create'" data-toggle="modal"
+                                data-target="#newIssue">Nouveau Sujet
+                            </button>
+                            <div class="modal fade" id="newIssue" tabindex="-1" role="dialog" aria-labelledby="newIssue"
+                                aria-hidden="true">
+                                <div class="modal-wrapper">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-blue">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">×</button>
+                                                <h4 class="modal-title"><i class="fa fa-pencil"></i> Créer un topic
+                                                </h4>
+                                            </div>
+                                            <form action="#" method="post">
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <input name="subject" type="text" class="form-control"
+                                                            placeholder="Subject">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="department" type="text" class="form-control"
+                                                            placeholder="Department">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <textarea name="message" class="form-control"
+                                                            placeholder="Please detail your issue or question"
+                                                            style="height: 120px;"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="file" name="attachment">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal"><i class="fa fa-times"></i>
+                                                        Supprimer</button>
+                                                    <button type="submit" class="btn btn-primary pull-right"><i
+                                                            class="fa fa-pencil"></i> Créer
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><hr>
+                            <!-- Fin Nouvelle Étiquettes -->
+                            <div class="row">
+                                <!-- Commence Nouvelle Étiquettes -->
+                                    {% for topic in topics %}
+                                <div class="col-md-12">
+                                    <ul id="étiquetteBlockRight" class="list-group fa-padding">
+                                        <li class="list-group-item" data-toggle="modal" data-target="#issue">
+                                            <div class="media">
+                                                <img src=" {{ asset(topic.categoryTopic.imagePathUrl("id")) }}" style="contain;">
+                                                <div class="media-body">
+                                                    <strong onclick="location.href = {{ path('topic_show',{'id':topic.id} ) }}">{{ topic.subjet }}</strong>
+                                                    <p class="info">
+                                                        Publié par <a href="#" class="utilisateurTopic">{{ topic.user("id") }}</a><i
+                                                        class="fa fa-comments"></i>
+                                                        <a href="#" class="utilisateurTopic">150 comments</a>
+                                                    </p>
+                                                </div>
+                                            </div>  
+                                            <div>
+                                                <a class="btn btn-primary mt-3"  href="{{ path('topic_show',{'id':topic.id} ) }}">Consulter</a>
+                                                {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+                                                <a class="btn btn-primary mt-3" href="{{ path('topic_edit',{'id':topic.id} ) }}">Modifier</a>
+                                                {% endif %}
+                                            </div><br>                                          
+                                        </li>
+                                        </div>
+                                            {% else %}
+                                                <tr>
+                                                    <td colspan="6">Aucun enregistrement trouvé</td>
+                                                </tr>
+                                            {% endfor %}
+                                        </div>                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin Étiquettes -->
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {#{{ encore_entry_script_tags('app') }}#}
+
+    <!-- Icon Font Aweaome -->
+    <script src="Access-Control-Allow-Origin: https://kit.fontawesome.com/e74bd4f77c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="Jquery/espace-utilisateur.js"></script>
+    <script src="https://kit.fontawesome.com/e74bd4f77c.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/dropdownButton.js') }}"></script>
+
+{% endblock %}

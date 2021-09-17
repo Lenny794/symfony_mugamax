@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
- * @Route("/admin")
+ * @Route("/")
  */
 class ActualityNewsController extends AbstractController
 {
@@ -28,9 +28,9 @@ class ActualityNewsController extends AbstractController
     }
 
     /**
-     * @Route("/actuality/news/create", name="actuality_news_new", methods={"GET","POST"})
+     * @Route("admin/actuality/news/create", name="actuality_news_new", methods={"GET","POST"})
      */
-    public function new(Request $request, SluggerInterface $slugger, handleImage $handleImage): Response
+    public function new(Request $request, SluggerInterface $slugger, HandleImage $handleImage): Response
     {
         $actualityNews = new ActualityNews();
         $form = $this->createForm(ActualityNewsType::class, $actualityNews);
@@ -69,9 +69,9 @@ class ActualityNewsController extends AbstractController
     }
 
     /**
-     * @Route("/actuality/news/{id}/edit", name="actuality_news_edit", methods={"GET","POST"})
+     * @Route("admin/actuality/news/{id}/edit", name="actuality_news_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, ActualityNews $actualityNews, handleImage $handleImage): Response
+    public function edit(Request $request, ActualityNews $actualityNews, HandleImage $handleImage): Response
     {
         $form = $this->createForm(ActualityNewsType::class, $actualityNews);
         $form->handleRequest($request);
@@ -100,12 +100,12 @@ class ActualityNewsController extends AbstractController
     }
 
     /**
-     * @Route("/actuality/news/{id}", name="actuality_news_delete", methods={"POST"})
+     * @Route("admin/actuality/news/{id}", name="actuality_news_delete", methods={"POST"})
      */
-    public function delete(Request $request, ActualityNews $actualityNews, handleImage $handleImage): Response
+    public function delete(Request $request, ActualityNews $actualityNews, HandleImage $handleImage): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$actualityNews->getId(), $request->request->get('_token'))) {
-            
+        if ($this->isCsrfTokenValid('delete'.$actualityNews->getId(), $request->request->get('_token'))) 
+        {  
             $vintageImage = $actualityNews->getImage();
             
             $handleImage->deleteImage($vintageImage);

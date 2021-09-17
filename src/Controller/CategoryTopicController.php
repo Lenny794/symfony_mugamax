@@ -4,19 +4,21 @@ namespace App\Controller;
 
 use App\Entity\CategoryTopic;
 use App\Form\CategoryTopicType;
+use App\MesServices\HandleIcon;
 use App\Repository\CategoryTopicRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/category/topic")
+ * @Route("/admin")
  */
 class CategoryTopicController extends AbstractController
 {
     /**
-     * @Route("/", name="category_topic_index", methods={"GET"})
+     * @Route("/category/topic/liste", name="category_topic_index", methods={"GET"})
      */
     public function index(CategoryTopicRepository $categoryTopicRepository): Response
     {
@@ -26,15 +28,23 @@ class CategoryTopicController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="category_topic_new", methods={"GET","POST"})
+     * @Route("/category/topic/create", name="category_topic_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SluggerInterface $slugger, HandleIcon $handleIcon): Response
     {
         $categoryTopic = new CategoryTopic();
         $form = $this->createForm(CategoryTopicType::class, $categoryTopic);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) 
+        {
+            $iconFile = $form->get('image_path_url')->getData();
+
+            if($iconFile)
+            {
+                $handleIcon->SaveImage($iconFile, $categoryTopic);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($categoryTopic);
             $entityManager->flush();
@@ -49,7 +59,7 @@ class CategoryTopicController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="category_topic_show", methods={"GET"})
+     * @Route("/category/topic/{id}", name="category_topic_show", methods={"GET"})
      */
     public function show(CategoryTopic $categoryTopic): Response
     {
@@ -59,14 +69,25 @@ class CategoryTopicController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="category_topic_edit", methods={"GET","POST"})
+     * @Route("/category/topic/{id}/edit", name="category_topic_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, CategoryTopic $categoryTopic): Response
+    public function edit(Request $request, CategoryTopic $categoryTopic, HandleIcon $handleIcon): Response
     {
         $form = $this->createForm(CategoryTopicType::class, $categoryTopic);
         $form->handleRequest($request);
 
+        $vintageImage = $categoryTopic->getImagePathUrl();
+
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $iconFile = $form->get('image_path_url')->getData();
+            
+            if($iconFile)
+            {
+               $handleIcon->editImage($iconFile, $categoryTopic, $vintageImage); 
+                          
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('category_topic_index', [], Response::HTTP_SEE_OTHER);
@@ -79,11 +100,15 @@ class CategoryTopicController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="category_topic_delete", methods={"POST"})
+     * @Route("/category/topic/{id}", name="category_topic_delete", methods={"POST"})
      */
-    public function delete(Request $request, CategoryTopic $categoryTopic): Response
+    public function delete(Request $request, CategoryTopic $categoryTopic, HandleIcon $handleIcon): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$categoryTopic->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$categoryTopic->getId(), $request->request->get('_token'))) 
+        {
+            $vintageImage = $categoryTopic->getImagePathUrl();
+            
+            $handleIcon->deleteImage($vintageImage);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($categoryTopic);
             $entityManager->flush();

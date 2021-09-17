@@ -11,22 +11,22 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/topic")
+ * @Route("/")
  */
 class TopicController extends AbstractController
 {
     /**
-     * @Route("/", name="topic_page", methods={"GET"})
+     * @Route("/forum", name="topic_index", methods={"GET"})
      */
     public function index(TopicRepository $topicRepository): Response
     {
-        return $this->render('topic/topic_page.html.twig', [
+        return $this->render('topic/index.html.twig', [
             'topics' => $topicRepository->findAll(),
         ]);
     }
 
     /**
-     * @Route("/new", name="topic_new", methods={"GET","POST"})
+     * @Route("/forum/create", name="topic_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -39,7 +39,7 @@ class TopicController extends AbstractController
             $entityManager->persist($topic);
             $entityManager->flush();
 
-            return $this->redirectToRoute('topic_page', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('topic_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('topic/new.html.twig', [
@@ -49,7 +49,7 @@ class TopicController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="topic_show", methods={"GET"})
+     * @Route("/forum/{id}", name="topic_show", methods={"GET"})
      */
     public function show(Topic $topic): Response
     {
@@ -59,7 +59,7 @@ class TopicController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="topic_edit", methods={"GET","POST"})
+     * @Route("/forum/{id}/edit", name="topic_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Topic $topic): Response
     {
@@ -79,7 +79,7 @@ class TopicController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="topic_delete", methods={"POST"})
+     * @Route("/forum/{id}", name="topic_delete", methods={"POST"})
      */
     public function delete(Request $request, Topic $topic): Response
     {

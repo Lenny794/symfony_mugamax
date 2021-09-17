@@ -26,8 +26,24 @@ p, strong, span{
 
 body{
     background-color: var(--background);
-    }
-    
+} 
+
+.btn-primary{
+    font-family: "Staatliches-Regular";
+    background-color: var(--secondary2) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: var(--secondary);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+    text-align: center;
+}
+
 .padding {
         padding: 10px;
 }
@@ -45,6 +61,7 @@ body{
 
 .col-md-12{
     background-color: var(--background);
+    padding-top: 2px;
 }
 
 .row h3 {
@@ -194,11 +211,6 @@ body{
     color: var(--secondary2);
 }
 
-.support ul li a:hover {
-    color: var(--secondary2);
-}
-
-
 .support ul li.active a {
     color:var(--siteText2);
 }
@@ -213,14 +225,14 @@ body{
 }
 
 .support-content .list-group li {
-    padding: 15px 20px 12px 20px;
+    padding: 15px 20px 0px 20px;
     cursor: pointer;
     background-color:var(--background);
     border-bottom-color: var(--background2);
 }
     
 .support-content .list-group li:hover {
-    background: #484848;
+    background: var(--block2);
 }
 
 .support-content .fa-padding .fa {
@@ -251,7 +263,6 @@ body{
 }
 
 .support-content img {
-    margin: 0 auto;
     display: block;
 }
 

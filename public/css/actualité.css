@@ -138,43 +138,70 @@ p{
     margin-bottom: 33px; 
 }
 
-.card {
-    position: relative;
+/* card */
+
+.card-body{
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
     display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
+    margin-bottom: 20px;
+}
+.card {
     background-color: var(--background);
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-    background-color: var(--block2) !important;
-    border-right-width: 2.1px;
-    border-right-style: solid;
-    border-radius: 2rem !important;
-    border-color: var(--block-border);
-    border-bottom-width: 2.1px;
-    border-bottom-style: solid;
-    border-top-width: 2.1px;
-    border-top-style: solid;
-    border-left-width: 2.1px;
-    border-left-style: solid;  
-    margin-bottom: 33px;
+    margin: 5px;
+    border-radius: 15px;
+    padding: 8px 2px 0;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
 }
 .card img{
-    background-color: var(--block2) !important;
-    border-right-width: 2.1px;
-    border-right-style: solid;
-    border-color: var(--block-border);
-    border-bottom-width: 2.1px;
-    border-bottom-style: solid;
-    border-top-width: 2.1px;
-    border-top-style: solid;
-    border-left-width: 2.1px;
-    border-left-style: solid;
-    margin-bottom: 33px;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
+    max-height: 350px;
+    max-width: 95%;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.5);
+    transition: border-radius .3s,-webkit-transform .2s;
+    transition: transform .2s,border-radius .3s;
+    transition: transform .2s,border-radius .3s,-webkit-transform .2s;    
+}
+.text-wrap {
+    white-space: normal !important;
+}
+.mb-auto, .my-auto {
+    margin-bottom: auto !important;
+}
+.pt-2, .py-2 {
+    padding-top: .5rem !important;
+}
+.pl-1, .px-1 {
+    padding-left: .25rem !important;
+}
+.pr-1, .px-1 {
+    padding-right: .25rem !important;
+}
+.card img:hover{
+    max-width: 96%;
+    -webkit-transform: scale(1.05) translateY(-2px);
+    transform: scale(1.05) translateY(-2px);
+    border-radius: 15px 15px 0 0;
+}
+.mt-auto, .my-auto {
+    margin-top: auto !important;
+}
+.pb-2, .py-2 {
+    padding-bottom: .5rem !important;
+}
+.publish{
+    margin: auto;
 }
 
 
@@ -210,3 +237,7 @@ p{
     margin-right: 5rem;
 }
 
+.btn-primary{
+    font-family: "Staatliches-Regular";
+    
+}
