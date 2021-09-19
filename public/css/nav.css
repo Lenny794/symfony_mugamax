@@ -29,6 +29,10 @@
     border-top-style: solid;
     border-left-width: 2.1px;
     border-left-style: solid;
+    font-family: "Staatliches-Regular";
+}
+.form-control::placeholder{
+    opacity: 0.4;
 }
 .logo-menu{
     display: flex;
@@ -79,9 +83,9 @@
     color: var(--siteText)
 }
 #nav-jeux:hover{
-    background-color: var(--secondary);
+    color: var(--secondary);
+    background-color: var(--background);
     transition: 0.5s all;
-    color: var(--siteText);
 }
 
 #nav-JeuxDropdown{
@@ -263,7 +267,8 @@
     color: var(--siteText);
 }
 #nav-vidéos:hover{
-    background-color: var(--secondary);
+    color: var(--secondary);
+    background-color: var(--background);
     transition: 0.5s all;
 }
 
@@ -272,7 +277,8 @@
     color: var(--siteText);
 }
 #nav-actualités:hover{
-    background-color: var(--secondary);
+    color: var(--secondary);
+    background-color: var(--background);
     transition: 0.5s all;
 }
 #nav-ActuDropdown{
@@ -299,7 +305,8 @@
     color: var(--siteText);
 }
 #nav-forums:hover{
-    background-color: var(--secondary);
+    color: var(--secondary);
+    background-color: var(--background);
     transition: 0.5s all;
 }
 
@@ -351,8 +358,18 @@
 #nav-adminhome{
     color: var(--siteText);
 }
+#nav-adminhome:hover{
+    color: var(--secondary);
+    background-color: var(--background);
+    transition: 0.5s all;
+}
 #nav-logout{
     color: var(--siteText);
+}
+#nav-logout:hover{
+    color: var(--secondary);
+    background-color: var(--background);
+    transition: 0.5s all;
 }
 
 /* Boutton recherche */
@@ -439,8 +456,8 @@
     color: rgb(226, 226, 226);
     font-size: 25px;
     margin: auto;
-        margin-top: auto;
-        margin-left: auto;
+    margin-top: auto;
+    margin-left: auto;
     margin-top: auto;
     margin-left: auto;
     margin-left: auto;

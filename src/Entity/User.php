@@ -84,11 +84,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $topicComments;
 
+    /**
+     * @ORM\OneToMany(targetEntity=SettingUserPreference::class, mappedBy="user")
+     */
+    private $settingUserPreferences;
+
     public function __construct()
     {
         $this->actualityNews = new ArrayCollection();
         $this->topics = new ArrayCollection();
         $this->topicComments = new ArrayCollection();
+        $this->settingUserPreferences = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -343,5 +349,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
     public function __toString() {
         return $this->pseudo;
+    }
+
+    /**
+     * @return Collection|SettingUserPreference[]
+     */
+    public function getSettingUserPreferences(): Collection
+    {
+        return $this->settingUserPreferences;
+    }
+
+    public function addSettingUserPreference(SettingUserPreference $settingUserPreference): self
+    {
+        if (!$this->settingUserPreferences->contains($settingUserPreference)) {
+            $this->settingUserPreferences[] = $settingUserPreference;
+            $settingUserPreference->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSettingUserPreference(SettingUserPreference $settingUserPreference): self
+    {
+        if ($this->settingUserPreferences->removeElement($settingUserPreference)) {
+            // set the owning side to null (unless already changed)
+            if ($settingUserPreference->getUser() === $this) {
+                $settingUserPreference->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }

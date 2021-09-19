@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SettingUserPreference{% endblock %}
+
+{% block body %}
+    <h1>Edit SettingUserPreference</h1>
+
+    {{ include('setting_user/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('user_index') }}">back to list</a>
+
+    {{ include('setting_user_preference/_delete_form.html.twig') }}
+{% endblock %}

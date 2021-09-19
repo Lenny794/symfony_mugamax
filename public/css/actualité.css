@@ -155,6 +155,11 @@ p{
     margin-left: calc(var(--bs-gutter-x) * -.5);
     margin-bottom: 20px;
 }
+#cardBlock{
+    background-color: transparent !important;
+    box-shadow: 0 0 5px 0 transparent !important;
+    border: 1px solid transparent !important;
+}
 .card {
     background-color: var(--background);
     margin: 5px;
@@ -162,7 +167,12 @@ p{
     padding: 8px 2px 0;
     box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
 }
+#cardShow{
+    width:44rem;
+    max-height: 390px !important;
+}
 .card img{
+    margin-left: 6px;
     max-height: 350px;
     max-width: 95%;
     vertical-align: middle;
@@ -188,7 +198,7 @@ p{
 .pr-1, .px-1 {
     padding-right: .25rem !important;
 }
-.card img:hover{
+.imgCard{
     max-width: 96%;
     -webkit-transform: scale(1.05) translateY(-2px);
     transform: scale(1.05) translateY(-2px);

@@ -72,4 +72,5 @@ class TopicComment
 
         return $this;
     }
+
 }

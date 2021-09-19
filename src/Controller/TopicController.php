@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controller;
-
+use App\Entity\TopicComment;
 use App\Entity\Topic;
 use App\Form\TopicType;
 use App\Repository\TopicRepository;

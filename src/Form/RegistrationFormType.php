@@ -25,6 +25,7 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('gender', ChoiceType::class, [
                 'label' => 'Genre',
+                'required' => false,
 
                 'choices' => [
                     'Homme' => 'Homme',

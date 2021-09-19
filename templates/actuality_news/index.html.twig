@@ -89,15 +89,15 @@
                         </td>
                     </tr> #}
                 <div class="row">
-                {% for actuality_news in actuality_news %}
+                    {% for actuality_news in actuality_news %}
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3">
                         <div class="card">
                             <div class="card-header">
-                                <img src=" {{ asset(actuality_news.image) }}" style="contain;" alt="">
+                                <img class="imgCard" src=" {{ asset(actuality_news.image) }}" style="contain;" alt="">
                             </div>
                             <div class="card-body text-wrap my-auto px-1 py-2">
                                 <h4> {{ actuality_news.titre }} </h4>
-                            </div>
+                            </div><hr>
                             <div class="card-footer">
                                 <p class="publish"><i>Publié le : </i>{{ actuality_news.createdAt | date('d-m-Y') }} <i>par</i> {{ actuality_news.user("id") }}</p> 
                                 <div>

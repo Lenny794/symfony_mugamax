@@ -84,11 +84,13 @@
                         </ul>
                     </li>
                 {% endif %}
+                {% if app.user %}
                 <li>
-                    <a id="navMonCompte" class="nav-link active" href="{{ path('user_account') }}"><i
+                    <a id="navMonCompte" class="nav-link active" href="{{ path('user_index') }}"><i
                         class="fas fa-ghost"></i>
                     </a>
                 </li>
+                {% endif %}
                 <li>
                     <a id="getBrightness" class="nav-link active" href="../Projet - Mugamax - Light Version (Lenny)/light-actualité.html"><i
                         class="fas fa-adjust"></i>
