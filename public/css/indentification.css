@@ -81,7 +81,7 @@ body{
     border-top-style: solid;
     border-left-width: 2.1px;
     border-left-style: solid;
-    margin-bottom: 19rem;
+    margin-bottom: 15rem;
     margin-top: 1.5rem;
     padding-top: 15px;
 }
@@ -115,6 +115,7 @@ body{
 @media only screen and (max-width: 1399px) and (min-width: 992px) {
     #signUp {
         margin-left: 4rem;
+        padding-bottom: 24px;
     }
 }
 @media only screen and (max-width: 991px) and (min-width: 768px) {
@@ -125,6 +126,7 @@ body{
 @media only screen and (max-width: 767px) {
     #signUp {
         margin-left: 0rem;
+        padding-bottom: 24px;
     }
 }
 
@@ -164,6 +166,7 @@ body{
     padding-bottom: 10px;
     padding-top: 10px;
     text-align: center;
+    
 }
 @media only screen and (max-width: 767px) {
     #loginButton {
@@ -173,4 +176,22 @@ body{
 
 .form-control::placeholder{
     color: var(--login_background1);
+}
+#registration_form_country{
+    border-radius: 1rem;
+}
+#registration_form_birthdate_month {
+    border-radius: 1rem;
+    margin-right: 6px;
+}
+#registration_form_birthdate_day {
+    border-radius: 1rem;
+    margin-right: 6px;
+}
+#registration_form_birthdate_year {
+    border-radius: 1rem;
+    margin-right: 6px;
+}
+#registration_form_gender {
+    border-radius: 1rem;
 }

@@ -23,22 +23,36 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('gender', ChoiceType::class, [
+            ->add('gender', ChoiceType::class, array(
                 'label' => 'Genre',
                 'required' => false,
-
-                'choices' => [
+                'expanded' => true,
+                'multiple' => false,
+                
+                'choices' => array (
                     'Homme' => 'Homme',
                     'Femme' => 'Femme',
-                ],
-            ])
+                ),
+                'data' => 'Homme'
+            ))
+
+            
+            
+            
             ->add('pseudo', TextType::class, [
                 'label' => 'Pseudo',
+                'required' => false,
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Vous devez accepter les termes et conditions.',
+                    ]),
+                ],
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'label' => 'Mot de passe',
+                'required' => false,
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
@@ -67,7 +81,12 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('birthdate', BirthdayType::class, [
                 'label' => 'Date de naissance',
-                'required' => false
+                'required' => true,
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Vous devez accepter les termes et conditions.',
+                    ]),
+                ],
             ])
             ->add('country', CountryType::class, [
                 'label' => 'Pays',
@@ -75,6 +94,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'label' => 'Accepter les termes et conditions',
+                'required' => false,
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
@@ -83,7 +103,6 @@ class RegistrationFormType extends AbstractType
                 ],
             ]);
     }
-
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([

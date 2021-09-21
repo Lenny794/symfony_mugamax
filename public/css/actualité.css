@@ -88,6 +88,8 @@ p{
 .txtMyactu{
     color: var(--siteText);
     font-size: 12px;
+    margin-left: 1px;
+    margin-top: 12px;
 }
 #myActu{
     margin-left: 5rem;

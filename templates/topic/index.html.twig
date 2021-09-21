@@ -136,14 +136,16 @@
                                                     <p class="info">
                                                         Publié par <a href="#" class="utilisateurTopic">{{ topic.user("id") }}</a><i
                                                         class="fa fa-comments"></i>
-                                                        <a href="#" class="utilisateurTopic">150 comments</a>
+                                                        <a href="{{ path('topic_show',{'id':topic.id} ) }}" class="utilisateurTopic">{{ topic.topicComments("id") | length }} commentaire</a>
                                                     </p>
                                                 </div>
                                             </div>  
                                             <div>
                                                 <a class="btn btn-primary mt-3"  href="{{ path('topic_show',{'id':topic.id} ) }}">Consulter</a>
-                                                {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
-                                                <a class="btn btn-primary mt-3" href="{{ path('topic_edit',{'id':topic.id} ) }}">Modifier</a>
+                                                {% if app.user %}
+                                                    {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+                                                    <a class="btn btn-primary mt-3" href="{{ path('topic_edit',{'id':topic.id} ) }}">Modifier</a>
+                                                    {% endif %}
                                                 {% endif %}
                                             </div><br>                                          
                                         </li>

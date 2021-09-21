@@ -9,10 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"pseudo"}, message="There is already an account with this pseudo")
+ * @UniqueEntity(fields={"pseudo"}, message="Ce pseudo est déja utilisé")
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -25,6 +26,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank(message="Vous devez ajouter un pseudo")
      */
     private $pseudo;
 
@@ -41,31 +43,37 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Vous devez choisir un genre")
      */
     private $gender;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Vous devez renseigner un prénom")
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Vous devez renseigner un nom")
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Vous devez renseigner une adresse email")
      */
     private $email;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\NotBlank(message="Vous devez renseigner une date de naissance")
      */
     private $birthdate;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Vous devez renseigner un pays")
      */
     private $country;
 
@@ -85,9 +93,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $topicComments;
 
     /**
-     * @ORM\OneToMany(targetEntity=SettingUserPreference::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=ActualityComment::class, mappedBy="user")
      */
-    private $settingUserPreferences;
+    private $actualityComments;
 
     public function __construct()
     {
@@ -95,6 +103,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->topics = new ArrayCollection();
         $this->topicComments = new ArrayCollection();
         $this->settingUserPreferences = new ArrayCollection();
+        $this->actualityComments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -359,22 +368,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->settingUserPreferences;
     }
 
-    public function addSettingUserPreference(SettingUserPreference $settingUserPreference): self
+    /**
+     * @return Collection|ActualityComment[]
+     */
+    public function getActualityComments(): Collection
     {
-        if (!$this->settingUserPreferences->contains($settingUserPreference)) {
-            $this->settingUserPreferences[] = $settingUserPreference;
-            $settingUserPreference->setUser($this);
+        return $this->actualityComments;
+    }
+
+    public function addActualityComment(ActualityComment $actualityComment): self
+    {
+        if (!$this->actualityComments->contains($actualityComment)) {
+            $this->actualityComments[] = $actualityComment;
+            $actualityComment->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeSettingUserPreference(SettingUserPreference $settingUserPreference): self
+    public function removeActualityComment(ActualityComment $actualityComment): self
     {
-        if ($this->settingUserPreferences->removeElement($settingUserPreference)) {
+        if ($this->actualityComments->removeElement($actualityComment)) {
             // set the owning side to null (unless already changed)
-            if ($settingUserPreference->getUser() === $this) {
-                $settingUserPreference->setUser(null);
+            if ($actualityComment->getUser() === $this) {
+                $actualityComment->setUser(null);
             }
         }
 

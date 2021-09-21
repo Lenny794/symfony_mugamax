@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ActualityNewsRepository;
 
@@ -49,6 +51,16 @@ class ActualityNews
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="actualityNews")
      */
     private $user;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ActualityComment::class, mappedBy="actualityNews")
+     */
+    private $actualityComments;
+
+    public function __construct()
+    {
+        $this->actualityComments = new ArrayCollection();
+    }
 
     /**
      * @ORM\PrePersist
@@ -134,6 +146,36 @@ class ActualityNews
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ActualityComment[]
+     */
+    public function getActualityComments(): Collection
+    {
+        return $this->actualityComments;
+    }
+
+    public function addActualityComment(ActualityComment $actualityComment): self
+    {
+        if (!$this->actualityComments->contains($actualityComment)) {
+            $this->actualityComments[] = $actualityComment;
+            $actualityComment->setActualityNews($this);
+        }
+
+        return $this;
+    }
+
+    public function removeActualityComment(ActualityComment $actualityComment): self
+    {
+        if ($this->actualityComments->removeElement($actualityComment)) {
+            // set the owning side to null (unless already changed)
+            if ($actualityComment->getActualityNews() === $this) {
+                $actualityComment->setActualityNews(null);
+            }
+        }
 
         return $this;
     }
