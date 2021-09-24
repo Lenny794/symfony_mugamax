@@ -185,6 +185,12 @@ p{
     transition: transform .2s,border-radius .3s;
     transition: transform .2s,border-radius .3s,-webkit-transform .2s;    
 }
+#cardActualityHeader:hover{
+    max-width: 96%;
+    -webkit-transform: scale(1.05) translateY(-2px);
+    transform: scale(1.05) translateY(-2px);
+    
+}
 .text-wrap {
     white-space: normal !important;
 }

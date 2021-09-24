@@ -16,7 +16,6 @@ class ActualityNewsType extends AbstractType
     {
         $builder
             ->add('categoryNews')
-            ->add('user')
             ->add('titre', TextType::class, [
                 'label' => 'Titre'
             ])

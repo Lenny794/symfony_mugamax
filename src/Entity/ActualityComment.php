@@ -2,11 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\ActualityCommentRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ActualityCommentRepository;
+use Doctrine\ORM\Mapping\HasLifecycleCallbacks;
+
 
 /**
  * @ORM\Entity(repositoryClass=ActualityCommentRepository::class)
+ * @ORM\HasLifecycleCallbacks
  */
 class ActualityComment
 {
@@ -33,6 +37,23 @@ class ActualityComment
      * @ORM\Column(type="text")
      */
     private $content;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function prePersist()
+    {
+        if(empty($this->createdAt))
+        {
+            $this->createdAt = new DateTime();
+        }
+    }
+
 
     public function getId(): ?int
     {
@@ -71,6 +92,18 @@ class ActualityComment
     public function setContent(string $content): self
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

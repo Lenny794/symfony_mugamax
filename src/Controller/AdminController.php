@@ -16,11 +16,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminController extends AbstractController
 {
     /**
-     * @Route("/home", name="admin_home", methods={"GET"})
+     * @Route("/dashboard", name="admin_dashboard", methods={"GET"})
      */
     public function index(UserRepository $userRepository): Response
     {
-        return $this->render('admin/admin_home.html.twig', [
+        return $this->render('admin/admin_dashboard.html.twig', [
             'users' => $userRepository->findAll(),
         ]);
     }
@@ -83,7 +83,7 @@ class AdminController extends AbstractController
      */
     public function delete(Request $request, User $user): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();

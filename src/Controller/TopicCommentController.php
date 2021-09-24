@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\TopicComment;
 use App\Form\TopicCommentType;
 use App\Repository\TopicCommentRepository;
+use App\Repository\TopicRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,20 +27,23 @@ class TopicCommentController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="topic_comment_new", methods={"GET","POST"})
+     * @Route("/new/{id}", name="topic_comment_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, int $id, TopicRepository $topicRepository): Response
     {
         $topicComment = new TopicComment();
         $form = $this->createForm(TopicCommentType::class, $topicComment);
         $form->handleRequest($request);
+        $topic = $topicRepository->find($id);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $topicComment->setTopic($topic);
+            $topicComment->setUser($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($topicComment);
             $entityManager->flush();
 
-            return $this->redirectToRoute('topic_comment_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('topic_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('topic_comment/new.html.twig', [
@@ -69,7 +73,7 @@ class TopicCommentController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('topic_comment_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('topic_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('topic_comment/edit.html.twig', [

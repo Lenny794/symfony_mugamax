@@ -2,29 +2,24 @@
 
 namespace App\Form;
 
-use App\Entity\TopicComment;
+use App\Entity\ActualityComment;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class TopicCommentType extends AbstractType
+class ActualityCommentType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        
-           
-            ->add('content', TextareaType::class, [
-                'label' => 'Commenter'
-            ])
+            ->add('content')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => TopicComment::class,
+            'data_class' => ActualityComment::class,
         ]);
     }
 }

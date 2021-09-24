@@ -1,0 +1,389 @@
+:root{
+    --primary: #35416d;
+    --secondary: #1e90ff;
+    --secondary2:#0073b7;
+    --success: #d1383d;
+    --success2: #fa9c66;
+    --success3: #517379;
+    --sucesss4: #7c34b8;
+    --success5: #93d34a;
+    --siteText1: #eeeeee;
+    --siteText2: #d1d1d1;
+    --background: #232728;
+    --background2: #3c3c3c;
+    --block:#262f39;
+    --block2:#23292f;
+    --block-border:#3f4b57;
+}
+
+h5, h2, h1{
+    color: var(--siteText1);
+}
+
+p, strong, span{
+    color: var(--siteText2);
+}
+
+body{
+    background-color: var(--background);
+} 
+
+.btn-primary{
+    font-family: "Staatliches-Regular";
+    background-color: var(--secondary2) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: var(--secondary);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+    text-align: center;
+}
+
+.padding {
+        padding: 10px;
+}
+    
+/* GRID */
+.col {
+        padding: 10px 20px;
+        margin-bottom: 10px;
+        background: #fff;
+        color: #666666;
+        text-align: center;
+        font-weight: 400;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.col-md-12{
+    background-color: var(--background);
+    padding-top: 2px;
+}
+
+.row h3 {
+    color: #222426;
+}
+
+.row.grid {
+    margin-left: 0;
+}
+
+.grid {
+    position: relative;
+    width: 100%;
+    color: #666666;
+    border-radius: 2px;
+    margin-bottom: 25px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+.grid .grid-header {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 10px 10px 20px;
+}
+
+.grid .grid-header:before,
+.grid .grid-header:after {
+    display: table;
+    content: " ";
+}
+
+.grid .grid-header:after {
+    clear: both;
+}
+
+.grid .grid-header span,
+.grid .grid-header > .fa {
+    display: inline-block;
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.5em;
+}
+
+.grid .grid-header span {
+    padding: 0 5px;
+}
+
+.grid .grid-header > .fa {
+    padding: 5px 10px 0 0;
+}
+
+.grid .grid-header > .grid-tools {
+    padding: 4px 10px;
+}
+
+.grid .grid-header > .grid-tools a {
+    color: #999999;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.grid .grid-header > .grid-tools a:hover {
+    color: #666666;
+}
+
+#blockLeft {
+    padding: 15px 20px 15px 20px;
+    font-size: 0.9em;
+    line-height: 1.9em;
+    background-color: var(--block2);
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: var(--block-border);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+    
+}
+
+#blockRight{
+    background-color: var(--block2);
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: var(--block-border);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;  
+    margin-bottom: 33px; 
+}
+#blockRight h2{
+    margin-left: 20px;
+}
+
+#étiquetteBlockRight{
+    background-color: var(--block2);
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: var(--block-border);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+}
+
+/* Topic */
+.list-group{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: .25rem;   
+    border-left-width: 0.1px;
+    border-left-style: solid;
+    border-right-width: 0.1px;
+    border-right-style: solid;
+    border-top-width: 0.1px;
+    border-top-style: solid;
+    border-bottom-width: 0.1px;
+    border-bottom-style: solid;
+}
+.support ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.support ul li {
+    padding: 8px 10px;
+}
+
+.support ul li a {
+    color: var(--siteText2);
+    display: block;
+}
+.support ul li.active a:hover {
+    color: var(--secondary2);
+}
+
+.support ul li.active a {
+    color:var(--siteText2);
+}
+
+.support ul.support-label li {
+    padding: 2px 0px;
+}
+
+.support h2,
+.support-content h2 {
+    margin-top: 5px;
+}
+
+.support-content .list-group li {
+    padding: 15px 20px 0px 20px;
+    cursor: pointer;
+    background-color:var(--background);
+    border-bottom-color: var(--background2);
+}
+    
+.support-content .list-group li:hover {
+    background: var(--block2);
+}
+
+.support-content .fa-padding .fa {
+    padding-top: 5px;
+    width: 1.5em;
+}
+    
+.support-content .info {
+    color: #777;
+    margin: 0px;
+}
+    
+.support-content a {
+    color: #111;
+}
+    
+.support-content .info a:hover {
+    text-decoration: underline;
+}
+    
+.support-content .info .fa {
+    width: 1.5em;
+    text-align: center;
+}
+    
+.support-content .number {
+    color: #777;
+}
+
+.support-content img {
+    display: block;
+}
+
+.support-content .modal-body {
+    padding-bottom: 0px;
+}
+
+.support-content-comment {
+    padding: 10px 10px 10px 30px;
+    background: #eee;
+    border-top: 1px solid #ccc;
+}
+
+/* Dropdown Button */
+#ButtonTrier{
+background-color: var(--secondary2);
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 7px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+  
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+    border-radius: 6px;
+}
+
+.dropdown-content a {
+    color: var(--siteText1);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover{
+    background-color: var(--secondary2);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.show {display:block;}
+
+#myDropdown{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    top: 40px;
+    border-radius: 15px;
+    background-color: var(--block2);
+}
+
+/* Étiquettes */
+.étiquettesTab-Suggestion{
+    text-decoration: none;
+}
+.étiquettesTab-Suggestion i, .fa-question-circle{
+    color: var(--success5);
+}
+
+.étiquettesTab-News-Jeux{
+    text-decoration: none;
+}
+.étiquettesTab-News-Jeux i, .fa-trophy{
+color: var(--sucesss4);
+}
+#étiquettesTab-AstuceViolet{
+    color:var(--sucesss4)
+}
+
+.étiquettesTab-News-Astuce{
+    text-decoration: none;
+}
+.étiquettesTab-News-Astuce i, .fa-folder1{
+    color: var(--success2);
+}
+#étiquettesTab-AstuceOrange{
+    color: var(--success2)
+}
+
+.étiquettesTab-News-Débat{
+    text-decoration: none;
+}
+.étiquettesTab-News-Débat i, .fa-folder{
+    color: var(--success);
+}
+
+.étiquettesTab-Test{
+    text-decoration: none;
+}
+.étiquettesTab-Test i, .fa-dice-d6{
+color: var(--secondary);
+}
+
+.étiquettesTab-Tuto-Tech{
+    text-decoration: none;
+}
+.étiquettesTab-Tuto-Tech i, .fa-cog{
+color: var(--success3);
+}
+/* Publié par */
+p .utilisateurTopic{
+    color: var(--secondary2);
+}
+p .utilisateurTopic:hover{
+    color: var(--secondary);
+}
+.fa-comments{
+    color: var(--siteText2);
+}

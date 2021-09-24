@@ -1109,3 +1109,21 @@ body{
     line-height: 1.5;
     font-family: "Staatliches-Regular";
 }
+.form-control::placeholder{
+    color: var(--login_background1);
+}
+#edit_profil_country{
+    border-radius: 1rem;
+}
+#edit_profil_birthdate_month {
+    border-radius: 1rem;
+    margin-right: 6px;
+}
+#edit_profil_birthdate_day {
+    border-radius: 1rem;
+    margin-right: 6px;
+}
+#edit_profil_birthdate_year {
+    border-radius: 1rem;
+    margin-right: 6px;
+}

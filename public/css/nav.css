@@ -107,8 +107,8 @@
     border-left-style: solid;
     border-top-right-radius: unset;
     border-top-left-radius: unset;
-    left: 14px;
-    bottom: -343px;
+    /* left: 14px; */
+    bottom: -169px;
     background-color: var(--nav-block);
 }
 
@@ -248,10 +248,10 @@
     border-top-width: 2.433px !important;
     padding-top: 0.5rem !important;
     border-right-width: 2.433px !important;
-    border-left-width: 1.433px !important;
+    border-left-width: 2.433px !important;
     border-bottom-width: -0.467px !important;
     margin-bottom: 0px !important;
-    border: var(--nav-block-border);
+    border: var(--siteText2);
     border-style: solid;
     border-bottom-right-radius: 2rem;
     border-bottom-left-radius: 2rem;
@@ -367,6 +367,8 @@
     background-color: var(--background);
     transition: 0.5s all;
 }
+
+
 #nav-logout{
     color: var(--siteText);
 }
@@ -454,6 +456,27 @@
     transform:rotate(360deg);
     transition: transform 500ms ease-in-out;
 }
+
+/******dashBoard****/
+#dashBoard{
+    color:var(--siteText);
+    font-size: 41px;
+    margin: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-left: auto;
+    margin-left: 4px;
+    margin-top: -6px;
+    background: transparent;
+    padding-left: 7px;
+    padding-top: 0px;
+    padding-bottom: -8px;
+    padding-right: 8px;
+}
+#dashBoard:hover{
+    color:var(--secondary);
+}    
+
 /* Luminosité */
 
 #getBrightness{
@@ -471,7 +494,7 @@
 
 #getBrightness:hover{
     color: #ffffff;
-    font-size: 27px;
+ 
     transform:rotate(220deg);
     transition: transform 500ms ease-in-out;
     

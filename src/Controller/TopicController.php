@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Entity\TopicComment;
 use App\Entity\Topic;
 use App\Form\TopicType;
+use App\Repository\TopicCommentRepository;
 use App\Repository\TopicRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -51,9 +52,12 @@ class TopicController extends AbstractController
     /**
      * @Route("/forum/{id}", name="topic_show", methods={"GET"})
      */
-    public function show(Topic $topic): Response
-    {
+    public function show(Topic $topic, int $id, TopicCommentRepository $topicCommentRepository ): Response
+    {   
+        $topicComment = $topicCommentRepository->find($id);
+        
         return $this->render('topic/show.html.twig', [
+            'topic_comment' => $topicComment,
             'topic' => $topic,
         ]);
     }

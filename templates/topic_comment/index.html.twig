@@ -55,7 +55,7 @@
                                                 <div class="media-body">
                                                     {{ topic_comment.content }} <br>
                                                     <a href="{{ path('topic_comment_edit', {'id': topic_comment.id}) }}">edit</a>
-                                                    <a href="{{ path('topic_comment_new') }}">Commenter</a>
+                                                    <a href="{{ path('topic_comment_new', {'id': topic_comment.id}) }}) }}">Commenter</a>
                                                 </div>
                                             </div>                                           
                                         </li>                                        

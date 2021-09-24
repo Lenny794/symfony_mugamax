@@ -2,15 +2,18 @@
 
 namespace App\Controller;
 
+use App\Entity\ActualityComment;
 use App\Entity\ActualityNews;
 use App\Form\ActualityNewsType;
 use App\MesServices\HandleImage;
+use App\Form\ActualityCommentType;
 use App\Repository\ActualityNewsRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/")
@@ -18,7 +21,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class ActualityNewsController extends AbstractController
 {
     /**
-     * @Route("/actuality/liste", name="actuality_news_index", methods={"GET"})
+     * @Route("/actuality", name="actuality_news_index", methods={"GET"})
      */
     public function index(ActualityNewsRepository $actualityNewsRepository): Response
     {
@@ -28,7 +31,7 @@ class ActualityNewsController extends AbstractController
     }
 
     /**
-     * @Route("admin/actuality/news/create", name="actuality_news_new", methods={"GET","POST"})
+     * @Route("/admin/actuality/create", name="actuality_news_new", methods={"GET","POST"})
      */
     public function new(Request $request, SluggerInterface $slugger, HandleImage $handleImage): Response
     {
@@ -38,6 +41,8 @@ class ActualityNewsController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid())
         {   
+            $actualityNews->setUser($this->getUser());
+
             $imageFile = $form->get('image')->getData();
 
             if($imageFile)
@@ -59,17 +64,33 @@ class ActualityNewsController extends AbstractController
     }
 
     /**
-     * @Route("/actuality/news/{id}", name="actuality_news_show", methods={"GET"})
+     * @Route("/actuality/{id}", name="actuality_news_show", methods={"GET","POST"})
      */
-    public function show(ActualityNews $actualityNews): Response
+    public function show(ActualityNews $actualityNews,Request $request,EntityManagerInterface $em, int $id): Response
     {
+        $actualityComment = new ActualityComment();
+
+        $form = $this->createForm(ActualityCommentType::class, $actualityComment);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid() ) 
+        {
+            $actualityComment->setActualityNews($actualityNews);
+            $actualityComment->setUser($this->getUser());
+
+            $em->persist($actualityComment);
+            $em->flush();
+            return $this->redirectToRoute('actuality_news_show', ['id' => $id]);
+        }
         return $this->render('actuality_news/show.html.twig', [
             'actuality_news' => $actualityNews,
+            'form' => $form->createView()
         ]);
     }
 
     /**
-     * @Route("admin/actuality/news/{id}/edit", name="actuality_news_edit", methods={"GET","POST"})
+     * @Route("/admin/actuality/{id}/edit", name="actuality_news_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, ActualityNews $actualityNews, HandleImage $handleImage): Response
     {

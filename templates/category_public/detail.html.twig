@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
 {% endblock %}
 
-{% block title %}Liste Actualité{% endblock %}
+{% block title %}Mon Actualité{% endblock %}
 
 {% block body %}
     <div id="bannerGame" class="row b-row listing meta-below grid-3">
@@ -43,19 +43,12 @@
     <div id="myActu">
         <div id="myActuBlock" class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
             <div class="col-md-6 px-0">
-                <h1 class="display-4 fst-italic">Actualités</h1>
+                <h1 class="display-4 fst-italic">{{ category.name | upper }}</h1>
             
                 <div>
                     <p class="txtMyactu lead my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem quisquam
                         ipsum tenetur? Et, culpa eum!
                     </p>
-                    {% if app.user %}
-                        {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
-                            <h3 class="txtMyactu lead mb-0"><a href="{{ path('actuality_news_new') }}" class="text-white fw-bold">
-                            Créer nouvelle actualité</a>
-                            </h3>
-                        {% endif %}
-                    {% endif %}
                 </div>
             </div>
         </div>
@@ -64,11 +57,11 @@
         <div class="row">
             <div id="signUp" class="col-md-10 mt-4">
                 <div class="row">
-                    {% for actuality_news in actuality_news %}
+                    {% for actuality_news in category.actualityNews %}
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3">
                         <div class="card">
                             <div class="card-header">
-                                <img id="cardActualityHeader"class="imgCard" src=" {{ asset(actuality_news.image) }}" style="contain;" alt="">
+                                <img class="imgCard" src=" {{ asset(actuality_news.image) }}" style="contain;" alt="">
                             </div>
                             <div class="card-body text-wrap my-auto px-1 py-2">
                                 <h4> {{ actuality_news.titre }} </h4>
@@ -77,11 +70,7 @@
                                 <p class="publish"><i>Publié le : </i>{{ actuality_news.createdAt | date('d-m-Y') }} <i>par</i> {{ actuality_news.user("id") }}</p> 
                                 <div>
                                     <a class="btn btn-primary mt-3"  href="{{ path('actuality_news_show',{'id':actuality_news.id} ) }}">Consulter</a>
-                                    {% if app.user %}
-                                        {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
-                                            <a class="btn btn-primary mt-3" href="{{ path('actuality_news_edit',{'id':actuality_news.id} ) }}">Modifier</a>
-                                        {% endif %}
-                                    {% endif %}
+                                    
                                 </div><br>
                             </div>
                         </div>
