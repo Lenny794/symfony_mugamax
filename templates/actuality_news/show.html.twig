@@ -106,6 +106,9 @@
                         >Auteur : {{ actualityComments.user.pseudo}}</p>
                         <p>Date : {{ actualityComments.createdAt | date('d-m-Y H:i:s') }}</p>
                         <p>Contenu : {{ actualityComments.content }}</p>
+                        {% if app.user is same as actualityComments.user %}
+                            <a class="btn btn-primary" href="{{ path('actuality_comment_edit',{'id':actualityComments.user.id}) }}">Modifier</a>
+                        {% endif %}
                         <hr>
                     {% endfor %}
                 {% else %}

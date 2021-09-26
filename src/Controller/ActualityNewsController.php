@@ -2,18 +2,19 @@
 
 namespace App\Controller;
 
-use App\Entity\ActualityComment;
 use App\Entity\ActualityNews;
 use App\Form\ActualityNewsType;
+use App\Entity\ActualityComment;
 use App\MesServices\HandleImage;
 use App\Form\ActualityCommentType;
-use App\Repository\ActualityNewsRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\ActualityNewsRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * @Route("/")
@@ -31,7 +32,7 @@ class ActualityNewsController extends AbstractController
     }
 
     /**
-     * @Route("/admin/actuality/create", name="actuality_news_new", methods={"GET","POST"})
+     * @Route("/admin/actuality/create", name="actuality_news_new", methods={"GET","POST"}, requirements={"id":"\d+"})
      */
     public function new(Request $request, SluggerInterface $slugger, HandleImage $handleImage): Response
     {
@@ -64,7 +65,7 @@ class ActualityNewsController extends AbstractController
     }
 
     /**
-     * @Route("/actuality/{id}", name="actuality_news_show", methods={"GET","POST"})
+     * @Route("/actuality/{id}", name="actuality_news_show", methods={"GET","POST"}, requirements={"id":"\d+"})
      */
     public function show(ActualityNews $actualityNews,Request $request,EntityManagerInterface $em, int $id): Response
     {
@@ -88,7 +89,32 @@ class ActualityNewsController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+    
+    /**
+     * @Route("/actuality/{id}/edit/", name="actuality_comment_edit", methods={"GET","POST"}, requirements={"id":"\d+"})
+     */
+    public function editComment(ActualityComment $actualityComment,Request $request, int $id): Response
+    {   
+        $form = $this->createForm(ActualityCommentType::class, $actualityComment);
 
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid() ) 
+        {
+            $actualityComment->setUser($this->getUser());
+            
+            $this->getDoctrine()->getManager()->flush();
+ 
+            $this->addFlash('message', 'Votre commentaire a été modifier');
+            
+            return $this->redirectToRoute('actuality_news_show', ['id' => $id], Response::HTTP_SEE_OTHER);
+        }
+        return $this->renderForm('actuality_news/edit_comment.html.twig', [
+            'actuality_news' => $actualityComment,
+            'form' => $form
+        ]);
+    }
+    
     /**
      * @Route("/admin/actuality/{id}/edit", name="actuality_news_edit", methods={"GET","POST"})
      */

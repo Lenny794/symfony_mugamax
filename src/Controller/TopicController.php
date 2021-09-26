@@ -1,15 +1,18 @@
 <?php
 
 namespace App\Controller;
-use App\Entity\TopicComment;
+
 use App\Entity\Topic;
 use App\Form\TopicType;
-use App\Repository\TopicCommentRepository;
+use App\Entity\TopicComment;
+use App\Form\TopicCommentType;
+
 use App\Repository\TopicRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/")
@@ -50,16 +53,68 @@ class TopicController extends AbstractController
     }
 
     /**
-     * @Route("/forum/{id}", name="topic_show", methods={"GET"})
+     * @Route("/forum/{id}", name="topic_show", methods={"GET","POST"}, requirements={"id":"\d+"})
      */
-    public function show(Topic $topic, int $id, TopicCommentRepository $topicCommentRepository ): Response
+    public function show(Topic $topic, int $id, EntityManagerInterface $em, Request $request): Response
     {   
-        $topicComment = $topicCommentRepository->find($id);
+        $topicComment = new TopicComment();
+
+        $form = $this->createForm(TopicCommentType::class, $topicComment);
+
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) 
+        {
+            $topicComment->setTopic($topic);
+            $topicComment->setUser($this->getUser());
+
+            $em->persist($topicComment);
+            $em->flush();
+            return $this->redirectToRoute('topic_show', ['id' => $id]);
+        }
         
         return $this->render('topic/show.html.twig', [
-            'topic_comment' => $topicComment,
             'topic' => $topic,
+            'form' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/forum/{id}/edit", name="topic_comment_edit", methods={"GET","POST"}, requirements={"id":"\d+"})
+     */
+    public function editTopicComment(Request $request, TopicComment $topicComment, int $id): Response
+    {
+        $form = $this->createForm(TopicCommentType::class, $topicComment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) 
+        {
+            $topicComment->setUser($this->getUser());
+            
+            $this->getDoctrine()->getManager()->flush();
+            
+            $this->addFlash('message', 'Votre commentaire a été modifier');
+
+            return $this->redirectToRoute('topic_show', ['id' => $id], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('topic_comment/edit.html.twig', [
+            'topicComment' => $topicComment,
+            'form' => $form,
+        ]);
+    }
+    /**
+     * @Route("/forum/{id}/edit", name="topic_comment_delete", methods={"POST"})
+     */
+    public function deleteTopicComment(Request $request, TopicComment $topicComment, int $id): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$topicComment->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($topicComment);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('topic_show', ['id' => $id]);
     }
 
     /**

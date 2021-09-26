@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/page-forum.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/page-forum_comment.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/indentification.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/indentification_comment.css') }}">
 {% endblock %}
 
 
@@ -44,9 +44,21 @@
                                     </div>
                                 </div>
                                 <!-- Commence Nouvelle Étiquettes -->
-                                <a type="button" class="btn btn-success pull-right" href="{{ path('topic_comment_new',{'id' : topic.id}) }}" data-toggle="modal"
-                                    data-target="#newIssue">Commenter
-                                </a>
+                                
+                                <div class="card-body">
+                                    {% if app.user %}
+                                        {{ form_start(form) }}
+                                        {{ form_widget(form) }}
+                                        <button class="btn btn-primary mt-3" type="submit">Enregistrer</button>
+                                        {{ form_end(form) }}
+                                    {% else %}
+                                        <p>Vous devez être connecter pour ajouter un commentaire.</p>
+                                        <hr>
+                                        <a class="btn btn-link" href="{{ path('app_login') }}">Se connecter</a>
+                                        <hr>
+                                        <a class="btn btn-primary" href="{{ path('app_register') }}">Créer un compte</a>
+                                    {% endif %}
+                                </div>
                                 <div class="modal fade" id="newIssue" tabindex="-1" role="dialog" aria-labelledby="newIssue"
                                     aria-hidden="true">
                                     <div class="modal-wrapper">
@@ -58,8 +70,6 @@
                                                     <h4 class="modal-title"><i class="fa fa-pencil"></i> Créer un topic
                                                     </h4>
                                                 </div>  
-                                                
-                                                
                                                 <hr>
                                                 <ul>
                                                     <li><a href="#">Pays : </a>{{ topic.user.country }}</li>
@@ -73,16 +83,12 @@
                         </div>
                     </div>
                     <!-- *************** Début Topic***************** -->
-                    <div id="blockRight" class="col-md-9">
+                    <div id="blockRight" class="col-md-9" style="margin-bottom: 155px;">
                         <div class="grid support-content">
                             <div class="grid-body">
                                 <h2>{{ topic.subjet }}</h2>
                                 <hr>
                                 <h3>{{ topic.user.pseudo }}</h3>
-                                <div class="row">
-                                    <!-- Commence Nouvelle Étiquettes -->
-
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -90,51 +96,65 @@
                 </div>
             </section>
         </div>
-    {% for topic_comment in topic.topicComment %}
-        <div class="container">
-            <section class="content">
-                <div class="row">
-                    <!-- Naviguer -->
-                    <div class="col-md-3">
-                        <div class="grid support">
-                            <div id="blockLeft" class="grid-body">
-                                <h2>{{ topic_comment.user.pseudo }}</h2>
-                                <hr>
-                                <ul>
-                                    <li><a href="#">Pays : </a>{{ topic_comment.user.country }}</li>
-                                </ul>
-                                <hr>
+        {% if topic.topicComments | length > 0 %}
+            {% for topicComments in topic.topicComments %}
+            <div class="container">
+                <section class="content">
+                    <div class="row">
+                        <!-- Naviguer -->
+                        <div class="col-md-3">
+                            <div class="grid support">
+                                <div id="blockLeft" class="grid-body">
+                                    <h2>{{ topicComments.user.pseudo }}</h2>
+                                    <hr>
+                                    <ul>
+                                        <li><a style="color: var(--siteText1)">Pays : </a>{{ topicComments.user.country }}</li>
+                                    </ul>
+                                    <hr>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- *************** Début Topic***************** -->
-                    <div id="blockRight" class="col-md-9">
-                        <div class="grid support-content">
-                            <div class="grid-body">
-                                <div class="row">
-                                    <!-- Commence Nouvelle Étiquettes -->
-                                    <div class="col-md-12">
-                                        <ul id="étiquetteBlockRight" class="list-group fa-padding">
-                                            <li class="list-group-item" data-toggle="modal" data-target="#issue">
-                                                <div class="media">
-                                                    <div class="media-body">
-                                                        {{ topic_comment.content }}
-                                                        <br>
-                                                        <a href="{{ path('topic_comment_edit', {'id': topic_comment.id}) }}">edit</a>
-                                                    </div>
-                                                </div>                                           
-                                            </li>                                        
-                                        </ul>
+                        <!-- *************** Début Topic***************** -->
+                        <div id="blockRight" class="col-md-9">
+                            <div class="grid support-content">
+                                <div class="grid-body">
+                                    <div class="row">
+                                        <!-- Commence Nouvelle Étiquettes -->
+                                        <div class="col-md-12">
+                                            <ul id="étiquetteBlockRight" class="list-group fa-padding">
+                                                <li class="list-group-item" data-toggle="modal" data-target="#issue">
+                                                    <div class="media">
+                                                        <div class="media-body" style="color: var(--siteText1);">
+                                                            {{ topicComments.content }}
+                                                            <br>
+                                                        </div>
+                                                    </div>                                           
+                                                </li>                                        
+                                            </ul>
+                                            {% if app.user is same as topicComments.user %}
+                                            <a class="btn btn-primary" style="margin-top: 12px;" href="{{ path('topic_comment_edit', {'id':topicComments.user.id}) }}">Modifier</a>
+                                            {% endif %}
+                                        </div>
+                                        <!-- Fin Étiquettes -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Fin Étiquettes -->
+                </section>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="container">
+                <div id="blockRight" class="col-md-4">
+                    <div class="grid support-content" style="text-align: center;">
+                        <div class="grid-body">
+                            <p>Il n'y pas encore de commentaire.</p>
+                        </div>
+                    </div>
                 </div>
-            </section>
-        </div>
-    {% endfor %}
+            </div>        
+        {% endif %}
 {% endblock %}
 {% block footer %}
     <footer class="text-center bg-light py-6 mt-4">
@@ -143,6 +163,13 @@
                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="d-block mb-2">
             </img>&copy; Mugamax - 2021 - All Right Reserved
+        </div>
+        <div class="text-center bg-light py-6 mt-4">
+            <p>
+                <a href="#" width 32px>
+                    <i class="fas fa-angle-double-up"></i><br>
+                </a>
+            </p>
         </div>
     </footer>
 {% endblock %}
@@ -158,3 +185,4 @@
     <script src="{{ asset('js/dropdownButton.js') }}"></script>
 
 {% endblock %}
+

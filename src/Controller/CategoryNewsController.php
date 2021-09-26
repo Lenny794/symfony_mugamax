@@ -66,7 +66,8 @@ class CategoryNewsController extends AbstractController
         $form = $this->createForm(CategoryNewsType::class, $categoryNews);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) 
+        {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('category_news_index', [], Response::HTTP_SEE_OTHER);
