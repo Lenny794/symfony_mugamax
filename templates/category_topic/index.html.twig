@@ -61,35 +61,6 @@
     <div class="container my-4">
         <div id="blockLeftAndRight" class="row">
             <div id="signUp" class="col-md-6 mt-4">
-                {#<table class="table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nom</th>
-                            <th>Image_path_url</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for category_topic in category_topics %}
-                        <tr>
-                            <td>{{ category_topic.id }}</td>
-                            <td>{{ category_topic.name }}</td>
-                            <td>{{ category_topic.imagePathUrl }}</td>
-                            <img src=" {{ asset(category_topic.imagePathUrl) }}" style="contain;" alt="">
-                            <td>
-                                <a href="{{ path('category_topic_show', {'id': category_topic.id}) }}">Afficher</a>
-                                <a href="{{ path('category_topic_edit', {'id': category_topic.id}) }}">Modifier</a>
-                            </td>
-                        </tr>
-                    {% else %}
-                        <tr>
-                            <td colspan="3">Aucun enregistrement trouvé</td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                    <a href="{{ path('category_topic_new') }}">Créer nouvelle catégorie</a>
-                </table> #}
                 <div class="row">
                     {% for category_topic in category_topics %}
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3">

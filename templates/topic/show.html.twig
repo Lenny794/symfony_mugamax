@@ -44,7 +44,6 @@
                                     </div>
                                 </div>
                                 <!-- Commence Nouvelle Étiquettes -->
-                                
                                 <div class="card-body">
                                     {% if app.user %}
                                         {{ form_start(form) }}
@@ -58,26 +57,6 @@
                                         <hr>
                                         <a class="btn btn-primary" href="{{ path('app_register') }}">Créer un compte</a>
                                     {% endif %}
-                                </div>
-                                <div class="modal fade" id="newIssue" tabindex="-1" role="dialog" aria-labelledby="newIssue"
-                                    aria-hidden="true">
-                                    <div class="modal-wrapper">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header bg-blue">
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-hidden="true">×</button>
-                                                    <h4 class="modal-title"><i class="fa fa-pencil"></i> Créer un topic
-                                                    </h4>
-                                                </div>  
-                                                <hr>
-                                                <ul>
-                                                    <li><a href="#">Pays : </a>{{ topic.user.country }}</li>
-                                                </ul>
-                                                <hr>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>    
                         </div>
@@ -107,15 +86,13 @@
                                 <div id="blockLeft" class="grid-body">
                                     <h2>{{ topicComment.user.pseudo }}</h2><br>
                                     {% if topicComment.user.avatarUser is same as null %}
-                                        <a id="avatarUserNav" idstyle="font-size: 12px;" data-bs-toggle="dropdown" aria-expanded="false"><i class=""><img class="" src="{{ asset('icons/default.png') }}" alt=""/></i></a>
+                                        <a id="avatarUserForum" style="font-size: 12px;" data-bs-toggle="dropdown" aria-expanded="false"><i class=""><img class="" src="{{ asset('icons/default.png') }}" alt=""/></i></a>
                                     {% else %}
-                                        <a id="avatarUserNav" idstyle="font-size: 12px;" data-bs-toggle="dropdown" aria-expanded="false"><i class=""><img src=" {{ asset(topicComment.user.avatarUser) }}" alt=""></i></a>
+                                        <a id="avatarUserForum" style="font-size: 12px;" data-bs-toggle="dropdown" aria-expanded="false"><i class=""><img src=" {{ asset(topicComment.user.avatarUser) }}" alt=""></i></a>
                                     {% endif %} 
                                     <hr>
-                                    <ul>
-                                        <li><a style="color: var(--siteText1)">Pays : </a>{{ topicComment.user.country }}</li>
-                                    </ul>
-                                    <hr>
+                                    <a style="color: var(--siteText1)">Pays : </a>{{ topicComment.user.country }}
+                                 
                                 </div>
                             </div>
                         </div>

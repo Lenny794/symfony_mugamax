@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\User\EditPasswordType;
 use App\Form\UserType;
 use App\Form\EditProfilType;
 use App\MesServices\HandleAvatar;
@@ -27,29 +28,6 @@ class UserController extends AbstractController
             
         ]);
     }
-
-    /**
-     * @Route("/new", name="user_new", methods={"GET","POST"})
-     */
-    // public function new(Request $request): Response
-    // {
-    //     $user = new User();
-    //     $form = $this->createForm(UserType::class, $user);
-    //     $form->handleRequest($request);
-
-    //     if ($form->isSubmitted() && $form->isValid()) {
-    //         $entityManager = $this->getDoctrine()->getManager();
-    //         $entityManager->persist($user);
-    //         $entityManager->flush();
-
-    //         return $this->redirectToRoute('index', [], Response::HTTP_SEE_OTHER);
-    //     }
-
-    //     return $this->renderForm('user/new.html.twig', [
-    //         'user' => $user,
-    //         'form' => $form,
-    //     ]);
-    // }
 
     /**
      * @Route("/profil/edit", name="user_profil_edit", methods={"GET","POST"})
@@ -83,16 +61,6 @@ class UserController extends AbstractController
            'form' => $form,
         ]);
     }
-
-    /**
-     * @Route("/{id}", name="user_show", methods={"GET"})
-     */
-    // public function show(User $user): Response
-    // {
-    //     return $this->render('user/show.html.twig', [
-    //         'user' => $user,
-    //     ]);
-    // }
     
     /**
      * @Route("/{id}", name="user_delete", methods={"POST"})
@@ -107,4 +75,37 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('index', [], Response::HTTP_SEE_OTHER);
     }
+        
+    /**
+     * @Route("/Security", name="user_security", methods={"GET"})
+     */
+    public function securityindex(UserRepository $userRepository): Response
+    {
+        return $this->render('user/pass_email_user.html.twig', [
+            
+        ]);
+    }
+    /**
+       * @Route("/Security/edit", name="user_security_edit", methods={"GET","POST"})
+       */
+      public function editPasswordMail(Request $request): Response
+      {
+          $user = $this->getUser();
+          $form = $this->createForm(EditPasswordType::class, $user);
+          $form->handleRequest($request);
+    
+          if ($form->isSubmitted() && $form->isValid()) {
+              $entityManager = $this->getDoctrine()->getManager();
+              
+              $entityManager->flush();
+              
+              $this->addFlash('message', 'Profil mis à jour');
+              return $this->redirectToRoute('user_security', [], Response::HTTP_SEE_OTHER);
+          }
+    
+          return $this->renderForm('user/edit_pass_email.html.twig', [
+             'user' => $user,
+             'form' => $form,
+          ]);
+      }
 }

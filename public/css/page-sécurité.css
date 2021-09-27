@@ -1,0 +1,22 @@
+.mb-3 {
+    margin-top: -24px;
+}
+#divConfirmPass {
+   
+    margin-bottom: 6rem;
+    padding-bottom: 8px;
+    margin-bottom: 6rem;
+}
+.form-control {
+    margin-bottom: 17px;
+    bottom: -7px;
+    display: block;
+    color: var(--siteText);
+    background-color: transparent;
+    border: 1px solid var(--siteText);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 1.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

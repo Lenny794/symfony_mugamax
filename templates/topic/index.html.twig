@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/page-forum_comment.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/page-forum.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
 {% endblock %}
 
@@ -76,9 +76,11 @@
                                 </div>
                             </div>
                             <!-- Commence Nouvelle Étiquettes -->
-                            <button type="button" class="btn btn-success pull-right" onclick="location.href = 'forum/create'" data-toggle="modal"
-                                data-target="#newIssue">Nouveau Sujet
-                            </button>
+                            {% if app.user %}
+                                <button type="button" class="btn btn-success pull-right" onclick="location.href = 'forum/create'" data-toggle="modal"
+                                    data-target="#newIssue">Nouveau Sujet
+                                </button>
+                            {% endif %}
                             <div class="modal fade" id="newIssue" tabindex="-1" role="dialog" aria-labelledby="newIssue"
                                 aria-hidden="true">
                                 <div class="modal-wrapper">
@@ -132,7 +134,8 @@
                                             <div class="media">
                                                 <img src=" {{ asset(topic.categoryTopic.imagePathUrl("id")) }}" style="contain;">
                                                 <div class="media-body">
-                                                    <strong onclick="location.href = {{ path('topic_show',{'id':topic.id} ) }}">{{ topic.subjet }}</strong>
+                                                    <a class="topicTitle" href="{{ path('topic_show',{'id':topic.id} ) }}"><strong>{{ topic.subjet }}</strong></a>
+                                                    
                                                     <p class="info">
                                                         Publié par <a href="#" class="utilisateurTopic">{{ topic.user("id") }}</a><i
                                                         class="fa fa-comments"></i>
@@ -141,7 +144,6 @@
                                                 </div>
                                             </div>  
                                             <div>
-                                                <a class="btn btn-primary mt-3"  href="{{ path('topic_show',{'id':topic.id} ) }}">Consulter</a>
                                                 {% if app.user %}
                                                     {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
                                                     <a class="btn btn-primary mt-3" href="{{ path('topic_edit',{'id':topic.id} ) }}">Modifier</a>

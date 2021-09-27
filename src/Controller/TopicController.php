@@ -82,7 +82,7 @@ class TopicController extends AbstractController
     }
 
     /**
-     * @Route("/forum/{id}/edit", name="topic_comment_edit", methods={"GET","POST"}, requirements={"id":"\d+"})
+     * @Route("/forum/{id}/edit_Comment", name="topic_comment_edit", methods={"GET","POST"}, requirements={"id":"\d+"})
      */
     public function editTopicComment(Request $request, TopicComment $topicComment, int $id): Response
     {

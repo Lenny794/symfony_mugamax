@@ -381,3 +381,32 @@ p .utilisateurTopic:hover{
 .fa-comments{
     color: var(--siteText2);
 }
+#avatarUserForum{
+    margin-top: 14px;
+}
+#avatarUserForum i{
+    font-size: 23px;
+    background: transparent;
+    border: var(--siteText);
+    border-radius: 24%;
+    border-top-width: 1px;
+    border-top-style: solid;
+    padding-left: 7px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+    padding-top: 24px;
+    padding-bottom: 3px;
+    padding-right: 50px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+#avatarUserForum img{
+    height: 54px;
+    object-fit: contain;
+    margin-top: -27px;
+    margin-right: -50px;
+    border-radius: 1rem;
+    margin-left: -6px;
+}

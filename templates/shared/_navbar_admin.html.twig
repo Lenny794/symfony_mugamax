@@ -24,27 +24,49 @@
 					</ul>
 				</li>
 				<li class="nav-item">
-					<a id="nav-adminhome" class="nav-link active" href="{{ path('home') }}">Revenir à l'accueil</a>
-				</li>
-				<li class="nav-item">
-					<a id="nav-logout" class="nav-link active" href="{{ path('app_logout') }}">Se déconnecter</a>
+					<a id="backHome" class="nav-link active" href="{{ path('home') }}">Revenir à l'accueil</a>
 				</li>
 				<li>
 					<a id="dashBoard" class="nav-link active" href="{{ path('admin_dashboard') }}">
 						<i class="bi bi-speedometer"></i>
 					</a>
 				</li>
-				<li>
-					<a id="navMonCompte" class="nav-link active" href="{{ path('user_index') }}">
-						<i class="fas fa-ghost"></i>
-					</a>
-				</li>
+				{% if app.user %}
+				<li id="userOnglet" class="nav-item dropdown">
+					{% if app.user.avatarUser is same as null %}
+						<a id="avatarUserNav" idstyle="font-size: 12px;" class="nav-link dropdown-toggle active" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class=""><img class="" src="{{ asset('icons/default.png') }}" alt=""/></i></a>
+					{% else %}
+						<a id="avatarUserNav" idstyle="font-size: 12px;" class="nav-link dropdown-toggle active" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class=""><img src=" {{ asset(app.user.avatarUser) }}" alt=""></i></a>
+					{% endif %}
+					<ul id="navPofilDropdown" class="dropdown-menu active" aria-labelledby="navbarDropdown">
+						<li>
+							<a id="navProfil" class="nav-link active" aria-current="page" href="{{ path('user_index') }}">Profil</a>
+						</li>
+						<li>
+							<a class="nav-link active; navOngletEmpty" aria-current="page" href="{{ path('user_index') }}"></a>
+						</li>
+						<li>
+							<a id="navPréférence" class="nav-link active" aria-current="page" href="{{ path('user_index') }}">Préférence</a>
+						</li>
+						<li>
+							<a class="nav-link active; navOngletEmpty" aria-current="page" href="{{ path('user_index') }}"></a>
+						</li>
+						<li class="nav-link active">
+							<a id="navLogout" class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
+						</li>
+						<li class="nav-link active">
+							<a class="nav-link active; navOngletEmptyLast" href="{{ path('app_logout') }}"></a>
+						</li>
+					</ul>
+				</li>				
+			
+			 	{% endif %}
 			</ul>
 			<form id="searchBtn" class="d-flex">
 				<a id="getBrightness" class="nav-link active" href="#">
 					<i class="fas fa-adjust"></i>
 				</a>
-				<input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+				<input id="SearchForm" class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
 
 				<button id="buttonSearch" class="btn btn-outline-success" type="submit">
 					<i class="bi bi-search"></i>

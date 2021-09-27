@@ -26,7 +26,7 @@
                 <!-- ********************Profil********************** -->
                 <section>
                     <div id="containerParam2" class="row">
-                        <div id="containerParam3" class="col-8">
+                        <div id="containerParam3Edit" class="col-8">
                             <div id="paramètre">
                                 <div id="paramètreHeader" class="lp-header">
                                     <span id="spanParamètreTitle">Paramètres</span>
@@ -37,7 +37,7 @@
                                     <div id="paramètreCompteHeadTitle" class="head-title"> 
                                         <i id="iconChevronCompte" class="bi bi-chevron-right"></i>
                                         <i id="iconUserCompte" class="bi bi-person-fill"></i>
-                                        <a id="spanCompte" href="page-utilisateur-compte.html">Compte</a>
+                                        <a id="spanCompte" href="{{ path('user_index') }}">Compte</a>
                                     </div>
                                     <div id="subMenuCompte" class="sub-menu slide-item">
                                         <div id="tabProfil" class="sub-title" data-scrollto="profile-form">
@@ -58,7 +58,7 @@
                                     <div id="paramètreNotifHeadTitle" class="head-title">
                                         <i id="iconChevronNotif" class="bi bi-chevron-right"></i>
                                         <i id="IconBellNofif" class="bi bi-bell-fill"></i>
-                                        <a id="spanNofif" href="page-utilisateur-notification.html">Notifications</a>
+                                        <a id="spanNofif" href="#">Notifications</a>
                                     </div>
                                     <div id="subMenuNotif" class="sub-menu slide-item">
                                         <div id="tabNotifAcc" class="sub-title"
@@ -76,7 +76,7 @@
                                     <div id="paramètreSécuritéHeadTitle" class="head-title">
                                         <i id="iconChevronSécurité" class="bi bi-chevron-down"></i>
                                         <i id="iconShieldSécurité" class="bi bi-shield-lock-fill"></i> 
-                                        <a id="spanSécurité" href="page-utilisateur-sécutité.html">Sécurité</a>
+                                        <a id="spanSécurité" href="{{ path('user_security') }}">Sécurité</a>
                                     </div>
                                     <div id="subMenuSécurité" class="sub-menu slide-item">
                                         <div id="tabChangePass" class="sub-title" data-scrollto="change-password">
@@ -129,18 +129,18 @@
                                                 <hr>
                                                 <br>
                                                 <div id="divPseudo" class="col-xs-6 col-md-6">
-                                                    <div class="bi bi-person">
+                                                    <div class="bi bi-person">Pseudo
                                                         {{ form_row(form.pseudo, { 'attr': {'class': "span12",'placeholder': app.user.pseudo} } ) }}
                                                     </div>
                                                 </div><br>
 
-                                                <div id="divPrénom" class="col-xs-6 col-md-6">
+                                                <div id="divPrénom" class="col-xs-6 col-md-6">Prénom
                                                     <div>
                                                         {{ form_row(form.firstname, { 'attr': {'class': "span12",'placeholder': app.user.firstname} } ) }}
                                                     </div>
                                                 </div>
 
-                                                <div id="divNom" class="col-xs-6 col-md-6">
+                                                <div id="divNom" class="col-xs-6 col-md-6">Nom
                                                     <div>
                                                         {{ form_row(form.lastname, { 'attr': {'class': "span12",'placeholder': app.user.lastname} } ) }}
                                                     </div>
@@ -153,7 +153,7 @@
                                                     </div>
                                                 </div><br>
                                                 <!-- **************Pays*************** -->
-                                                <div id="labelCountry" class="col-xs-6 col-md-4"><i class="fas fa-globe-americas"></i>
+                                                <div id="labelCountry" class="col-xs-6 col-md-4"><i class="fas fa-globe-americas"></i> Pays :
                                                     <div>
                                                         {{ form_row(form.country, { 'attr': {'class': "span12",'placeholder': app.user.country} } ) }}
                                                     </div>
