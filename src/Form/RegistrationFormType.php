@@ -34,11 +34,7 @@ class RegistrationFormType extends AbstractType
                     'Femme' => 'Femme',
                 ),
                 'data' => 'Homme'
-            ))
-
-            
-            
-            
+            ))            
             ->add('pseudo', TextType::class, [
                 'label' => 'Pseudo',
                 'required' => false,

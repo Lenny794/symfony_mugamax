@@ -39,6 +39,8 @@ class TopicController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $topic->setUser($this->getUser());
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($topic);
             $entityManager->flush();
@@ -84,12 +86,17 @@ class TopicController extends AbstractController
      */
     public function editTopicComment(Request $request, TopicComment $topicComment, int $id): Response
     {
+        if ($this->getUser() !== $topicComment->getUser())
+        {
+            $this->addFlash('message', 'Vous n\'avez pas les droits');
+
+            return $this->redirectToRoute('topic_show', ['id' => $id], Response::HTTP_SEE_OTHER);
+        }
         $form = $this->createForm(TopicCommentType::class, $topicComment);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) 
         {
-            $topicComment->setUser($this->getUser());
             
             $this->getDoctrine()->getManager()->flush();
             
@@ -104,7 +111,7 @@ class TopicController extends AbstractController
         ]);
     }
     /**
-     * @Route("/forum/{id}/edit", name="topic_comment_delete", methods={"POST"})
+     * @Route("/forum/{id}/delete", name="topic_comment_delete", methods={"POST"})
      */
     public function deleteTopicComment(Request $request, TopicComment $topicComment, int $id): Response
     {

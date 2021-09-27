@@ -97,7 +97,7 @@
             </section>
         </div>
         {% if topic.topicComments | length > 0 %}
-            {% for topicComments in topic.topicComments %}
+            {% for topicComment in topic.topicComments %}
             <div class="container">
                 <section class="content">
                     <div class="row">
@@ -105,10 +105,15 @@
                         <div class="col-md-3">
                             <div class="grid support">
                                 <div id="blockLeft" class="grid-body">
-                                    <h2>{{ topicComments.user.pseudo }}</h2>
+                                    <h2>{{ topicComment.user.pseudo }}</h2><br>
+                                    {% if topicComment.user.avatarUser is same as null %}
+                                        <a id="avatarUserNav" idstyle="font-size: 12px;" data-bs-toggle="dropdown" aria-expanded="false"><i class=""><img class="" src="{{ asset('icons/default.png') }}" alt=""/></i></a>
+                                    {% else %}
+                                        <a id="avatarUserNav" idstyle="font-size: 12px;" data-bs-toggle="dropdown" aria-expanded="false"><i class=""><img src=" {{ asset(topicComment.user.avatarUser) }}" alt=""></i></a>
+                                    {% endif %} 
                                     <hr>
                                     <ul>
-                                        <li><a style="color: var(--siteText1)">Pays : </a>{{ topicComments.user.country }}</li>
+                                        <li><a style="color: var(--siteText1)">Pays : </a>{{ topicComment.user.country }}</li>
                                     </ul>
                                     <hr>
                                 </div>
@@ -125,14 +130,14 @@
                                                 <li class="list-group-item" data-toggle="modal" data-target="#issue">
                                                     <div class="media">
                                                         <div class="media-body" style="color: var(--siteText1);">
-                                                            {{ topicComments.content }}
+                                                            {{ topicComment.content }}
                                                             <br>
                                                         </div>
                                                     </div>                                           
                                                 </li>                                        
                                             </ul>
-                                            {% if app.user is same as topicComments.user %}
-                                            <a class="btn btn-primary" style="margin-top: 12px;" href="{{ path('topic_comment_edit', {'id':topicComments.user.id}) }}">Modifier</a>
+                                            {% if app.user is same as topicComment.user %}
+                                            <a class="btn btn-primary" style="margin-top: 12px;" href="{{ path('topic_comment_edit', {'id':topicComment.id}) }}">Modifier</a>
                                             {% endif %}
                                         </div>
                                         <!-- Fin Étiquettes -->

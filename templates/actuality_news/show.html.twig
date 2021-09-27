@@ -97,17 +97,17 @@
                 </div>
                 <div class="card-body">
                 {% if actuality_news.actualityComments | length > 0 %}
-                    {% for actualityComments in actuality_news.actualityComments %}
+                    {% for actualityComment in actuality_news.actualityComments %}
                         <p
-                            {% if app.user is same as actualityComments.user %}
+                            {% if app.user is same as actualityComment.user %}
                                 style="ont-weight:bold;color:red"
                             {% endif %}
                             
-                        >Auteur : {{ actualityComments.user.pseudo}}</p>
-                        <p>Date : {{ actualityComments.createdAt | date('d-m-Y H:i:s') }}</p>
-                        <p>Contenu : {{ actualityComments.content }}</p>
-                        {% if app.user is same as actualityComments.user %}
-                            <a class="btn btn-primary" href="{{ path('actuality_comment_edit',{'id':actualityComments.user.id}) }}">Modifier</a>
+                        >Auteur : {{ actualityComment.user.pseudo}}</p>
+                        <p>Date : {{ actualityComment.createdAt | date('d-m-Y H:i:s') }}</p>
+                        <p>Contenu : {{ actualityComment.content }}</p>
+                        {% if app.user is same as actualityComment.user %}
+                            <a class="btn btn-primary" href="{{ path('actuality_comment_edit',{'id':actualityComment.id}) }}">Modifier</a>
                         {% endif %}
                         <hr>
                     {% endfor %}

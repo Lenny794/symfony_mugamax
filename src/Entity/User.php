@@ -97,6 +97,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $actualityComments;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $avatar_user;
+
     public function __construct()
     {
         $this->actualityNews = new ArrayCollection();
@@ -394,6 +399,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $actualityComment->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAvatarUser(): ?string
+    {
+        return $this->avatar_user;
+    }
+
+    public function setAvatarUser(?string $avatar_user): self
+    {
+        $this->avatar_user = $avatar_user;
 
         return $this;
     }

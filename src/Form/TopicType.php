@@ -13,7 +13,6 @@ class TopicType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('user')
             ->add('categoryTopic')
             ->add('subjet', TextType::class, [
                 'label' => 'Sujet'

@@ -99,15 +99,20 @@ class ActualityNewsController extends AbstractController
 
         $form->handleRequest($request);
 
+        if ($this->getUser() !== $actualityComment->getUser())
+        {
+            $this->addFlash('message', 'Vous n\'avez pas les droits');
+
+            return $this->redirectToRoute('topic_show', ['id' => $id], Response::HTTP_SEE_OTHER);
+        }
         if ($form->isSubmitted() && $form->isValid() ) 
         {
-            $actualityComment->setUser($this->getUser());
-            
+
             $this->getDoctrine()->getManager()->flush();
  
-            $this->addFlash('message', 'Votre commentaire a été modifier');
+            $this->addFlash('message', 'Votre commentaire a été modifié');
             
-            return $this->redirectToRoute('actuality_news_show', ['id' => $id], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('actuality_news_show', ['id' => $actualityComment->getActualityNews()->getId()], Response::HTTP_SEE_OTHER);
         }
         return $this->renderForm('actuality_news/edit_comment.html.twig', [
             'actuality_news' => $actualityComment,

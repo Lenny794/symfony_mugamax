@@ -111,7 +111,23 @@
                                     {{ form_start(form) }}
                                         <div id="fmContainerFluid" class="container-fluid">
                                             <div id="fmAccMainContainer" class="row">
-
+                                                <div id="divAvatar" class="col-xs-6 col-md-6">
+                                                    <p class="avatarText">Avatar</p> 
+                                                    <div>
+                                                        {% if app.user.avatarUser is same as null %}
+                                                            <a id="avatarUser" class="nav-link active" >
+                                                                <i class=""><img class="" src="{{ asset('icons/default.png') }}" alt=""/></i>
+                                                            </a>   
+                                                        {% else %}
+                                                            <a id="avatarUser" class="nav-link active" >
+                                                                <i class=""><img src=" {{ asset(app.user.avatarUser) }}" alt=""></i>
+                                                            </a>
+                                                        {% endif %}  
+                                                        {{ form_row(form.avatar_user) }}
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <br>
                                                 <div id="divPseudo" class="col-xs-6 col-md-6">
                                                     <div class="bi bi-person">
                                                         {{ form_row(form.pseudo, { 'attr': {'class': "span12",'placeholder': app.user.pseudo} } ) }}
@@ -136,7 +152,6 @@
                                                         {{ form_row(form.birthdate, { 'attr': {'class': "span12",'placeholder': app.user.birthdate ? app.user.birthdate|date('d-m-Y') : '' } } ) }}
                                                     </div>
                                                 </div><br>
-
                                                 <!-- **************Pays*************** -->
                                                 <div id="labelCountry" class="col-xs-6 col-md-4"><i class="fas fa-globe-americas"></i>
                                                     <div>

@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class EditProfilType extends AbstractType
@@ -16,6 +17,9 @@ class EditProfilType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+        ->add('avatar_user', FileType::class, array('data_class' => null), [
+            'label' => 'Avatar',
+        ])
         ->add('pseudo', TextType::class, [
             'label' => 'Pseudo',
         ])

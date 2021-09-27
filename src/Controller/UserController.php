@@ -3,8 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\EditProfilType;
 use App\Form\UserType;
+use App\Form\EditProfilType;
+use App\MesServices\HandleAvatar;
 use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -53,16 +54,24 @@ class UserController extends AbstractController
     /**
      * @Route("/profil/edit", name="user_profil_edit", methods={"GET","POST"})
      */
-    public function editUser(Request $request): Response
+    public function editUser(Request $request,HandleAvatar $handleAvatar): Response
     {
         $user = $this->getUser();
         $form = $this->createForm(EditProfilType::class, $user);
-
         $form->handleRequest($request);
+
+        $vintageImage = $user->getAvatarUser();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-           
+            
+            $avatarFile = $form->get('avatar_user')->getData();
+            
+            if($avatarFile)
+            {
+               $handleAvatar->editImage($avatarFile, $user, $vintageImage); 
+                          
+            }
             $entityManager->flush();
             
             $this->addFlash('message', 'Profil mis à jour');

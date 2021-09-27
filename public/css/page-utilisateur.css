@@ -973,6 +973,20 @@ body{
     color: var(--siteText1);
     opacity: 1
 }
+/* input Avetar */
+#divAvatar{
+    margin-bottom: auto;
+}
+.avatarText{
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: -15px;
+    margin-right: 0px;
+    padding-right: 84px;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
 /* input Pseudo */
 #inputPseudo:hover{
     background-color: var(--secondary);
@@ -981,6 +995,7 @@ body{
 #divPseudo{
     margin-bottom: auto;
     margin-bottom: 1rem;
+    margin-left: -24px;
 }
 /* input Prénom */
 #inputPrénom:hover{
@@ -1126,4 +1141,42 @@ body{
 #edit_profil_birthdate_year {
     border-radius: 1rem;
     margin-right: 6px;
+}
+#avatarUser i{
+    font-size: 32px;
+    margin: auto;
+        margin-top: auto;
+        margin-left: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-left: auto;
+    margin-left: 59px;
+    margin-top: -6px;
+    background: transparent;
+    border: var(--siteText);
+    border-radius: 24%;
+    border-top-width: 1px;
+    border-top-style: solid;
+    padding-left: 7px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+    padding-top: 25px;
+    padding-bottom: -8px;
+    padding-right: 50px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+#avatarUser img{
+    height: 56px;
+    object-fit: contain;
+    margin-top: -26px;
+    margin-right: -49px;
+    border-radius: 1rem;
+    margin-left: -6px;
+}
+.form-label {
+    color: transparent;
+    margin-bottom: .5rem;
 }

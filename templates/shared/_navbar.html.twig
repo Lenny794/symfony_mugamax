@@ -15,7 +15,6 @@
 							<li>
 								<a id="navJ1Ps4" class="nav-link active" aria-current="page" href="{{ path('public_category_detail',{'id': c.id}) }}">{{ c.name }}</a>
 							</li>
-
 							<li>
 								<a id="navJ8ïod" class="nav-link active" aria-current="page" href="{{ path('public_category_detail',{'id': c.id}) }}"></a>
 							</li>
@@ -41,9 +40,7 @@
 
 					{% endif %}
 
-					<li class="nav-item">
-						<a id="nav-logout" class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
-					</li>
+					
 
 				{% else %}
 					<li class="nav-item dropdown">
@@ -64,11 +61,41 @@
 			</li>
 		{% endif %}
 		{% if app.user %}
-			<li>
+				<li class="nav-item dropdown">
+					{% if app.user.avatarUser is same as null %}
+						<a id="avatarUserNav" idstyle="font-size: 12px;" class="nav-link dropdown-toggle active" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class=""><img class="" src="{{ asset('icons/default.png') }}" alt=""/></i></a>
+					{% else %}
+						<a id="avatarUserNav" idstyle="font-size: 12px;" class="nav-link dropdown-toggle active" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class=""><img src=" {{ asset(app.user.avatarUser) }}" alt=""></i></a>
+					{% endif %}
+					<ul id="navPofilDropdown" class="dropdown-menu active" aria-labelledby="navbarDropdown">
+						<li>
+							<a id="navProfil" class="nav-link active" aria-current="page" href="{{ path('user_index') }}">Profil</a>
+						</li>
+						<li>
+							<a class="nav-link active; navOngletEmpty" aria-current="page" href="{{ path('user_index') }}"></a>
+						</li>
+						<li>
+							<a id="navPréférence" class="nav-link active" aria-current="page" href="{{ path('user_index') }}">Préférence</a>
+						</li>
+						<li>
+							<a class="nav-link active; navOngletEmpty" aria-current="page" href="{{ path('user_index') }}"></a>
+						</li>
+						<li class="nav-link active">
+							<a id="navLogout" class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
+						</li>
+						<li class="nav-link active">
+							<a class="nav-link active; navOngletEmptyLast" href="{{ path('app_logout') }}"></a>
+						</li>
+					</ul>
+				</li>				
+			{# <li>
 				<a id="navMonCompte" class="nav-link active" href="{{ path('user_index') }}">
 					<i class="fas fa-ghost"></i>
 				</a>
-			</li>
+				<a id="avatarUserNav" class="nav-link active">
+					<i class=""><img src=" {{ asset(app.user.avatarUser) }}" alt=""></i>
+				</a>
+			</li> #}
 		{% endif %}
 	</ul>
 	<form id="searchBtn" class="d-flex">
