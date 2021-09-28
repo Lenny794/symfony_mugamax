@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/actualité.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/actualité_comment.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/indentification.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/font.css') }}">
 {% endblock %}
@@ -98,35 +99,89 @@
 				<div class="card-header">
 					<h5>Les commentaires</h5>
 				</div>
-				<div class="card-body">
-					{% if actuality_news.actualityComments | length > 0 %}
-						{% for actualityComment in actuality_news.actualityComments %}
-							<p {% if app.user is same as actualityComment.user %} style="ont-weight:bold;color:red" {% endif %}>Auteur :
-								{{ actualityComment.user.pseudo}}</p>
-							<p>Date :
-								{{ actualityComment.createdAt | date('d-m-Y H:i:s') }}</p>
-							<p>Contenu :
-								{{ actualityComment.content }}</p>
-							{% if app.user is same as actualityComment.user %}
-								<a class="btn btn-primary" href="{{ path('actuality_comment_edit',{'id':actualityComment.id}) }}">Modifier</a>
-							{% endif %}
-							<hr>
-						{% endfor %}
+				{% if actuality_news.actualityComments | length > 0 %}
+					{% for actualityComment in actuality_news.actualityComments %}        
+						<div class="container">
+							<section class="content">
+								<div class="row">
+									<!-- Naviguer -->
+									<div class="col-md-3">
+										<div class="grid support">
+											<div id="blockLeft" class="grid-body">
+												<h2 {% if app.user is same as actualityComment.user %} style="font-weight:bold;color:red" {% endif %}>{{ actualityComment.user.pseudo }}</h2>
+												{% if actualityComment.user.avatarUser is same as null %}
+													<a id="avatarUserForum" style="font-size: 12px;">
+														<i class=""><img style="max-width:55%" src="{{ asset('icons/default.png') }}" alt=""/></i>
+													</a>
+												{% else %}
+													<a id="avatarUserForum" style="font-size: 12px;" data-bs-toggle="dropdown" aria-expanded="false">
+														<i class=""><img style="max-width:55%" src=" {{ asset(actualityComment.user.avatarUser) }}" alt=""></i>
+													</a>
+												{% endif %}
+												<hr>
+												
+												<a style="color: var(--siteText1)">Pays :
+												</a>
+												{{ actualityComment.user.country }}
+											</div>
+										</div>
+									</div>
+									<!-- *************** Début Topic***************** -->
+									<div id="blockRight" class="col-md-9">
+										<div class="grid support-content">
+											<div class="grid-body">
+												<div
+													class="row">
+													<!-- Commence Nouvelle Étiquettes -->
+													<div class="col-md-12">
+														<ul id="étiquetteBlockRight" class="list-group fa-padding">
+															<li class="list-group-item" data-toggle="modal" data-target="#issue">
+																<div class="media">
+																<div class="card-header">
+																<a>Commenter le :
+																	{{ actualityComment.createdAt | date('d-m-Y H:i:s') }}
+																</a>
+																{% if app.user is same as actualityComment.user %}
+																	<a class="btn btn-primary" href="{{ path('actuality_comment_edit',{'id':actualityComment.id}) }}">Modifier</a>
+																{% endif %}
+																</div>
+																	<div class="media-body">
+																		{{ actualityComment.content }}
+																		<br>
+																	</div>
+																</div>
+															</li>
+														</ul>
+													</div>
+													<!-- Fin Étiquettes -->
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					{% endfor %}
 					{% else %}
-						<p>Il n'y pas encore de commentaire.</p>
-					{% endif %}
-				</div>
+						<div class="container">
+							<div id="blockRight" class="col-md-4">
+								<div class="grid support-content" style="text-align: center;">
+									<div class="grid-body">
+										<p>Il n'y pas encore de commentaire.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+				{% endif %}
 			</div>
-
 		</div>
 		<!-- **************onglet de droite*********************** -->
 		<div class="col-md-4">
 			<div class="position-sticky" style="top: 2rem;">
 				<div id="à-ProposBlock" class="p-4 mb-3 bg-light rounded">
-					<h4 class="fst-italic">À-propos</h4>
+					<h4 class="fst-italic"><a href="{{ path('contact') }}"> Nous contacter</a></h4>
 					<p class="txtMyactu mb-0">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem quisquam ipsum
-						                        tenetur? Et, culpa eum!
+						Contacter le Support Mugamax. Vous avez besoin d'une assistance par mail ? Nous vous fournirons l'aide dont vous avez besoin.
 					</p>
 				</div>
 				<div class="p-4">
@@ -165,13 +220,13 @@
 					<h4 class="fst-italic">Autre</h4>
 					<ol class="list-unstyled">
 						<li>
-							<a href="#">YouTube</a>
+							<a href="https://www.youtube.com">YouTube</a>
 						</li>
 						<li>
-							<a href="#">Twitch</a>
+							<a href="https://www.twitch.tv">Twitch</a>
 						</li>
 						<li>
-							<a href="#">Facebook</a>
+							<a href="https://fr-fr.facebook.com">Facebook</a>
 						</li>
 					</ol>
 				</div>

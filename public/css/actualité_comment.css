@@ -1,0 +1,21 @@
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    color: var(--siteText1);
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+   
+}
+.form-label {
+    margin-bottom: .5rem;
+    color: var(--siteText1);
+}
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    margin-left: -17px;
+    margin-right: -17px;
+    margin-top: -7px;
+}

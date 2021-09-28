@@ -93,8 +93,7 @@
 		{% for topicComment in topic.topicComments %}
 			<div class="container">
 				<section class="content">
-					<div
-						class="row">
+					<div class="row">
 						<!-- Naviguer -->
 						<div class="col-md-3">
 							<div class="grid support">
@@ -104,7 +103,7 @@
 										<a id="avatarUserForum" style="font-size: 12px;" data-bs-toggle="dropdown" aria-expanded="false">
 											<i class=""><img class="" src="{{ asset('icons/default.png') }}" alt=""/></i>
 										</a>
-									{% else %}
+										{% else %}
 										<a id="avatarUserForum" style="font-size: 12px;" data-bs-toggle="dropdown" aria-expanded="false">
 											<i class=""><img src=" {{ asset(topicComment.user.avatarUser) }}" alt=""></i>
 										</a>
@@ -148,16 +147,16 @@
 				</section>
 			</div>
 		{% endfor %}
-	{% else %}
-		<div class="container">
-			<div id="blockRight" class="col-md-4">
-				<div class="grid support-content" style="text-align: center;">
-					<div class="grid-body">
-						<p>Il n'y pas encore de commentaire.</p>
+		{% else %}
+			<div class="container">
+				<div id="blockRight" class="col-md-4">
+					<div class="grid support-content" style="text-align: center;">
+						<div class="grid-body">
+							<p>Il n'y pas encore de commentaire.</p>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 	{% endif %}
 {% endblock %}
 {% block footer %}
