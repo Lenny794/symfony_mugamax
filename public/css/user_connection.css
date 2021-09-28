@@ -1,0 +1,144 @@
+:root{
+    --primary: #35416d;
+    --secondary: #1e90ff;
+    --secondary2:#0073b7;
+    --success: #d1383d;
+    --success2: #fa9c66;
+    --success3: #517379;
+    --sucesss4: #7c34b8;
+    --success5: #93d34a;
+    --success6: #517ad3;
+    --siteText1: #eeeeee;
+    --siteText2: #d1d1d1;
+    --login_background1: #232728;
+    --login_background2: #3c3c3c;
+    --nav-block:#262f39;
+    --nav-block2:#23292f;
+    --nav-block-border:#3f4b57;
+}
+body{
+    font-size: 100%;
+    background-color: var(--login_background1);
+    color: var(--siteText);
+    background: url(../Medias/carl-raw-zvBT4eOtlkY-unsplash.jpg) center no-repeat;
+    background-size: cover;
+    padding-top: 0px;
+    background-position-y: -1rem;
+    background-size: 100rem 68rem;
+}
+@media only screen and (max-width: 1440px) and (min-width : 1400px) {
+    body {     
+        background: url(../Medias/carl-raw-zvBT4eOtlkY-unsplash.jpg) center no-repeat;
+        background-size: cover;
+        padding-top: 0px;
+        background-position-y: -1rem;
+        background-size: 100rem 68rem;        
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width : 510px) {
+    body {
+        background: url(../Medias/carl-raw-zvBT4eOtlkY-unsplash-phone.jpg) center no-repeat;
+        background-size: cover;
+        padding-top: 0px;
+        background-position-y: -2rem;
+        background-size: 55rem 95rem; 
+    }
+}
+@media only screen and (max-width: 509px){
+    body {
+        background: url(../Medias/carl-raw-zvBT4eOtlkY-unsplash-phone.jpg) center no-repeat;
+        background-size: cover;
+        padding-top: 0px;
+        background-position-y: -2rem;
+        background-size: 55rem 95rem;
+    }
+}
+
+/* logo du site */
+#logoSite{
+    height: 38px;
+      width: auto;
+      top: 30px;
+      right: 30px;
+      display: block;
+      z-index: 100;
+      transition: all 250ms linear;
+}
+
+@media only screen and (max-width: 767px) {
+    #blockLeftAndRight {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+#signup{
+    background-color:var(--siteText);
+
+    border-radius: 2%;
+}
+
+
+.d-block {
+	margin: auto;
+    display: unset !important;
+}
+
+#login{
+    background-color: var(--nav-block) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: #3f4b57;
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+    margin-bottom: 411px;
+    margin-top: 1.5rem;
+    padding-top: 15px;
+    background: url(../Medias/remi-thorel-0eKCOZ11gfk-unsplash.jpg) center no-repeat;
+    background-size: cover;
+}
+@media only screen and (max-width: 1440px) and (min-width : 1158px) {
+    #login {
+        margin-bottom: 411px;
+    }
+}
+@media only screen and (max-width: 1157px) and (min-width : 992px) {
+    #login {
+        margin-bottom: 413px;
+    }
+}
+@media only screen and (max-width: 766px) {
+    #login {
+        margin-bottom: 408px;
+    }
+}
+
+#loginButton{
+    background-color: var(--nav-block2) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: #3f4b57;
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 13px;
+    
+}
+@media only screen and (max-width: 767px) {
+    #loginButton {
+        margin-bottom: 20px;
+    }
+}

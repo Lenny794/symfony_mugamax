@@ -1,167 +1,189 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    {#{{ encore_entry_link_tags('app') }}#}
+	{#{{ encore_entry_link_tags('app') }}#}
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Icon Bootstrap -->   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    
-    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/actualité.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/indentification.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+	<!-- Bootstrap CSS -->
+	<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!-- Icon Bootstrap -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+	<link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/actualité.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/indentification.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/font.css') }}">
 {% endblock %}
 
-{% block title %}Liste Actualité{% endblock %}
+{% block title %}Liste Actualité
+{% endblock %}
 
 {% block body %}
-    <div id="bannerGame" class="row b-row listing meta-below grid-3">
-        <!-- ***********Barre de navigation************ -->
-        <div class="container">
-            <div class="nav-scroller py-1 mb-2">
-                <nav class="nav d-flex justify-content-between">
-                    <a class="p-2 link-secondary" href="#">Playstation 4</a>
-                    <a class="p-2 link-secondary" href="#">Playstation 5</a>
-                    <a class="p-2 link-secondary" href="#">Xbox one</a>
-                    <a class="p-2 link-secondary" href="#">Xbox Serie X</a>
-                    <a class="p-2 link-secondary" href="#">Pc</a>
-                    <a class="p-2 link-secondary" href="#">Nintendo Switch</a>
-                    <a class="p-2 link-secondary" href="#">ios</a>
-                    <a class="p-2 link-secondary" href="#">Android</a>
-                </nav>
-            </div>
-        </div>
-    </div>
-    <!-- *****************Partie Inférieure*************** -->
-    <div class="col-md-6">
-        <div id="mondeBlock" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-success">{{ actuality_news.categoryNews("id") }}</strong>
-                <h3 class="txtMyactu mb-0"></h3>
-                <div class="mb-1 text-muted">{{ actuality_news.createdAt | date("M Y") }}</div>
-                <div>
-                    <a href="{{ path('actuality_news_index') }}">Retour à la liste</a>
-                </div>
-                <br>
-            </div>
-        </div>
-    </div>
-    <div id="myActu5" class="row g-5">
-        <div class="col-md-8">
-            <h2 class="txtMyactu blog-post-meta">
-                <i>Auteur : </i>{{ actuality_news.user.pseudo }}
-            </h2>
-            <h1 class="pb-4 mb-4 fst-italic border-bottom">
-                    {{ actuality_news.titre }} 
-            </h1>
-            <div id="cardBlock" class="card">
-                <div >
-                    <img id="cardShow" src=" {{ asset(actuality_news.image) }}" style="contain;" alt="">
-                </div> 
-            </div>
-            <article class="txtMyactu blog-post">
-                <p class="blog-post-title"></p>
-                <p class="txtMyactu">
-                    {{ actuality_news.content }}
-                </p>
-            </article>
-            <div class="card">
-                <div class="card-header">
-                    <h5>Ajouter un commentaires</h5>
-                </div>
-                <div class="card-body">
-                    {% if app.user %}
-                        {{ form_start(form) }}
-                        {{ form_widget(form) }}
-                        <button class="btn btn-primary mt-3" type="submit">Enregistrer</button>
-                        {{ form_end(form) }}
-                    {% else %}
-                        <p>Vous devez être connecter pour ajouter un commentaire.</p>
-                        <hr>
-                        <a class="btn btn-link" href="{{ path('app_login') }}">Se connecter</a>
-                        <hr>
-                        <a class="btn btn-primary" href="{{ path('app_register') }}">Créer un compte</a>
-                    {% endif %}
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <h5>Les commentaires</h5>
-                </div>
-                <div class="card-body">
-                {% if actuality_news.actualityComments | length > 0 %}
-                    {% for actualityComment in actuality_news.actualityComments %}
-                        <p
-                            {% if app.user is same as actualityComment.user %}
-                                style="ont-weight:bold;color:red"
-                            {% endif %}
-                            
-                        >Auteur : {{ actualityComment.user.pseudo}}</p>
-                        <p>Date : {{ actualityComment.createdAt | date('d-m-Y H:i:s') }}</p>
-                        <p>Contenu : {{ actualityComment.content }}</p>
-                        {% if app.user is same as actualityComment.user %}
-                            <a class="btn btn-primary" href="{{ path('actuality_comment_edit',{'id':actualityComment.id}) }}">Modifier</a>
-                        {% endif %}
-                        <hr>
-                    {% endfor %}
-                {% else %}
-                    <p>Il n'y pas encore de commentaire.</p>    
-                {% endif %}
-                </div>
-            </div>
-            
-        </div>
-        <!-- **************onglet de droite*********************** -->
-        <div class="col-md-4">
-            <div class="position-sticky" style="top: 2rem;">
-                <div id="à-ProposBlock" class="p-4 mb-3 bg-light rounded">
-                    <h4 class="fst-italic">À-propos</h4>
-                    <p class="txtMyactu mb-0">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem quisquam ipsum
-                        tenetur? Et, culpa eum!
-                    </p>
-                </div>
-                <div class="p-4">
-                    <h4 class="fst-italic">Archives</h4>
-                    <ol class="list-unstyled mb-0">
-                        <li><a href="#">Decembre 2021</a></li>
-                        <li><a href="#">Novembre 2021</a></li>
-                        <li><a href="#">Octobre 2021</a></li>
-                        <li><a href="#">Septembre 2021</a></li>
-                        <li><a href="#">Août 2021</a></li>
-                        <li><a href="#">Juillet 2021</a></li>
-                        <li><a href="#">Juin 2021</a></li>
-                        <li><a href="#">Mai 2021</a></li>
-                        <li><a href="#">Avril 2021</a></li>
-                    </ol>
-                </div>
-                <div class="p-4">
-                    <h4 class="fst-italic">Autre</h4>
-                    <ol class="list-unstyled">
-                        <li><a href="#">YouTube</a></li>
-                        <li><a href="#">Twitch</a></li>
-                        <li><a href="#">Facebook</a></li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div> 
-    <hr class="hrAdjust">
+	<div
+		id="bannerGame" class="row b-row listing meta-below grid-3">
+		<!-- ***********Barre de navigation************ -->
+		<div class="container">
+			<div class="nav-scroller py-1 mb-2">
+				<nav class="nav d-flex justify-content-between">
+					<a class="p-2 link-secondary" href="#">Playstation 4</a>
+					<a class="p-2 link-secondary" href="#">Playstation 5</a>
+					<a class="p-2 link-secondary" href="#">Xbox one</a>
+					<a class="p-2 link-secondary" href="#">Xbox Serie X</a>
+					<a class="p-2 link-secondary" href="#">Pc</a>
+					<a class="p-2 link-secondary" href="#">Nintendo Switch</a>
+					<a class="p-2 link-secondary" href="#">ios</a>
+					<a class="p-2 link-secondary" href="#">Android</a>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<!-- *****************Partie Inférieure*************** -->
+	<div class="col-md-6">
+		<div id="mondeBlock" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+			<div class="col p-4 d-flex flex-column position-static">
+				<strong class="d-inline-block mb-2 text-success">{{ actuality_news.categoryNews("id") }}</strong>
+				<h3 class="txtMyactu mb-0"></h3>
+				<div class="mb-1 text-muted">{{ actuality_news.createdAt | date("M Y") }}</div>
+				<div>
+					<a href="{{ path('actuality_news_index') }}">Retour à la liste</a>
+				</div>
+				<br>
+			</div>
+		</div>
+	</div>
+	<div id="myActu5" class="row g-5">
+		<div class="col-md-8">
+			<h2 class="txtMyactu blog-post-meta">
+				<i>Auteur :
+				</i>
+				{{ actuality_news.user.pseudo }}
+			</h2>
+			<h1 class="pb-4 mb-4 fst-italic border-bottom">
+				{{ actuality_news.titre }}
+			</h1>
+			<div id="cardBlock" class="card">
+				<div>
+					<img id="cardShow" src=" {{ asset(actuality_news.image) }}" style="contain;" alt="">
+				</div>
+			</div>
+			<article class="txtMyactu blog-post">
+				<p class="blog-post-title"></p>
+				<p class="txtMyactu">
+					{{ actuality_news.content }}
+				</p>
+			</article>
+			<div class="card">
+				<div class="card-header">
+					<h5>Ajouter un commentaires</h5>
+				</div>
+				<div class="card-body">
+					{% if app.user %}
+						{{ form_start(form) }}
+						{{ form_widget(form) }}
+						<button class="btn btn-primary mt-3" type="submit">Enregistrer</button>
+						{{ form_end(form) }}
+					{% else %}
+						<p>Vous devez être connecter pour ajouter un commentaire.</p>
+						<hr>
+						<a class="btn btn-link" href="{{ path('app_login') }}">Se connecter</a>
+						<hr>
+						<a class="btn btn-primary" href="{{ path('app_register') }}">Créer un compte</a>
+					{% endif %}
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<h5>Les commentaires</h5>
+				</div>
+				<div class="card-body">
+					{% if actuality_news.actualityComments | length > 0 %}
+						{% for actualityComment in actuality_news.actualityComments %}
+							<p {% if app.user is same as actualityComment.user %} style="ont-weight:bold;color:red" {% endif %}>Auteur :
+								{{ actualityComment.user.pseudo}}</p>
+							<p>Date :
+								{{ actualityComment.createdAt | date('d-m-Y H:i:s') }}</p>
+							<p>Contenu :
+								{{ actualityComment.content }}</p>
+							{% if app.user is same as actualityComment.user %}
+								<a class="btn btn-primary" href="{{ path('actuality_comment_edit',{'id':actualityComment.id}) }}">Modifier</a>
+							{% endif %}
+							<hr>
+						{% endfor %}
+					{% else %}
+						<p>Il n'y pas encore de commentaire.</p>
+					{% endif %}
+				</div>
+			</div>
+
+		</div>
+		<!-- **************onglet de droite*********************** -->
+		<div class="col-md-4">
+			<div class="position-sticky" style="top: 2rem;">
+				<div id="à-ProposBlock" class="p-4 mb-3 bg-light rounded">
+					<h4 class="fst-italic">À-propos</h4>
+					<p class="txtMyactu mb-0">
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem quisquam ipsum
+						                        tenetur? Et, culpa eum!
+					</p>
+				</div>
+				<div class="p-4">
+					<h4 class="fst-italic">Archives</h4>
+					<ol class="list-unstyled mb-0">
+						<li>
+							<a href="#">Decembre 2021</a>
+						</li>
+						<li>
+							<a href="#">Novembre 2021</a>
+						</li>
+						<li>
+							<a href="#">Octobre 2021</a>
+						</li>
+						<li>
+							<a href="#">Septembre 2021</a>
+						</li>
+						<li>
+							<a href="#">Août 2021</a>
+						</li>
+						<li>
+							<a href="#">Juillet 2021</a>
+						</li>
+						<li>
+							<a href="#">Juin 2021</a>
+						</li>
+						<li>
+							<a href="#">Mai 2021</a>
+						</li>
+						<li>
+							<a href="#">Avril 2021</a>
+						</li>
+					</ol>
+				</div>
+				<div class="p-4">
+					<h4 class="fst-italic">Autre</h4>
+					<ol class="list-unstyled">
+						<li>
+							<a href="#">YouTube</a>
+						</li>
+						<li>
+							<a href="#">Twitch</a>
+						</li>
+						<li>
+							<a href="#">Facebook</a>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr class="hrAdjust">
 {% endblock %}
 {% block footer %}
-    <footer class="text-center bg-light py-6 mt-4">
-        <div>
-            <img src="{{ asset('logoMugamax/logo_small_icon_only_inverted.png') }}" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="d-block mb-2">
-            </img>&copy; Mugamax - 2021 - All Right Reserved
-        </div>
-    </footer>
-{% endblock %}
+	<footer class="text-center bg-light py-6 mt-4">
+		<div>
+			<img src="{{ asset('logoMugamax/logo_small_2.png') }}" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2">
+		</img>&copy; Mugamax - 2021 - All Right Reserved
+	</div>
+</footer>{% endblock %}

@@ -1,64 +1,61 @@
 {% extends 'base_admin.html.twig' %}
 
 {% block stylesheets %}
-    {#{{ encore_entry_link_tags('app') }}#}
+	{#{{ encore_entry_link_tags('app') }}#}
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Icon Bootstrap -->   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    
-    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/indentification.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+	<!-- Bootstrap CSS -->
+	<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!-- Icon Bootstrap -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+	<link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/indentification.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/font.css') }}">
 {% endblock %}
 
-{% block title %}Category Topic{% endblock %}
+{% block title %}Category Topic
+{% endblock %}
 
 {% block body %}
-    <div class="container my-4">
-        <div id="blockLeftAndRight" class="row">
-            <div id="signUp" class="col-md-6 mt-4">
-                <h1>Catégorie</h1>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <th>Id</th>
-                            <td>{{ category_topic.id }}</td>
-                        </tr>
-                        <tr>
-                            <th>Nom</th>
-                            <td>{{ category_topic.name }}</td>
-                        </tr>
-                        <tr>
-                            <th>Image_path_url</th>
-                            <td>{{ category_topic.imagePathUrl }}</td>
-                        </tr>                        
-                    </tbody>
-                </table>
-                <a href="{{ path('category_topic_index') }}">Retour à la liste</a>
-                
-                <a href="{{ path('category_topic_edit', {'id': category_topic.id}) }}">Modifier</a>
-                <div>
-                    {{ include('category_topic/_delete_form.html.twig') }}
-                </div>
-                <br>
-            </div>
-        </div>
-    </div>
+	<div class="container my-4">
+		<div id="blockLeftAndRight" class="row">
+			<div id="signUp" class="col-md-6 mt-4">
+				<h1>Catégorie</h1>
+				<table class="table">
+					<tbody>
+						<tr>
+							<th>Id</th>
+							<td>{{ category_topic.id }}</td>
+						</tr>
+						<tr>
+							<th>Nom</th>
+							<td>{{ category_topic.name }}</td>
+						</tr>
+						<tr>
+							<th>Image_path_url</th>
+							<td>{{ category_topic.imagePathUrl }}</td>
+						</tr>
+					</tbody>
+				</table>
+				<a href="{{ path('category_topic_index') }}">Retour à la liste</a>
+
+				<a href="{{ path('category_topic_edit', {'id': category_topic.id}) }}">Modifier</a>
+				<div>
+					{{ include('category_topic/_delete_form.html.twig') }}
+				</div>
+				<br>
+			</div>
+		</div>
+	</div>
 {% endblock %}
 {% block footer %}
-    <footer class="text-center bg-light py-6 mt-4">
-        <div>
-            <img src="{{ asset('logoMugamax/logo_small_icon_only_inverted.png') }}" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="d-block mb-2">
-            </img>&copy; Mugamax - 2021 - All Right Reserved
-        </div>
-    </footer>
-{% endblock %}
+	<footer class="text-center bg-light py-6 mt-4">
+		<div>
+			<img src="{{ asset('logoMugamax/logo_small_2.png') }}" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2">
+		</img>&copy; Mugamax - 2021 - All Right Reserved
+	</div>
+</footer>{% endblock %}

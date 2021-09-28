@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="{{ asset('css/font.css') }}">
   <link rel="stylesheet" href="{{ asset('css/actualité.css') }}">
   <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/page-accueil.css') }}">
     
 {% endblock %}
 
@@ -35,29 +36,9 @@
       </div>
   </div>
   <!-- Carousel -->
-  <div class="container">
+  <div id="carouselBlock" class="container">
     <div class="p-4 text-white rounded bg-dark">
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-          <button
-            data-mdb-target="#carouselExampleControls"
-            data-mdb-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1">
-          </button>
-          <button
-            data-mdb-target="#carouselExampleControls"
-            data-mdb-slide-to="1"
-            aria-label="Slide 1">
-          </button>
-          <button
-            data-mdb-target="#carouselExampleControls"
-            data-mdb-slide-to="2"
-            aria-label="Slide 1">
-          </button>
-        </div>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">       
         <!-- Inner -->
         <div class="carousel-inner">
           <!-- Single item -->

@@ -16,11 +16,9 @@
     --nav-block2:#23292f;
     --nav-block-border:#3f4b57;
 }
-
 body{
     font-size: 100%;
     background-color: var(--login_background1);
-    color: var(--siteText);
 }
 
 /* logo du site */
@@ -105,7 +103,7 @@ body{
     border-left-width: 2.1px;
     border-left-style: solid;
     padding-top: 15px;
-    margin-left: 6rem;
+    margin-left: 6rem;    
 }
 @media only screen and (max-width: 1440px) and (min-width: 1400px) {
     #signUp {

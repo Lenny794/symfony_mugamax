@@ -1,0 +1,234 @@
+:root{
+    --primary: #35416d;
+    --secondary: #1e90ff;
+    --secondary2:#0073b7;
+    --success: #d1383d;
+    --success2: #fa9c66;
+    --success3: #517379;
+    --sucesss4: #7c34b8;
+    --success5: #93d34a;
+    --success6: #517ad3;
+    --siteText1: #eeeeee;
+    --siteText2: #d1d1d1;
+    --login_background1: #232728;
+    --login_background2: #3c3c3c;
+    --nav-block:#262f39;
+    --nav-block2:#23292f;
+    --nav-block-border:#3f4b57;
+}
+body{
+    font-size: 100%;
+    background-color: var(--login_background1);
+    color: var(--siteText);
+    background: url(../Medias/carl-raw-zvBT4eOtlkY-unsplash.jpg) center no-repeat;
+    background-size: cover;
+    padding-top: 0px;
+    background-position-y: -1rem;
+    background-size: 100rem 68rem;
+}
+@media only screen and (max-width: 1440px) and (min-width : 1400px) {
+    body {     
+        background: url(../Medias/carl-raw-zvBT4eOtlkY-unsplash.jpg) center no-repeat;
+        background-size: cover;
+        padding-top: 0px;
+        background-position-y: -1rem;
+        background-size: 100rem 68rem;        
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width : 510px) {
+    body {
+        background: url(../Medias/carl-raw-zvBT4eOtlkY-unsplash-phone.jpg) center no-repeat;
+        background-size: cover;
+        padding-top: 0px;
+        background-position-y: -2rem;
+        background-size: 55rem 95rem; 
+    }
+}
+@media only screen and (max-width: 509px){
+    body {
+        background: url(../Medias/carl-raw-zvBT4eOtlkY-unsplash-phone.jpg) center no-repeat;
+        background-size: cover;
+        padding-top: 0px;
+        background-position-y: -2rem;
+        background-size: 55rem 95rem;
+    }
+}
+
+/* logo du site */
+#logoSite{
+    height: 38px;
+      width: auto;
+      top: 30px;
+      right: 30px;
+      display: block;
+      z-index: 100;
+      transition: all 250ms linear;
+}
+
+@media only screen and (max-width: 767px) {
+    #blockLeftAndRight {
+        margin-left: 1rem;
+    margin-right: 1rem;
+    }
+}
+
+#signup{
+    background-color:var(--siteText);
+
+    border-radius: 2%;
+}
+
+
+.d-block {
+	margin: auto;
+    display: unset !important;
+}
+
+.fa-male::before {
+    content: "\f183";
+    font-size: 20px;
+}
+#labelFemale{
+    margin: auto;
+    margin-left: auto;
+    margin-left: 17px;
+}
+
+
+.fa-female::before {
+    content: "\f182";
+    font-size: 20px;
+}
+
+#login{
+    background-color: var(--nav-block) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: #3f4b57;
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+    margin-bottom: 15rem;
+    margin-top: 1.5rem;
+    padding-top: 15px;
+    background: url(../Medias/remi-thorel-0eKCOZ11gfk-unsplash.jpg) center no-repeat;
+    background-size: cover;
+}
+@media only screen and (max-width: 767px) {
+    #login {
+        margin-bottom: 1rem;
+    }
+}
+
+
+#signUp{
+    background-color: var(--nav-block) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: #3f4b57;
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+    padding-top: 15px;
+    margin-left: 6rem;
+    background: url(../Medias/remi-thorel-0eKCOZ11gfk-unsplash.jpg) center no-repeat;
+    background-size: cover;
+    
+}
+@media only screen and (max-width: 1440px) and (min-width: 1400px) {
+    #signUp {
+        margin-left: 6rem;
+    }
+}
+@media only screen and (max-width: 1399px) and (min-width: 992px) {
+    #signUp {
+        margin-left: 4rem;
+        padding-bottom: 24px;
+    }
+}
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    #signUp {
+        margin-left: 3rem;
+    }
+}
+@media only screen and (max-width: 767px) {
+    #signUp {
+        margin-left: 0rem;
+        padding-bottom: 24px;
+    }
+}
+
+#signUpForm{
+    margin-bottom: 20px;
+}
+
+#signUpButton{
+    background-color: var(--nav-block2) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: #3f4b57;
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+#loginButton{
+    background-color: var(--nav-block2) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: #3f4b57;
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    
+}
+@media only screen and (max-width: 767px) {
+    #loginButton {
+        margin-bottom: 20px;
+    }
+}
+
+.form-control::placeholder{
+    color: var(--login_background1);
+}
+#registration_form_country{
+    border-radius: 1rem;
+}
+#registration_form_birthdate_month {
+    border-radius: 1rem;
+    margin-right: 6px;
+}
+#registration_form_birthdate_day {
+    border-radius: 1rem;
+    margin-right: 6px;
+}
+#registration_form_birthdate_year {
+    border-radius: 1rem;
+    margin-right: 6px;
+}
+#registration_form_gender {
+    border-radius: 1rem;
+}
