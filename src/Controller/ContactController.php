@@ -28,8 +28,8 @@ class ContactController extends AbstractController
             $message = $form->get('message')->getData();
 
             $contactEmail = (new TemplatedEmail())
-                    ->from('contact@monsite.fr')
-                    ->to('contact@monsite.fr')
+                    ->from($email)
+                    ->to('contact@mugamax.fr')
                     ->subject($objet)
                     ->htmlTemplate('email/contact.html.twig')
                     ->context([
@@ -40,7 +40,7 @@ class ContactController extends AbstractController
 
             $mailer->send($contactEmail);
 
-            return $this->redirectToRoute('contact');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('contact/index.html.twig', [

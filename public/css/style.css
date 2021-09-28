@@ -11,7 +11,12 @@
 .table{
     color: var(--siteText);
 }
-
+h1, footer {
+    color: var(--siteText);
+}
+label {
+    color: var(--siteText);
+}
 #content{
     background-color: var(--primary);
 }

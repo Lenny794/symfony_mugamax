@@ -16,7 +16,7 @@
     vertical-align: middle;
     padding: 0;
     min-width: 20rem;
-    max-width: 73.5rem;
+    max-width: 76.5rem;
     background-color: var(--nav-block) !important;
     border-right-width: 2.1px;
     border-right-style: solid;
@@ -806,7 +806,7 @@
 }
 
 #userOnglet{
-    left: 508px;
+    left: 420px;
 }
 @media only screen and (max-width: 1440px) and (min-width : 1400px) {
     #userOnglet {     
@@ -833,8 +833,33 @@
         left: 56px;
     }
 }
-@media only screen and (max-width: 509px){
+@media only screen and (max-width: 509px) and (min-width : 359px){
     #userOnglet {
         left: 22px;
+    }  
+}
+@media only screen and (max-width: 560px){
+    #userOnglet {
+        left: 2px;
+        bottom: -29px;
+    }  
+}
+
+#navbarSupportedContent{
+    
+    flex-grow: 1;
+    align-items: center;
+}
+@media only screen and (max-width: 560px){
+    #navbarSupportedContent {
+        margin-left: -55px;
+    }  
+}
+#searchBtn{
+    display: flex !important;
+}
+@media only screen and (max-width: 560px){
+    #searchBtn {
+        padding-top: 26px;
     }  
 }
