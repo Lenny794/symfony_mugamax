@@ -12,8 +12,8 @@
 	<link rel="stylesheet" href="{{ asset('css/nav.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/indentification.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/font.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/user_contact.css') }}">
 {% endblock %}
 {% block title %}Hello ContactController!
 {% endblock %}
@@ -21,11 +21,11 @@
 {% block body %}
 	<div class="container my-4">
 		<div id="blockLeftAndRight" class="row">
-			<div id="signUp" class="col-md-6 mt-4">
+			<div id="login" class="col-md-6 mt-4">
 				{{ form_start(form) }}
 
 				{{ form_widget(form) }}
-				<button id="signUpButton" class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Envoyer</button>
+				<button id="loginButton" class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Envoyer</button>
 
 				{{ form_end(form) }}
 			</div>

@@ -7,7 +7,15 @@
     --background2: #3c3c3c;
 }
 /* *************** */
-
+#UptoPage{
+    font-size: xxx-large;
+    color: var(--secondary);
+    margin-left: 7px;
+}
+#UptoPage:hover{
+    color: #1c7ddf;
+    cursor: pointer;
+}
 .table{
     color: var(--siteText);
 }

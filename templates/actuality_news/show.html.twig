@@ -78,7 +78,7 @@
 			</article>
 			<div class="card">
 				<div class="card-header">
-					<h5>Ajouter un commentaires</h5>
+					<h5 style="text-align:center">Ajouter un commentaires</h5>
 				</div>
 				<div class="card-body">
 					{% if app.user %}
@@ -97,7 +97,7 @@
 			</div>
 			<div class="card">
 				<div class="card-header">
-					<h5>Les commentaires</h5>
+					<h5 style="margin-left: 10px;">Les commentaires ({{ actuality_news.actualityComments("id") | length}})</h5>
 				</div>
 				{% if actuality_news.actualityComments | length > 0 %}
 					{% for actualityComment in actuality_news.actualityComments %}        
@@ -234,6 +234,7 @@
 		</div>
 	</div>
 	<hr class="hrAdjust">
+	<i id="UptoPage" onclick="topFunction()" class="bi bi-arrow-up-square-fill"></i>
 {% endblock %}
 {% block footer %}
 	<footer class="text-center bg-light py-6 mt-4">
@@ -242,3 +243,4 @@
 		</img>&copy; Mugamax - 2021 - All Right Reserved
 	</div>
 </footer>{% endblock %}
+

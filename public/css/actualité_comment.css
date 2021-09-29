@@ -1,3 +1,15 @@
+:root{
+    --primary: #35416d;
+    --secondary: #1e90ff;
+    --success: #ee2128;
+    --siteText: #eeeeee;
+    --background: #232728;
+    --background2: #3c3c3c;
+    --block:#262f39;
+    --block2:#23292f;
+    --block-border:#3f4b57;
+}
+
 h1 {
     font-size: 2em;
     margin: 0.67em 0;

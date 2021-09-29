@@ -50,8 +50,9 @@
 
 						<ul id="identifMyAccount" class="txtMyactu dropdown-menu active" aria-labelledby="navbarDropdown">
 							<li>
-								<button type="button" onclick="location.href = 'login'"></a>Identifiez-vous</li>
-						</button>
+								<a class="btn btn-primary" href="{{ path('app_login') }}">Identifiez-vous</a>
+							</li>
+						
 						<div>
 							Nouvel utilisateur?
 							<a href="{{ path('app_register') }}">créer un compte</a>

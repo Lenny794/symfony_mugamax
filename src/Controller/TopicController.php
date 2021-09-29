@@ -6,7 +6,6 @@ use App\Entity\Topic;
 use App\Form\TopicType;
 use App\Entity\TopicComment;
 use App\Form\TopicCommentType;
-
 use App\Repository\TopicRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -106,7 +105,7 @@ class TopicController extends AbstractController
         }
 
         return $this->renderForm('topic_comment/edit.html.twig', [
-            'topicComment' => $topicComment,
+            'topicComment' => ['id' => $topicComment->getTopic()->getId()],
             'form' => $form,
         ]);
     }

@@ -115,7 +115,7 @@ class ActualityNewsController extends AbstractController
             return $this->redirectToRoute('actuality_news_show', ['id' => $actualityComment->getActualityNews()->getId()], Response::HTTP_SEE_OTHER);
         }
         return $this->renderForm('actuality_news/edit_comment.html.twig', [
-            'actuality_news' => $actualityComment,
+            'actuality_news' => ['id' => $actualityComment->getActualityNews()->getId()],
             'form' => $form
         ]);
     }
