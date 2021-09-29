@@ -31,17 +31,11 @@
 					<a id="nav-forums" class="nav-link active" href="{{ path('topic_index') }}">Forums</a>
 				</li>
 				{% if app.user %}
-
 					{% if app.user.roles[0] is same as "ROLE_ADMIN" %}
-
 						<li class="nav-item">
 							
 						</li>
-
 					{% endif %}
-
-					
-
 				{% else %}
 					<li class="nav-item dropdown">
 						<a id="nav-connect" style="font-size: 12px;" class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,9 +44,8 @@
 
 						<ul id="identifMyAccount" class="txtMyactu dropdown-menu active" aria-labelledby="navbarDropdown">
 							<li>
-								<a class="btn btn-primary" href="{{ path('app_login') }}">Identifiez-vous</a>
+								<a id="identifMyAccountButton" class="btn btn-primary" href="{{ path('app_login') }}">Identifiez-vous</a>
 							</li>
-						
 						<div>
 							Nouvel utilisateur?
 							<a href="{{ path('app_register') }}">créer un compte</a>

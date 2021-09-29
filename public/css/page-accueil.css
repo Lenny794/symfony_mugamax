@@ -82,3 +82,18 @@ body{
     background-size: 46rem 127rem;  
   }
 }
+.row > * {
+
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+
+}
+
+@media only screen and (max-width: 767px){
+  .row > *  {
+    padding-right: calc(var(--bs-gutter-x) * .0);
+    padding-left: calc(var(--bs-gutter-x) * .0);
+    margin-bottom: 0px;
+    margin-top: 7%;
+  }  
+}

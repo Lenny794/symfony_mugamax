@@ -80,6 +80,12 @@ p{
     border-left-style: solid;  
     margin-bottom: 3px;
 }
+@media only screen and (max-width: 560px){
+    #bannerGame {
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }  
+}
 .link-secondary{
     color: var(--siteText);
 }
@@ -96,6 +102,12 @@ p{
     margin-right: 5rem;
 
 }
+@media only screen and (max-width: 560px){
+    #myActu {
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }  
+}
 #myActu4{
     margin-left: 0;
     margin-right: 0;
@@ -104,6 +116,12 @@ p{
 #myActu5{
     margin-left: 5rem;
     margin-right: 5rem;
+}
+@media only screen and (max-width: 560px){
+    #myActu5 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }  
 }
 
 .bg-light{
@@ -253,6 +271,12 @@ p{
     margin-bottom: 33px;
     margin-left: 5rem;
     margin-right: 5rem;
+}
+@media only screen and (max-width: 560px){
+    #mondeBlock {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }  
 }
 
 .btn-primary{

@@ -121,7 +121,7 @@ body{
 /* ******************************* ! PAGE PROFIL ******************************* */
 #containerParam3{
     margin-bottom: -3rem;
-    padding-bottom: 44rem;
+    padding-bottom: 46rem;
     margin-top: -24px;
     flex: 0 0 auto;
     width: 66.66666667%;
@@ -132,19 +132,24 @@ body{
     border-radius: 2rem;
     border-color: #3f4b57; 
 }
+@media only screen and (max-width: 1440px) and (min-width : 1400px) {
+    #containerParam3 {     
+        padding-bottom: 46rem;
+    }
+}
+@media only screen and (max-width: 1399px) and (min-width : 768px) {
+    #containerParam3 {     
+        padding-bottom: 54rem;
+    }
+}
 @media only screen and (max-width: 767px) {
     #containerParam3 {
         padding-bottom: 31px;
-        border-right-width: 0px;
-        margin-bottom: -48px;
+        
+        margin-bottom: 54px;
         margin-top: -24px;
-        flex: 0 0 auto;
-        width: 66.66666667%;
-        border-right-style: solid;
-        background-color: #23292f;
-        border-radius: 2rem;
-        border-color: #3f4b57;
-    }
+    }    
+ 
 }
 #containerParam3Edit{
     margin-bottom: -24px;
@@ -180,7 +185,7 @@ body{
 
 #containerParam3NotifSecu{
     margin-bottom: -48px;
-    padding-bottom: 380px;
+    padding-bottom: 10rem;
     margin-top: -24px;
     flex: 0 0 auto;
     width: 66.66666667%;
@@ -190,6 +195,16 @@ body{
     background-color: #23292f;
     border-radius: 2rem;
     border-color: #3f4b57; 
+}
+@media only screen and (max-width: 1440px) and (min-width : 1200px) {
+    #containerParam3NotifSecu {     
+        padding-bottom: 10rem;
+    }
+}
+@media only screen and (max-width: 1199px) and (min-width : 768px) {
+    #containerParam3NotifSecu {     
+        padding-bottom: 18rem;
+    }
 }
 @media only screen and (max-width: 767px) {
     #containerParam3NotifSecu {

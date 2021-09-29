@@ -94,6 +94,11 @@
     flex-direction: row;
     margin-left: 50px;
 }
+@media only screen and (max-width: 560px){
+    .navbar-expand-lg .navbar-nav {
+        margin-left: 82px;
+    }  
+}
 #navBlock{
     display: flex;
     flex-wrap: inherit;
@@ -351,7 +356,14 @@
     text-decoration:none;
     font-size: 10px;
 }
-
+#identifMyAccountButton{
+    background-color: var(--secondary);
+    color: var(--siteText) !important;
+}
+#identifMyAccountButton:hover{
+    background-color:#1b82e9;
+    color: var(--siteText) !important;
+}
 #nav-connect{
     color: var(--siteText);
     padding-left: 10px;
@@ -360,10 +372,10 @@
     background-color: var(--secondary);
     transition: 0.5s all;
 }
-@media only screen and (max-width: 509px){
+@media only screen and (max-width: 560px){
     #nav-connect {
         font-size: 12px;
-        margin-left: -56px;
+        margin-left: -88px;
         margin-bottom: 5px;
         padding-bottom: -1.5rem;
         margin-right: 0px;
@@ -376,10 +388,10 @@
     left: -2px;
     position: absolute;
 }
-@media only screen and (max-width: 509px){
+@media only screen and (max-width: 560px){
     #identifMyAccount {
         top: 84px;
-        left: -73px;
+        left: -114px;
     }
 }
 #identifMyAccount div{
@@ -441,6 +453,13 @@
 #SearchForm {
     margin-bottom: 17px;
     bottom: -7px;
+}
+@media only screen and (max-width: 560px){
+    #buttonSearch {
+        margin-left: 0px;
+        padding-right: 0.75rem;
+        margin-right: 27px; 
+    }  
 }
 #buttonSearch{
     background-color: var(--secondary);
@@ -840,19 +859,18 @@
 }
 @media only screen and (max-width: 560px){
     #userOnglet {
-        left: 2px;
+        left: -44px;
         bottom: -29px;
     }  
 }
 
 #navbarSupportedContent{
-    
     flex-grow: 1;
     align-items: center;
 }
 @media only screen and (max-width: 560px){
     #navbarSupportedContent {
-        margin-left: -55px;
+        margin-left: -70px;
     }  
 }
 #searchBtn{

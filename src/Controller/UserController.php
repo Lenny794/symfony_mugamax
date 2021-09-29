@@ -90,22 +90,22 @@ class UserController extends AbstractController
        */
       public function editPasswordMail(Request $request): Response
       {
-          $user = $this->getUser();
-          $form = $this->createForm(EditPasswordType::class, $user);
-          $form->handleRequest($request);
-    
-          if ($form->isSubmitted() && $form->isValid()) {
-              $entityManager = $this->getDoctrine()->getManager();
-              
-              $entityManager->flush();
-              
-              $this->addFlash('message', 'Profil mis à jour');
-              return $this->redirectToRoute('user_security', [], Response::HTTP_SEE_OTHER);
-          }
-    
-          return $this->renderForm('user/edit_pass_email.html.twig', [
-             'user' => $user,
-             'form' => $form,
-          ]);
+        $user = $this->getUser();
+        $form = $this->createForm(EditPasswordType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            
+            $entityManager->flush();
+            
+            $this->addFlash('message', 'Profil mis à jour');
+            return $this->redirectToRoute('user_security', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('user/edit_pass_email.html.twig', [
+            'user' => $user,
+            'form' => $form,
+        ]);
       }
 }
