@@ -17,8 +17,8 @@
     --nav-block-border:#3f4b57;
 }
 
-footer{
-    background-color: rgba(36, 35, 35, 0.774);
+footer {
+    background-color: transparent;
 }
 footer a:hover{
     font-size: 15px;

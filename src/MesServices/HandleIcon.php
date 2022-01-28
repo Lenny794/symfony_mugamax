@@ -9,7 +9,7 @@ class HandleIcon
 {
     protected $slugger;
     protected $containerBag;
-    
+
 
     public function __construct(SluggerInterface $slugger, ContainerBagInterface $containerBag)
     {
@@ -17,18 +17,18 @@ class HandleIcon
         $this->containerBag = $containerBag;
     }
 
-    public function SaveImage($imageIcon, object $object)
+    public function saveImage($imageIcon, object $object)
     {
         $originalFilename = pathinfo($imageIcon->getClientOriginalName(), PATHINFO_FILENAME);
         $safeFileName = $this->slugger->slug($originalFilename);
-        $uniqFileName = $safeFileName .'-'. uniqid() .'.'. $imageIcon->guessExtension();
+        $uniqFileName = $safeFileName . '-' . uniqid() . '.' . $imageIcon->guessExtension();
 
         $imageIcon->move(
             $this->containerBag->get('app_icons_directory'),
             $uniqFileName
         );
 
-        $object->setImagePathUrl('icons/' .$uniqFileName);        
+        $object->setImagePathUrl('icons/' . $uniqFileName);
     }
 
     public function editImage($imageIcon, object $object, $vintageImage)
@@ -40,14 +40,12 @@ class HandleIcon
 
     public function deleteImage($vintageImage)
     {
-        if($vintageImage)
-        {
-            $pathToVintageImage = $this->containerBag->get('app_icons_directory') ."/..". $vintageImage;
+        if ($vintageImage) {
+            $pathToVintageImage = $this->containerBag->get('app_icons_directory') . "/.." . $vintageImage;
 
-            if(file_exists($pathToVintageImage))
-            {
+            if (file_exists($pathToVintageImage)) {
                 unlink($pathToVintageImage);
             }
-        }        
+        }
     }
 }

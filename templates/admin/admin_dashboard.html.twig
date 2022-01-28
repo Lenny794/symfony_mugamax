@@ -97,16 +97,16 @@
                                     </div>
                                     <div id="subMenuSécurité" class="sub-menu slide-item">
                                         <div id="tabChangePass" class="sub-title" data-scrollto="change-password">
-                                            <a href="#">Créer catégorie</a>
+                                            <a href="{{ path('category_video_new') }}">Créer catégorie</a>
                                         </div>
-                                        <div id="tabChangeEmail" class="sub-title acc-setting-menu-change-em"
-                                            data-scrollto="change-email"><a href="#">Liste catégorie</a>
+                                        <div id="tabChangeEmail" class="sub-title acc-setting-menu-change-em" data-scrollto="change-email">
+                                            <a href="{{ path('category_video_new') }}">Liste catégorie</a>
                                         </div>
-                                         <div id="tabChangePass" class="sub-title" data-scrollto="change-password">
-                                            <a href="#">Créer vidéo</a>
+                                        <div id="tabChangePass" class="sub-title" data-scrollto="change-password">
+                                            <a href="{{ path('video_new') }}">Créer vidéo</a>
                                         </div>
-                                         <div id="tabChangePass" class="sub-title" data-scrollto="change-password">
-                                            <a href="#">Liste vidéo</a>
+                                        <div id="tabChangePass" class="sub-title" data-scrollto="change-password">
+                                            <a href="{{ path('video_index') }}">Liste vidéo</a>
                                         </div>
                                     </div>
                                 </div>
@@ -139,7 +139,6 @@
             </div>
         </div>
     </div>
-
 {% endblock %}
 
 {% block footer %}

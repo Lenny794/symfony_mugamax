@@ -86,7 +86,7 @@ body{
 }
 
 #login{
-    background-color: var(--nav-block) !important;
+    background-color: #0009;
     border-right-width: 2.1px;
     border-right-style: solid;
     border-radius: 2rem;
@@ -100,8 +100,6 @@ body{
     margin-bottom: 411px;
     margin-top: 1.5rem;
     padding-top: 15px;
-    background: url(../Medias/remi-thorel-0eKCOZ11gfk-unsplash.jpg) center no-repeat;
-    background-size: cover;
 }
 @media only screen and (max-width: 1440px) and (min-width : 1158px) {
     #login {
@@ -120,7 +118,7 @@ body{
 }
 
 #loginButton{
-    background-color: var(--nav-block2) !important;
+    background-color: #0009;
     border-right-width: 2.1px;
     border-right-style: solid;
     border-radius: 2rem;

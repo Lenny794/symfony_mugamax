@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Entity\User\EditPasswordType;
+use App\Form\EditPasswordType;
 use App\Form\UserType;
 use App\Form\EditProfilType;
 use App\MesServices\HandleAvatar;
@@ -77,7 +77,7 @@ class UserController extends AbstractController
     }
         
     /**
-     * @Route("/Security", name="user_security", methods={"GET"})
+     * @Route("/security", name="user_security", methods={"GET"})
      */
     public function securityindex(UserRepository $userRepository): Response
     {
@@ -86,7 +86,7 @@ class UserController extends AbstractController
         ]);
     }
     /**
-       * @Route("/Security/edit", name="user_security_edit", methods={"GET","POST"})
+       * @Route("/ecurity/edit", name="user_security_edit", methods={"GET","POST"})
        */
       public function editPasswordMail(Request $request): Response
       {

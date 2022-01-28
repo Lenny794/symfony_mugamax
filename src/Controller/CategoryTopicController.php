@@ -36,13 +36,11 @@ class CategoryTopicController extends AbstractController
         $form = $this->createForm(CategoryTopicType::class, $categoryTopic);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) 
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $iconFile = $form->get('image_path_url')->getData();
 
-            if($iconFile)
-            {
-                $handleIcon->SaveImage($iconFile, $categoryTopic);
+            if ($iconFile) {
+                $handleIcon->saveImage($iconFile, $categoryTopic);
             }
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -81,11 +79,9 @@ class CategoryTopicController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $iconFile = $form->get('image_path_url')->getData();
-            
-            if($iconFile)
-            {
-               $handleIcon->editImage($iconFile, $categoryTopic, $vintageImage); 
-                          
+
+            if ($iconFile) {
+                $handleIcon->editImage($iconFile, $categoryTopic, $vintageImage);
             }
 
             $this->getDoctrine()->getManager()->flush();
@@ -104,10 +100,9 @@ class CategoryTopicController extends AbstractController
      */
     public function delete(Request $request, CategoryTopic $categoryTopic, HandleIcon $handleIcon): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$categoryTopic->getId(), $request->request->get('_token'))) 
-        {
+        if ($this->isCsrfTokenValid('delete' . $categoryTopic->getId(), $request->request->get('_token'))) {
             $vintageImage = $categoryTopic->getImagePathUrl();
-            
+
             $handleIcon->deleteImage($vintageImage);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($categoryTopic);

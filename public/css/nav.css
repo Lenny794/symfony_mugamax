@@ -17,11 +17,11 @@
     padding: 0;
     min-width: 20rem;
     max-width: 76.5rem;
-    background-color: var(--nav-block) !important;
+    background-color: transparent!important;
     border-right-width: 2.1px;
     border-right-style: solid;
     border-radius: 2rem;
-    border-color: #3f4b57;
+    border-color: transparent;
     border-bottom-width: 2.1px;
     border-bottom-style: solid;
     border-top-width: 2.1px;
@@ -29,6 +29,7 @@
     border-left-width: 2.1px;
     border-left-style: solid;
     font-family: "Staatliches-Regular";
+    z-index: 1;
 }
 @media only screen and (max-width: 1440px) and (min-width : 1400px) {
     #navStyle {     
@@ -118,7 +119,8 @@
 
 /*********Jeux*********/
 #nav-jeux{
-    color: var(--siteText)
+    color: var(--siteText);
+    line-height: 50px;
 }
 #nav-jeux:hover{
     color: var(--secondary);
@@ -142,7 +144,7 @@
     border-top-right-radius: unset;
     border-top-left-radius: unset;
     /* left: 14px; */
-    bottom: -169px;
+    /* bottom: -176px; */
     background-color: var(--nav-block);
 }
 
@@ -303,7 +305,16 @@
 /*********Vidéo*********/
 #nav-vidéos{
     color: var(--siteText);
-    padding-left: 10px
+    padding-left: 10px;
+    line-height: 50px;
+    left: 2rem;
+    position: relative;
+}
+@media only screen and (max-width: 1199px){
+    #nav-vidéos{
+        left: 0rem;
+        position: relative;
+    }
 }
 #nav-vidéos:hover{
     color: var(--secondary);
@@ -314,7 +325,16 @@
 /*********Actualité*********/
 #nav-actualités{
     color: var(--siteText);
-    padding-left: 10px
+    padding-left: 10px;
+    line-height: 50px;
+    left: 4rem;
+    position: relative;
+}
+@media only screen and (max-width: 1199px) {
+    #nav-actualités{
+        left: 0rem;
+        position: relative;
+    }
 }
 #nav-actualités:hover{
     color: var(--secondary);
@@ -343,7 +363,16 @@
 /*********Forums*********/
 #nav-forums{
     color: var(--siteText);
-    padding-left: 10px
+    padding-left: 10px;
+    line-height: 50px;
+    position: relative;
+    left: 6rem;
+}
+@media only screen and (max-width: 1199px) {
+    #nav-forums{
+        left: 0rem;
+        position: relative;
+    }
 }
 #nav-forums:hover{
     color: var(--secondary);
@@ -354,7 +383,7 @@
 /*********Se connecter*********/
 #identifMyAccount a{
     text-decoration:none;
-    font-size: 10px;
+    font-size: 9px;
 }
 #identifMyAccountButton{
     background-color: var(--secondary);
@@ -364,34 +393,105 @@
     background-color:#1b82e9;
     color: var(--siteText) !important;
 }
+
+@media only screen and (max-width: 560px){
+    #navLiConnect
+    {
+        position: relative;
+        left: -3rem;
+        width: 0rem; 
+    }
+}
+
 #nav-connect{
     color: var(--siteText);
-    padding-left: 10px;
+    font-size: 12px;
+    margin-top: 13px;
+    left: 8rem;
+    position: relative;
+}
+@media only screen and (max-width: 1440px) and (min-width : 1200px) {
+    #nav-connect{
+        left: 8rem;
+        position: relative;
+    }
+}
+@media only screen and (max-width: 1199px) and (min-width : 992px) {
+    #nav-connect{
+        left: 1rem;
+        position: relative;
+    }
+}
+@media only screen and (max-width: 991px) and (min-width : 768px) {
+    #nav-connect {
+        left: 1rem;
+        position: relative;
+    }
+}
+@media only screen and (max-width: 767px) and (min-width : 510px) {
+    #nav-connect {
+        left: 1rem;
+        position: relative;
+    }
+}
+@media only screen and (max-width: 509px) and (min-width : 359px){
+    #nav-connect {
+        left: -7rem;
+        position: relative;
+    }
+}
+@media only screen and (max-width: 560px){
+    #nav-connect {
+        margin-bottom: 5px;
+        margin-right: 0px;
+        margin-top: 50px;
+        width: 8rem;
+        position: relative;
+        left: -12.5rem;
+    }
 }
 #nav-connect:hover{
     background-color: var(--secondary);
     transition: 0.5s all;
 }
-@media only screen and (max-width: 560px){
-    #nav-connect {
-        font-size: 12px;
-        margin-left: -88px;
-        margin-bottom: 5px;
-        padding-bottom: -1.5rem;
-        margin-right: 0px;
-        margin-top: 32px; 
-    }
-}
 #identifMyAccount{
     padding: 0.5rem 22px;
-    top: 53px;
-    left: -2px;
+    top: 66px;
+    left: 128px;
     position: absolute;
+}
+@media only screen and (max-width: 1199px) and (min-width : 992px) {
+    #identifMyAccount {
+        top: 65px;
+        left: 16px;
+        width: 0rem;
+    }
+}
+@media only screen and (max-width: 991px) and (min-width : 768px) {
+    #identifMyAccount {
+        top: 65px;
+        left: 16px;
+        width: 0rem;
+    }
+}
+@media only screen and (max-width: 767px) and (min-width : 510px) {
+    #identifMyAccount {
+        top: 65px;
+        left: 14px;
+        width: 0rem;
+    }
+}
+@media only screen and (max-width: 509px) and (min-width : 459px){
+    #identifMyAccount {
+        top: 104px;
+        left: -114px;
+    }
 }
 @media only screen and (max-width: 560px){
     #identifMyAccount {
-        top: 84px;
-        left: -114px;
+        top: 104px;
+        left: -202px;
+        width: 1rem;
     }
 }
 #identifMyAccount div{
@@ -416,6 +516,10 @@
 
 #identifMyAccount a{
     color: var(--secondary);
+    text-decoration-color: currentcolor;
+    font-family: "Staatliches-Regular";
+    border-radius: 2rem;
+    border-color: var(--secondary);
 }
 #identifMyAccount a:hover{
     color: var(--success);
@@ -453,6 +557,19 @@
 #SearchForm {
     margin-bottom: 17px;
     bottom: -7px;
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 13px;
+    color: #fff;
+    background-color: #fff0;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 2.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 @media only screen and (max-width: 560px){
     #buttonSearch {
@@ -613,13 +730,8 @@
     border-top-right-radius: unset;
     border-top-left-radius: unset;
     left: -44px;
-    bottom: -169px;
+    bottom: -237px;
     background-color: var(--nav-block);
-}
-@media only screen and (max-width: 1440px) and (min-width : 1400px) {
-    #navPofilDropdown {     
-        left: -44px;
-    }
 }
 @media only screen and (max-width: 1399px) and (min-width : 1200px) {
     #navPofilDropdown {       
@@ -649,6 +761,11 @@
 
 #avatarUserNav{
     margin-top: 14px;
+}
+@media only screen and (max-width: 509px){
+    #avatarUserNav{
+        margin-top: 35px;
+    }
 }
 #avatarUserNav i{
     font-size: 23px;
@@ -839,28 +956,31 @@
 }
 @media only screen and (max-width: 1199px) and (min-width : 992px) {
     #userOnglet {      
-        left: 163px;
+        left: 130px;
     }
 }
 @media only screen and (max-width: 991px) and (min-width : 768px) {
     #userOnglet {
-        left: 223px;
+        left: 10rem;
+        top: 1rem;
     }
 }
 @media only screen and (max-width: 767px) and (min-width : 510px) {
     #userOnglet {
         left: 56px;
+        margin-top: 4rem;
     }
 }
 @media only screen and (max-width: 509px) and (min-width : 359px){
     #userOnglet {
         left: 22px;
+        margin-top: 3rem;
     }  
 }
 @media only screen and (max-width: 560px){
     #userOnglet {
-        left: -44px;
-        bottom: -29px;
+        left: -3rem;
+        margin-top: 3rem;
     }  
 }
 
@@ -868,16 +988,55 @@
     flex-grow: 1;
     align-items: center;
 }
-@media only screen and (max-width: 560px){
+
+@media only screen and (max-width: 991px) and (min-width : 768px) {
     #navbarSupportedContent {
-        margin-left: -70px;
+        margin-left: 7rem;
+        border-radius: 2rem;
+        position: relative;
+        left: -3rem;
+        top: 1rem;
+        border: solid var(--darkreader-border--block-border) !important;
+        border-top-color: currentcolor;
+        border-right-color: currentcolor;
+        border-bottom-color: currentcolor;
+        border-left-color: currentcolor;
+        border-left-width: 1px !important;
+        border-left-style: solid;
+        border-bottom-width: 1px !important;
+        border-bottom-style: solid;
+        border-right-width: 1px !important;
+        border-right-style: solid;
+        border-top-width: 1px !important;
+        border-top-style: solid;
+        background: var(--darkreader-bg--block2) !important;  
+    }  
+}
+@media only screen and (max-width: 767px){
+    #navbarSupportedContent {
+        position: relative;
+        top: 1rem;
+        border-radius: 2rem;
+        border-right-width: 1.1px;
+        border-right-style: solid;
+        border-radius: 2rem;
+        border-bottom-width: 1.1px;
+        border-bottom-style: solid;
+        border-top-width: 1.1px;
+        border-top-style: solid;
+        border-left-width: 1.1px;
+        border-left-style: solid;
+        border-color: #3f4b57;
+        background-color: var(--background);
+        border-color: var(--nav-block-border);   
     }  
 }
 #searchBtn{
     display: flex !important;
 }
-@media only screen and (max-width: 560px){
+@media only screen and (max-width: 991px){
     #searchBtn {
         padding-top: 26px;
+        width: 24rem;
     }  
 }

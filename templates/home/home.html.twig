@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
   <link rel="stylesheet" href="{{ asset('css/font.css') }}">
   <link rel="stylesheet" href="{{ asset('css/actualité.css') }}">
   <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
@@ -85,45 +86,109 @@
   <!-- Carousel wrapper -->
   {# ------------------------------------------- #}
   <div id="myActu5" class="row g-5">
-      <div class="col-md-8">
-          <h3 class="pb-4 mb-4 fst-italic border-bottom">
-              Lorem, ipsum dolor.
-          </h3>
-          <article class="txtMyactu blog-post">
-              <h2 class="blog-post-title">Lorem ipsum dolor sit amet.</h2>
-              <p class="txtMyactu blog-post-meta">
-                  Publié le ...  par <a href="#">...</a>
-              </p>
-              <p class="txtMyactu">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem quisquam ipsum tenetur?
-                  Et, culpa eum!
-              </p>
-          </article>
-          <hr>
-          <article class="txtMyactu blog-post">
-              <h2 class="blog-post-title">Lorem ipsum dolor sit.</h2>
-              <p class="txtMyactu blog-post-meta">
-                  Publié le ...  par <a href="#">...</a>
-              </p>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos aperiam et eaque explicabo atque. Magnam
-                  ullam itaque quia quae quasi, aliquid nesciunt harum saepe libero, beatae id? Incidunt, possimus excepturi.
-              </p>
-              <ul>
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-              </ul>
-          </article>
-          <nav class="blog-pagination" aria-label="Pagination">
-              <a class="btn btn-outline-primary" href="#">Ancien</a>
-              <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Récent</a>
-          </nav>
-      </div>
+    <div class="col-md-8">  
+        <div class="master-wrapper">
+          <!-- Navigation -->
+        
+          <section id="welcome" class="">
+              <div class="section-inner">
+
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-lg-12 text-center mb100">                        
+                              <h2 class="section-heading">Les <span class="theme-accent-color">Dernières</span> Actualités</h2>
+                              <hr class="thin-hr">
+                              <h3 class="section-subheading secondary-font">Informer vous ici nos dernières actualité.</h3>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div>
+                          <h2 class="mb30">Actualité <span class="theme-accent-color">Du Jour</span></h2>
+                  {% for a in actualityNewsRepository.findAll() | slice(2) | reverse  %}
+                      <div class="container homeCardActu">
+                          <div class="col-md-5 col-md-offset-1">
+                              <h4 class="mb50">{{ a.titre }}</h4>
+                              <p class="lead">{{a.content[:50] ~ (a.content | length > 50 ? '...') }}</p>
+                              <p class="mt30"><a href="{{ path('actuality_news_show',{'id':a.id} ) }}" class="btn btn-primary btn-red page-scroll">Voir +</a></p>
+                          </div>
+                          <div >
+                            <img id="cardShowHome" src=" {{ asset(a.image) }}" style="contain;" alt="">
+                          </div>
+                      </div>
+                  {% endfor %}
+                  </div>
+              </div>
+          </section>
+          <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg10.jpg" data-speed="0.8">
+              <div class="section-inner">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-lg-12 text-center mb100">
+                              <h2 class="section-heading">Les <span class="theme-accent-color">Dernières</span> Vidéos</h2>
+                              <hr class="thin-hr">
+                              <h3 class="section-subheading secondary-font">Regarder les dernières vidéos.</h3>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-xs-12">
+                              <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="1" data-items-desktop="[1200,1]" data-items-desktop-small="[980,1]" data-items-tablet="[768,1]" data-items-mobile="[479,1]">
+                                  <li>
+                                      <div class="row">
+                                          <div class="col-xs-8 col-xs-offset-2 item-caption">
+                                              <div class="col-sm-2">
+                                                  <img src="assets/img/team/small1.jpg" class="img-responsive testimonial-author" alt="">
+                                              </div>
+                                              <div class="col-sm-10">                                                
+                                                  <h4>Lorem</h4>
+                                                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati omnis iusto doloribus voluptas repellendus laborum voluptatem quasi vel autem molestiae ab culpa inventore rerum nisi repellat perspiciatis, quo delectus atque.</p>
+                                                  <ul class="list-inline">
+                                                      <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                      <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                      <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                      <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                      <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="row">
+                                          <div class="col-xs-8 col-xs-offset-2 item-caption">
+                                              <div class="col-sm-2">
+                                                  <img src="assets/img/team/small2.jpg" class="img-responsive testimonial-author" alt="">
+                                              </div>
+                                              <div class="col-sm-10">                                                
+                                                  <h4>Lorem</h4>
+                                                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, tenetur adipisci. Accusantium sit maiores nobis, fugiat doloremque, dolor voluptatem repellendus ab ipsam ad corporis labore. Quibusdam quod molestiae sit eum?</p>
+                                                  <ul class="list-inline">
+                                                      <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                      <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                      <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                      <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                      <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+        </div>
+    </div>
       <!-- **************onglet de droite*********************** -->
       <div class="col-md-4">
           <div class="position-sticky" style="top: 2rem;">
               <div id="à-ProposBlock" class="p-4 mb-3 bg-light rounded">
-                  <h4 class="fst-italic"><a href="{{ path('contact') }}"> Nous contacter</a></h4>
+                  
+                  <h4 style="font-size: 25px;" class="section-heading"><a href="{{ path('contact') }}">Nous <span class="theme-accent-color">contacter</span></a></h4>
                   <p class="txtMyactu mb-0">
                       Contacter le Support Mugamax. Vous avez besoin d'une assistance par mail ? Nous vous fournirons l'aide dont vous avez besoin.
                   </p>

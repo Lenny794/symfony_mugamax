@@ -97,3 +97,16 @@ body{
     margin-top: 7%;
   }  
 }
+
+#cardShowHome
+{
+  width: 15rem;
+  max-height: 390px !important;
+}
+
+.homeCardActu
+{
+  display: flex;
+  flex-direction: row;
+  margin-top: 3rem;
+}

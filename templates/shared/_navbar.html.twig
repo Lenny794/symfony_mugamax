@@ -22,7 +22,7 @@
 					</ul>
 				</li>
 				<li>
-					<a id="nav-vidéos" class="nav-link active" href="#">Vidéos</a>
+					<a id="nav-vidéos" class="nav-link active" href="{{ path('video_index') }}">Vidéos</a>
 				</li>
 				<li>
 					<a id="nav-actualités" class="nav-link active" href="{{ path('actuality_news_index') }}">Actualités</a>
@@ -37,7 +37,7 @@
 						</li>
 					{% endif %}
 				{% else %}
-					<li class="nav-item dropdown">
+					<li id="navLiConnect" class="nav-item dropdown">
 						<a id="nav-connect" style="font-size: 12px;" class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							Bienvenue, identifiez-vous<br><strong style="font-size: 14px;">Connecter-vous</strong>
 						</a>

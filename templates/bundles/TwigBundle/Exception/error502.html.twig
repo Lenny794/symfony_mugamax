@@ -1,0 +1,39 @@
+{% extends 'base_error.html.twig' %}
+
+{% block stylesheets %}
+  {#{{ encore_entry_link_tags('app') }}#}
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" ntegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Icon Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  
+  <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/actualité.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/page-accueil.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/errorPage.css') }}">
+    
+{% endblock %}
+
+{% block body %}
+<body id="errorBody">
+	<div id="notfound">
+		<div class="notfound-bg"></div>
+		<div class="notfound">
+			<div class="notfound-404">
+				<h1>502</h1>
+			</div>
+			<h2>Oops! Bad Gateway ou Proxy Error.</h2>
+			<a href="{{ path('home') }}" class="home-btn">Retourner vers l'accueil</a>
+			<a href="{{ path('contact') }}" class="contact-btn">Contactez-nous</a>
+			
+		</div>
+	</div>
+</body>
+{% endblock %}

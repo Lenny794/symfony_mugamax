@@ -3,6 +3,7 @@ twig:
     form_themes: ['bootstrap_5_layout.html.twig']
     globals:
         categoryNewsRepository: "@App\\Repository\\CategoryNewsRepository"
+        actualityNewsRepository: "@App\\Repository\\ActualityNewsRepository"
 
 when@test:
     twig:

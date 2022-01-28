@@ -14,7 +14,7 @@ class TopicCommentType extends AbstractType
     {
         $builder
             ->add('content', TextareaType::class, [
-                'label' => 'Commenter'
+                'label' => 'Commenté'
             ])
         ;
     }

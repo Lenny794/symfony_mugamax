@@ -17,7 +17,7 @@ class HandleAvatar
         $this->containerBag = $containerBag;
     }
 
-    public function SaveImage($avatarFile, object $object)
+    public function saveImage($avatarFile, object $object)
     {
         $originalFilename = pathinfo($avatarFile->getClientOriginalName(), PATHINFO_FILENAME);
         $safeFileName = $this->slugger->slug($originalFilename);
@@ -33,7 +33,7 @@ class HandleAvatar
 
     public function editImage($avatarFile, object $object, $vintageImage)
     {
-        $this->SaveImage($avatarFile, $object);
+        $this->saveImage($avatarFile, $object);
 
         $this->deleteImage($vintageImage);
     }

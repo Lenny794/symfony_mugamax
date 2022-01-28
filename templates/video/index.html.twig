@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {#{{ encore_entry_link_tags('app') }}#}
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Icon Bootstrap -->   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/indentification.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/actualité.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+{% endblock %}
+
+{% block title %}Page Des Vidéos{% endblock %}
+
+{% block body %}
+    <!-- ***********Barre de navigation************ -->
+    <div class="container">
+        <div class="nav-scroller py-1 mb-2">
+            <nav class="nav d-flex justify-content-between">
+                <a class="p-2 link-secondary" href="#">Playstation 4</a>
+                <a class="p-2 link-secondary" href="#">Playstation 5</a>
+                <a class="p-2 link-secondary" href="#">Xbox one</a>
+                <a class="p-2 link-secondary" href="#">Xbox Serie X</a>
+                <a class="p-2 link-secondary" href="#">Pc</a>
+                <a class="p-2 link-secondary" href="#">Nintendo Switch</a>
+                <a class="p-2 link-secondary" href="#">ios</a>
+                <a class="p-2 link-secondary" href="#">Android</a>
+            </nav>
+        </div>
+    </div>
+    <!-- *****************Bannière actualité******************** -->
+    <div id="myActu">
+        <div id="myActuBlock" class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+            <div class="col-md-6 px-0">
+                <h1 class="display-4 fst-italic">Vidéos</h1>
+            
+                <div>
+                    <p class="txtMyactu lead my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem quisquam
+                        ipsum tenetur? Et, culpa eum!
+                    </p>
+                    {% if app.user %}
+                        {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+                            <h3 class="txtMyactu lead mb-0"><a href="{{ path('video_new') }}" class="text-white fw-bold">
+                            Ajouter une nouvelle video</a>
+                            </h3>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-4">
+        <div class="row">
+            <div id="signUp" class="col-md-10 mt-4">
+                <div class="row">
+                    {% for video in videos %}
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <video id="cardActualityHeader" class="imgCard" style="contain;" class="w-100" src=" {{ asset(video.image) }}" style="contain" alt="Image de {{ video.name }}"></video>
+                            </div>
+                            <div class="card-body text-wrap my-auto px-1 py-2">
+                                <h4> {{ video.name }} </h4>
+                            </div><hr>
+                            <div class="card-footer">
+                                <p class="publish"><i>Publié le : </i>{{ video.createdAt | date('d-m-Y') }} <i>par</i> {{ video.user("id") }}</p> 
+                                <div>
+                                    <a class="btn btn-primary mt-3"  href="{{ path('video_show',{'id':video.id} ) }}">Consulter</a>
+                                    {% if app.user %}
+                                        {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+                                            <a class="btn btn-primary mt-3" href="{{ path('video_edit',{'id':video.id} ) }}">Modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                </div><br>
+                            </div>
+                        </div>
+                        </div>
+                            {% else %}
+                                <tr>
+                                    <td colspan="6">Aucun enregistrement trouvé</td>
+                                </tr>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>            
+{% endblock %}
