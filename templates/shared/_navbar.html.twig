@@ -15,9 +15,7 @@
 							<li>
 								<a id="navJ1Ps4" class="nav-link active" aria-current="page" href="{{ path('public_category_detail',{'id': c.id}) }}">{{ c.name }}</a>
 							</li>
-							<li>
-								<a id="navJ8ïod" class="nav-link active" aria-current="page" href="{{ path('public_category_detail',{'id': c.id}) }}"></a>
-							</li>
+							
 						{% endfor %}
 					</ul>
 				</li>
@@ -66,27 +64,15 @@
 						<a id="navProfil" class="nav-link active" aria-current="page" href="{{ path('user_index') }}">Profil</a>
 					</li>
 					<li>
-						<a class="nav-link active; navOngletEmpty" aria-current="page" href="{{ path('user_index') }}"></a>
-					</li>
-					<li>
 						<a id="navPréférence" class="nav-link active" aria-current="page" href="{{ path('user_index') }}">Préférence</a>
 					</li>
 					{% if app.user.roles[0] is same as "ROLE_ADMIN" %}
 						<li>
-							<a class="nav-link active; navOngletEmpty" aria-current="page" href="{{ path('user_index') }}"></a>
-						</li>
-						<li>
 							<a id="nav-adminhome" class="nav-link" href="{{ path('admin_dashboard') }}">Administration</a>
 						</li>
 					{% endif %}
-					<li>
-						<a class="nav-link active; navOngletEmpty" aria-current="page" href="{{ path('user_index') }}"></a>
-					</li>
 					<li class="nav-link active">
 						<a id="navLogout" class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
-					</li>
-					<li class="nav-link active">
-						<a class="nav-link active; navOngletEmptyLast" href="{{ path('app_logout') }}"></a>
 					</li>
 				</ul>
 			</li>
