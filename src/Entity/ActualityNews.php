@@ -54,7 +54,7 @@ class ActualityNews
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity=ActualityComment::class, mappedBy="actualityNews")
+     * @ORM\OneToMany(targetEntity=ActualityComment::class, mappedBy="actualityNews", cascade={"persist", "remove"}, orphanRemoval=true))
      */
     private $actualityComments;
 
