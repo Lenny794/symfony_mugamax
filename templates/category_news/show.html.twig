@@ -16,148 +16,150 @@
 	<link rel="stylesheet" href="{{ asset('css/indentification.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/font.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/espace_admin.css') }}">
-	<link rel="stylesheet" href="{{ asset('espace_admin.css') }}">
+
 {% endblock %}
 
 {% block title %}Catégorie
 {% endblock %}
 
 {% block body %}
-<div class="container my-4">
-	<div id="containerParam" class="row">
-		<div class="col-md-5 mt-4">
-			<!-- ********************Profil********************** -->
+	<div class="container my-4">
+		<div id="containerParam" class="row">
+			<div
+				class="col-md-5 mt-4">
+				<!-- ********************Profil********************** -->
+				<section>
+					<div id="containerParam2" class="row">
+						<div id="containerParam3" class="col-8">
+							<div id="paramètre">
+								<div id="paramètreHeader" class="lp-header">
+									<span id="spanParamètreTitle">Tableau de bord
+									</span>
+								</div>
+								<!-- Paramètre compte -->
+								<div id="paramètreCompte" class="settings-button slide-in-out ts-500 account-s active">
+									<div id="paramètreCompteHeadTitle" class="head-title">
+										<i id="iconChevronCompte" class="bi bi-chevron-right"></i>
+										<i class="far fa-newspaper" style="color:white"></i>
+										<a id="spanCompte">Actualités</a>
+									</div>
+									<div id="subMenuCompte" class="sub-menu slide-item">
+										<div id="tabProfil" class="sub-title" data-scrollto="profile-form">
+											<a href="{{ path('category_news_new') }}">Créer catégorie</a>
+										</div>
+										<div id="tabPréférence" class="sub-title" data-scrollto="preferences">
+											<a href="{{ path('category_news_index') }}">Liste catégorie</a>
+										</div>
+										<div id="tabPréférence" class="sub-title" data-scrollto="preferences">
+											<a href="{{ path('actuality_news_new') }}">Créer actualité</a>
+
+										</div>
+										<div id="tabPréférence" class="sub-title" data-scrollto="preferences">
+											<a href="{{ path('actuality_news_index') }}">Liste actualité</a>
+										</div>
+									</div>
+								</div>
+								<!-- Paramètre notification -->
+								<div id="paramètreNotif" class="settings-button slide-in-out ts-500 notifications closed">
+									<div id="paramètreNotifHeadTitle" class="head-title">
+										<i id="iconChevronNotif" class="bi bi-chevron-right"></i>
+										<i class="fas fa-rss" style="color:white"></i>
+									</i>
+									<a id="spanNofif">Forum</a>
+								</div>
+								<div id="subMenuNotif" class="sub-menu slide-item">
+									<div id="tabNotifAcc" class="sub-title" data-scrollto="account-notification">
+										<a href="{{ path('category_topic_new') }}">Créer catégorie</a>
+									</div>
+									<div id="tabNotifEmail" class="sub-title" data-scrollto="email-notification">
+										<a href="{{ path('category_topic_index') }}">Liste catégorie</a>
+									</div>
+									<div id="tabNotifEmail" class="sub-title" data-scrollto="email-notification">
+										<a href="{{ path('topic_new') }}">Créer topic</a>
+									</div>
+									<div id="tabNotifEmail" class="sub-title" data-scrollto="email-notification">
+										<a href="{{ path('topic_index') }}">Liste topic</a>
+									</div>
+								</div>
+							</div>
+							<!-- Paramètre sécurité -->
+							<div id="paramèteSécurité" class="settings-button slide-in-out ts-500 security closed">
+								<div id="paramètreSécuritéHeadTitle" class="head-title">
+									<i id="iconChevronSécurité" class="bi bi-chevron-down"></i>
+									<i class="fas fa-video" style="color:white"></i>
+									<a id="spanSécurité">Vidéo</a>
+								</div>
+								<div id="subMenuSécurité" class="sub-menu slide-item">
+									<div id="tabChangePass" class="sub-title" data-scrollto="change-password">
+										<a href="{{ path('category_video_new') }}">Créer catégorie</a>
+									</div>
+									<div id="tabChangeEmail" class="sub-title acc-setting-menu-change-em" data-scrollto="change-email">
+										<a href="{{ path('category_video_index') }}">Liste catégorie</a>
+									</div>
+									<div id="tabChangePass" class="sub-title" data-scrollto="change-password">
+										<a href="{{ path('video_new') }}">Créer vidéo</a>
+									</div>
+									<div id="tabChangePass" class="sub-title" data-scrollto="change-password">
+										<a href="{{ path('video_index') }}">Liste vidéo</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><br>
+				<div class="col-xs-6 col-md-6"></div><br>
+			</section>
+		</div>
+		<div
+			class="col-md-6 mt-4">
+			<!-- ******************Espace Utilisateur********************* -->
 			<section>
-				<div id="containerParam2" class="row">
-					<div id="containerParam3" class="col-8">
-						<div id="paramètre">
-							<div id="paramètreHeader" class="lp-header">
-								<span id="spanParamètreTitle">Tableau de bord
-								</span>
-							</div>
-							<!-- Paramètre compte -->
-							<div id="paramètreCompte" class="settings-button slide-in-out ts-500 account-s active">
-								<div id="paramètreCompteHeadTitle" class="head-title">
-									<i id="iconChevronCompte" class="bi bi-chevron-right"></i>
-									<i class="far fa-newspaper" style="color:white"></i>
-									<a id="spanCompte">Actualités</a>
-								</div>
-								<div id="subMenuCompte" class="sub-menu slide-item">
-									<div id="tabProfil" class="sub-title" data-scrollto="profile-form">
-										<a href="{{ path('category_news_new') }}">Créer catégorie</a>
-									</div>
-									<div id="tabPréférence" class="sub-title" data-scrollto="preferences">
-										<a href="{{ path('category_news_index') }}">Liste catégorie</a>
-									</div>
-									<div id="tabPréférence" class="sub-title" data-scrollto="preferences">
-										<a href="{{ path('actuality_news_new') }}">Créer actualité</a>
-
-									</div>
-									<div id="tabPréférence" class="sub-title" data-scrollto="preferences">
-										<a href="{{ path('actuality_news_index') }}">Liste actualité</a>
-									</div>
-								</div>
-							</div>
-							<!-- Paramètre notification -->
-							<div id="paramètreNotif" class="settings-button slide-in-out ts-500 notifications closed">
-								<div id="paramètreNotifHeadTitle" class="head-title">
-									<i id="iconChevronNotif" class="bi bi-chevron-right"></i>
-									<i class="fas fa-rss" style="color:white"></i>
-								</i>
-								<a id="spanNofif">Forum</a>
-							</div>
-							<div id="subMenuNotif" class="sub-menu slide-item">
-								<div id="tabNotifAcc" class="sub-title" data-scrollto="account-notification">
-									<a href="{{ path('category_topic_new') }}">Créer catégorie</a>
-								</div>
-								<div id="tabNotifEmail" class="sub-title" data-scrollto="email-notification">
-									<a href="{{ path('category_topic_index') }}">Liste catégorie</a>
-								</div>
-								<div id="tabNotifEmail" class="sub-title" data-scrollto="email-notification">
-									<a href="{{ path('topic_new') }}">Créer topic</a>
-								</div>
-								<div id="tabNotifEmail" class="sub-title" data-scrollto="email-notification">
-									<a href="{{ path('topic_index') }}">Liste topic</a>
-								</div>
-							</div>
-						</div>
-						<!-- Paramètre sécurité -->
-						<div id="paramèteSécurité" class="settings-button slide-in-out ts-500 security closed">
-							<div id="paramètreSécuritéHeadTitle" class="head-title">
-								<i id="iconChevronSécurité" class="bi bi-chevron-down"></i>
-								<i class="fas fa-video" style="color:white"></i>
-								<a id="spanSécurité">Vidéo</a>
-							</div>
-							<div id="subMenuSécurité" class="sub-menu slide-item">
-								<div id="tabChangePass" class="sub-title" data-scrollto="change-password">
-									<a href="{{ path('category_video_new') }}">Créer catégorie</a>
-								</div>
-								<div id="tabChangeEmail" class="sub-title acc-setting-menu-change-em" data-scrollto="change-email">
-									<a href="{{ path('category_video_index') }}">Liste catégorie</a>
-								</div>
-								<div id="tabChangePass" class="sub-title" data-scrollto="change-password">
-									<a href="{{ path('video_new') }}">Créer vidéo</a>
-								</div>
-								<div id="tabChangePass" class="sub-title" data-scrollto="change-password">
-									<a href="{{ path('video_index') }}">Liste vidéo</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div><br>
-			<div class="col-xs-6 col-md-6"></div><br>
-		</section>
-	</div>
-	<div class="col-md-6 mt-4">
-		<!-- ******************Espace Utilisateur********************* -->
-		<section>
-			<div class="row">
-				<div class="col-12">
-					<div
-						id="accProfil" class="col-12">
-						<!-- boîte gauche 1 profil -->
-						<div id="accProfilSettingleft" class="settings-left-block">
-							<h1 id="accTitleTxtleft1" class="title-txt">Liste catégorie</h1>
-						</div>
-						<!-- boîte droite 1 -->
+				<div class="row">
+					<div class="col-12">
 						<div
-							id="accProfilSettingRight" class="settings-right-block">
-							<!-- séparation 1 -->
-							<hr>
+							id="accProfil" class="col-12">
+							<!-- boîte gauche 1 profil -->
+							<div id="accProfilSettingleft" class="settings-left-block">
+								<h1 id="accTitleTxtleft1" class="title-txt">Liste catégorie</h1>
+							</div>
+							<!-- boîte droite 1 -->
+							<div
+								id="accProfilSettingRight" class="settings-right-block">
+								<!-- séparation 1 -->
+								<hr>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		<div class="container">
-			<div id="blockLeftAndRight" class="row">
-			<div  >
-				<h1>Catégorie</h1>
-				<table class="table">
-					<tbody>
-						<tr>
-							<th>Id</th>
-							<td>{{ category_news.id }}</td>
-						</tr>
-						<tr>
-							<th>Nom</th>
-							<td>{{ category_news.name }}</td>
-						</tr>
-					</tbody>
-				</table>
-				<a href="{{ path('category_news_index') }}">Retour à la liste</a>
+			</section>
+			<div class="container">
+				<div id="blockLeftAndRight" class="row">
+					<div>
+						<h1>Catégorie</h1>
+						<table class="table">
+							<tbody>
+								<tr>
+									<th>Id</th>
+									<td>{{ category_news.id }}</td>
+								</tr>
+								<tr>
+									<th>Nom</th>
+									<td>{{ category_news.name }}</td>
+								</tr>
+							</tbody>
+						</table>
+						<a href="{{ path('category_news_index') }}">Retour à la liste</a>
 
-				<a href="{{ path('category_news_edit', {'id': category_news.id}) }}">Modifier</a><br><br>
-				<div>
-					{{ include('category_news/_delete_form.html.twig') }}
+						<a href="{{ path('category_news_edit', {'id': category_news.id}) }}">Modifier</a><br><br>
+						<div>
+							{{ include('category_news/_delete_form.html.twig') }}
+						</div>
+						<br>
+					</div>
 				</div>
-				<br>
 			</div>
-		</div>
 		</div>
 	</div>
-</div>
 {% endblock %}
 {% block footer %}
 	<footer class="text-center bg-light py-6 mt-4">
