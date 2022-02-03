@@ -15,17 +15,18 @@
 	<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/indentification.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/font.css') }}">
-	
+	<link rel="stylesheet" href="{{ asset('css/page-forum-edit.css') }}">
+
 {% endblock %}
 
-{% block title %}Edit ActualityNews
+{% block title %}Modifier Topic
 {% endblock %}
 
 {% block body %}
-	<div class="container my-4">
+	<div id="topicEditContainer" class="container my-4">
 		<div id="blockLeftAndRight" class="row">
 			<div id="signUp" class="col-md-6 mt-4">
-				<h1>Modifier Actualité</h1>
+				<h1>Modifier Topic</h1>
 
 				{{ include('topic/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 				<br>
@@ -41,9 +42,10 @@
 	</div>
 {% endblock %}
 {% block footer %}
-	<footer class="text-center bg-light py-6 mt-4">
-		<div>
-			<img src="{{ asset('logoMugamax/logo_small_2.png') }}" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2">
-		</img>&copy; Mugamax - 2021 - All Right Reserved
-	</div>
-</footer>{% endblock %}
+	<footer class="text-center py-6 mt-4">
+			<div>
+				<img src="{{ asset('logoMugamax/logo_small_2.png') }}" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2">
+				</img>&copy; Mugamax - 2021 - All Right Reserved
+			</div>
+	</footer>
+{% endblock %}

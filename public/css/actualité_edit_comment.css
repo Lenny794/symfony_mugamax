@@ -1,0 +1,99 @@
+:root{
+    --primary: #35416d;
+    --secondary: #1e90ff;
+    --success: #ee2128;
+    --siteText: #eeeeee;
+    --background: #232728;
+    --background2: #3c3c3c;
+    --block:#262f39;
+    --block2:#23292f;
+    --block-border:#3f4b57;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    color: var(--siteText1);
+}
+footer{
+    color: var(--siteText1);  
+}
+.list-group-item:last-child {
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+    top: 1rem;
+}
+@media only screen and (max-width: 1440px) and (min-width : 768px) {
+    .list-group-item:last-child {     
+        top: 1rem;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .list-group-item:last-child {     
+        top: 1rem;
+    }
+}
+.form-label {
+    margin-bottom: .5rem;
+    color: var(--siteText1);
+}
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    margin-top: -7px;
+}
+@media only screen and (max-width: 767px){
+    .row > *  {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * .0);
+        padding-left: calc(var(--bs-gutter-x) * .0);
+        margin-top: var(--bs-gutter-y);
+    }  
+}
+
+#card-header-comment
+{
+    
+}
+#deleteCommentButton
+{
+    font-size: 1rem;
+    background-color: #d03333;
+    border-left-width: 1.5px !important;
+    border-top-width: 1.5px !important;
+    border-bottom-width: 1.5px !important;
+    border-right-width: 1.5px !important;
+    border: medium solid;
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+}
+#deleteCommentButton:hover
+{
+    font-size: 1rem;
+    background-color: #ad2d2d;
+    border-color: rgb(255, 255, 255);
+}
+
+#editCommentButton
+{
+    font-size: 1rem;
+    background-color: rgb(3, 104, 255);
+    border-left-width: 1.5px !important;
+    border-top-width: 1.5px !important;
+    border-bottom-width: 1.5px !important;
+    border-right-width: 1.5px !important;
+    border: medium solid;
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+}
+#editCommentButton:hover
+{
+    font-size: 1rem;
+    background-color: rgb(6, 86, 207);
+    border-color: rgb(255, 255, 255);
+}

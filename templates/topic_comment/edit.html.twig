@@ -31,7 +31,7 @@
 				{{ include('topic_comment/_delete_form.html.twig') }}
 				<br>
 				<div>
-					<a href="{{ path('topic_show',{'id': topicComment.id} ) }}">Retour à la liste</a>
+					<a href="{{ path('topic_show',{'id': returnTopic} ) }}">Retour à la liste</a>
 				</div>
 				<br>
 			</div>
@@ -39,7 +39,7 @@
 	</div>
 {% endblock %}
 {% block footer %}
-	<footer class="text-center bg-light py-6 mt-4">
+	<footer class="text-center py-6 mt-4">
 		<div>
 			<img src="{{ asset('logoMugamax/logo_small_2.png') }}" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2">
 		</img>&copy; Mugamax - 2021 - All Right Reserved

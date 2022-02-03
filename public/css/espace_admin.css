@@ -34,7 +34,7 @@ body{
     background-color: rgb(31, 34, 35);
     margin-left: 1rem;
     margin-right: 1rem;
-    background: url(../Medias/charlota-blunarova-hmzKFGDeOV4-unsplash.jpg) center no-repeat;
+    background: url(../Medias/diego-ph-j_Bf6WSkT4w-unsplash.jpg) center no-repeat;
     background-size: cover;
     background-position-y: -11rem;
     background-size: 90rem 104rem;
@@ -59,22 +59,22 @@ body{
   }
   @media only screen and (max-width: 767px) and (min-width : 737px) {
     body {     
-        background: url(../Medias/charlota-blunarova-hmzKFGDeOV4-unsplash-phone.jpg) center no-repeat;
-        background-position-y: 7rem;
+        background: url(../Medias/diego-ph-j_Bf6WSkT4w-unsplash-phone.jpg) center no-repeat;
+        background-position-y: 0rem;
         background-size: 70rem 226rem;      
     }
   }
   @media only screen and (max-width: 736px) and (min-width : 468px)  {
     body {     
-      background: url(../Medias/charlota-blunarova-hmzKFGDeOV4-unsplash-phone.jpg) center no-repeat;
-      background-position-y: 7rem;
+      background: url(../Medias/diego-ph-j_Bf6WSkT4w-unsplash-phone.jpg) center no-repeat;
+      background-position-y: 0rem;
       background-size: 70rem 262rem;   
     }
   }
   @media only screen and (max-width: 467px)  {
     body {     
-      background: url(../Medias/charlota-blunarova-hmzKFGDeOV4-unsplash-phone.jpg) center no-repeat;
-      background-position-y: 6rem;
+      background: url(../Medias/diego-ph-j_Bf6WSkT4w-unsplash-phone.jpg) center no-repeat;
+      background-position-y: 0rem;
       background-size: 52rem 252rem; 
     }
   }

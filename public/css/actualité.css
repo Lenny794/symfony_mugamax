@@ -25,21 +25,21 @@ body{
     background-color: rgb(31, 34, 35);
     margin-left: 1rem;
     margin-right: 1rem;
-    background: url(../Medias/charlota-blunarova-hmzKFGDeOV4-unsplash.jpg) center no-repeat;
+    background: url(../Medias/diego-ph-j_Bf6WSkT4w-unsplash.jpg) center no-repeat;
     background-size: cover;
     background-position-y: -11rem;
-    background-size: 90rem 104rem;
+    background-size: 90rem 145rem;
 }
   @media only screen and (max-width: 1440px) and (min-width : 1168px) {
     body {     
       background-position-y: -11rem;
-      background-size: 90rem 124rem;       
+      background-size: 90rem 145rem;      
     }
   }
   @media only screen and (max-width: 1167px) and (min-width : 992px) {
     body {     
       background-position-y: -11rem;
-      background-size: 70rem 120rem;       
+      background-size: 90rem 145rem;       
     }
   }
   @media only screen and (max-width: 991px) and (min-width : 768px) {
@@ -50,22 +50,22 @@ body{
   }
   @media only screen and (max-width: 767px) and (min-width : 737px) {
     body {     
-        background: url(../Medias/charlota-blunarova-hmzKFGDeOV4-unsplash-phone.jpg) center no-repeat;
-        background-position-y: 7rem;
+        background: url(../Medias/diego-ph-j_Bf6WSkT4w-unsplash-phone.jpg) center no-repeat;
+        background-position-y: 0rem;
         background-size: 70rem 226rem;      
     }
   }
   @media only screen and (max-width: 736px) and (min-width : 468px)  {
     body {     
-      background: url(../Medias/charlota-blunarova-hmzKFGDeOV4-unsplash-phone.jpg) center no-repeat;
-      background-position-y: 7rem;
+      background: url(../Medias/diego-ph-j_Bf6WSkT4w-unsplash-phone.jpg) center no-repeat;
+      background-position-y: 0rem;
       background-size: 70rem 262rem;   
     }
   }
   @media only screen and (max-width: 467px)  {
     body {     
-      background: url(../Medias/charlota-blunarova-hmzKFGDeOV4-unsplash-phone.jpg) center no-repeat;
-      background-position-y: 6rem;
+      background: url(../Medias/diego-ph-j_Bf6WSkT4w-unsplash-phone.jpg) center no-repeat;
+      background-position-y: 0rem;
       background-size: 52rem 252rem; 
     }
   }
@@ -134,9 +134,9 @@ p{
 /* Bannière Actualité en haut de page */
 .txtMyactu{
     color: var(--siteText);
-    font-size: 12px;
-    margin-left: 1px;
+    font-size: 95%;
     margin-top: 12px;
+    text-align: left;
 }
 #myActu{
     margin-left: 5rem;
@@ -163,6 +163,12 @@ p{
         margin-left: 1rem;
         margin-right: 1rem;
     }  
+}
+
+#myActu5block
+{
+    background: #00000047;
+    border-radius: 1.5rem;
 }
 
 .bg-light{

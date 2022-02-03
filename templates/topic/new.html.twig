@@ -15,12 +15,14 @@
 	<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/indentification.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/font.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/page-forum-edit.css') }}">
 {% endblock %}
 
-{% block title %}Nouveau Topic{% endblock %}
+{% block title %}Nouveau Topic
+{% endblock %}
 
 {% block body %}
-	<div class="container my-4">
+	<div id="topicNewContainer" class="container my-4">
 		<div id="blockLeftAndRight" class="row">
 			<div id="signUp" class="col-md-6 mt-4">
 				<h1>Créer un topic</h1>
@@ -35,7 +37,7 @@
 	</div>
 {% endblock %}
 {% block footer %}
-	<footer class="text-center bg-light py-6 mt-4">
+	<footer class="text-center py-6 mt-4">
 		<div>
 			<img src="{{ asset('logoMugamax/logo_small_2.png') }}" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2">
 		</img>&copy; Mugamax - 2021 - All Right Reserved

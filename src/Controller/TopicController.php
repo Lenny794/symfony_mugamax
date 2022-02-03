@@ -107,6 +107,7 @@ class TopicController extends AbstractController
         return $this->renderForm('topic_comment/edit.html.twig', [
             'topicComment' => ['id' => $topicComment->getId()],
             'form' => $form,
+            "returnTopic" => $topicComment->getTopic()->getId()
         ]);
     }
     
@@ -135,7 +136,7 @@ class TopicController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('topic_page', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('topic_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('topic/edit.html.twig', [
@@ -145,7 +146,7 @@ class TopicController extends AbstractController
     }
 
     /**
-     * @Route("/forum/{id}", name="topic_delete", methods={"POST"})
+     * @Route("/forum/{id}/delete", name="topic_delete", methods={"POST"})
      */
     public function delete(Request $request, Topic $topic): Response
     {
@@ -155,6 +156,6 @@ class TopicController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('topic_page', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('topic_index', [], Response::HTTP_SEE_OTHER);
     }
 }

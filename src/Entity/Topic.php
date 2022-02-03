@@ -35,7 +35,7 @@ class Topic
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity=TopicComment::class, mappedBy="topic")
+     * @ORM\OneToMany(targetEntity=TopicComment::class, mappedBy="topic", cascade={"persist", "remove"}, orphanRemoval=true))
      */
     private $topicComments;
 

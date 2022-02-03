@@ -19,24 +19,26 @@
 	<link rel="stylesheet" href="{{ asset('css/font.css') }}">
 {% endblock %}
 
-{% block title %}Actualité | {{ actuality_news.titre }} {% endblock %}
+{% block title %}Actualité |
+	{{ actuality_news.titre }}
+{% endblock %}
 
 {% block body %}
-    <!-- ***********Barre de navigation************ -->
-    <div class="container">
-        <div class="nav-scroller py-1 mb-2">
-            <nav class="nav d-flex justify-content-between">
-                <a class="p-2 link-secondary" href="#">Playstation 4</a>
-                <a class="p-2 link-secondary" href="#">Playstation 5</a>
-                <a class="p-2 link-secondary" href="#">Xbox one</a>
-                <a class="p-2 link-secondary" href="#">Xbox Serie X</a>
-                <a class="p-2 link-secondary" href="#">Pc</a>
-                <a class="p-2 link-secondary" href="#">Nintendo Switch</a>
-                <a class="p-2 link-secondary" href="#">ios</a>
-                <a class="p-2 link-secondary" href="#">Android</a>
-            </nav>
-        </div>
-    </div>
+	<!-- ***********Barre de navigation************ -->
+	<div class="container">
+		<div class="nav-scroller py-1 mb-2">
+			<nav class="nav d-flex justify-content-between">
+				<a class="p-2 link-secondary" href="#">Playstation 4</a>
+				<a class="p-2 link-secondary" href="#">Playstation 5</a>
+				<a class="p-2 link-secondary" href="#">Xbox one</a>
+				<a class="p-2 link-secondary" href="#">Xbox Serie X</a>
+				<a class="p-2 link-secondary" href="#">Pc</a>
+				<a class="p-2 link-secondary" href="#">Nintendo Switch</a>
+				<a class="p-2 link-secondary" href="#">ios</a>
+				<a class="p-2 link-secondary" href="#">Android</a>
+			</nav>
+		</div>
+	</div>
 	<!-- *****************Partie Inférieure*************** -->
 	<div class="col-md-6">
 		<div id="mondeBlock" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -52,7 +54,7 @@
 		</div>
 	</div>
 	<div id="myActu5" class="row g-5">
-		<div class="col-md-8">
+		<div id="myActu5block" class="col-md-8">
 			<h2 class="txtMyactu blog-post-meta">
 				<i>Auteur :
 				</i>
@@ -96,10 +98,11 @@
 					<h5 style="margin-left: 10px;">Les commentaires ({{ actuality_news.actualityComments("id") | length}})</h5>
 				</div>
 				{% if actuality_news.actualityComments | length > 0 %}
-					{% for actualityComment in actuality_news.actualityComments %}        
+					{% for actualityComment in actuality_news.actualityComments %}
 						<div class="container">
 							<section class="content">
-								<div class="row">
+								<div
+									class="row">
 									<!-- Naviguer -->
 									<div class="col-md-3">
 										<div class="grid support">
@@ -115,7 +118,7 @@
 													</a>
 												{% endif %}
 												<hr>
-												
+
 												<a style="color: var(--siteText1)">Pays :
 												</a>
 												{{ actualityComment.user.country }}
@@ -133,14 +136,14 @@
 														<ul id="étiquetteBlockRight" class="list-group fa-padding">
 															<li class="list-group-item" data-toggle="modal" data-target="#issue">
 																<div class="media">
-																<div class="card-header">
-																<a>Commenter le :
-																	{{ actualityComment.createdAt | date('d-m-Y H:i:s') }}
-																</a>
-																{% if app.user is same as actualityComment.user %}
-																	<a class="btn btn-primary" href="{{ path('actuality_comment_edit',{'id':actualityComment.id}) }}">Modifier</a>
-																{% endif %}
-																</div>
+																	<div class="card-header">
+																		<a>Commenter le :
+																			{{ actualityComment.createdAt | date('d-m-Y H:i:s') }}
+																		</a>
+																		{% if app.user is same as actualityComment.user %}
+																			<a class="btn btn-primary" href="{{ path('actuality_comment_edit',{'id':actualityComment.id}) }}">Modifier</a>
+																		{% endif %}
+																	</div>
 																	<div class="media-body">
 																		{{ actualityComment.content }}
 																		<br>
@@ -158,16 +161,16 @@
 							</section>
 						</div>
 					{% endfor %}
-					{% else %}
-						<div class="container">
-							<div id="blockRight" class="col-md-4">
-								<div class="grid support-content" style="text-align: center;">
-									<div class="grid-body">
-										<p>Il n'y pas encore de commentaire.</p>
-									</div>
+				{% else %}
+					<div class="container">
+						<div id="blockRight" class="col-md-4">
+							<div class="grid support-content" style="text-align: center;">
+								<div class="grid-body">
+									<p>Il n'y pas encore de commentaire.</p>
 								</div>
 							</div>
 						</div>
+					</div>
 				{% endif %}
 			</div>
 		</div>
@@ -175,7 +178,10 @@
 		<div class="col-md-4">
 			<div class="position-sticky" style="top: 2rem;">
 				<div id="à-ProposBlock" class="p-4 mb-3 bg-light rounded">
-					<h4 class="fst-italic"><a href="{{ path('contact') }}"> Nous contacter</a></h4>
+					<h4 class="fst-italic">
+						<a href="{{ path('contact') }}">
+							Nous contacter</a>
+					</h4>
 					<p class="txtMyactu mb-0">
 						Contacter le Support Mugamax. Vous avez besoin d'une assistance par mail ? Nous vous fournirons l'aide dont vous avez besoin.
 					</p>
@@ -233,10 +239,9 @@
 	<i id="UptoPage" onclick="topFunction()" class="bi bi-arrow-up-square-fill"></i>
 {% endblock %}
 {% block footer %}
-	<footer class="text-center bg-light py-6 mt-4">
+	<footer class="text-center py-6 mt-4">
 		<div>
 			<img src="{{ asset('logoMugamax/logo_small_2.png') }}" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2">
 		</img>&copy; Mugamax - 2021 - All Right Reserved
 	</div>
 </footer>{% endblock %}
-

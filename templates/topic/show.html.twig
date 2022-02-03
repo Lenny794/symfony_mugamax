@@ -19,7 +19,9 @@
 {% endblock %}
 
 
-{% block title %}Forum | {{ topic.subjet }}{% endblock %}
+{% block title %}Forum |
+	{{ topic.subjet }}
+{% endblock %}
 
 {% block body %}
 	<div class="container">
@@ -92,7 +94,8 @@
 		{% for topicComment in topic.topicComments %}
 			<div class="container">
 				<section class="content">
-					<div class="row">
+					<div
+						class="row">
 						<!-- Naviguer -->
 						<div class="col-md-3">
 							<div class="grid support">
@@ -102,7 +105,7 @@
 										<a id="avatarUserForum" style="font-size: 12px;" data-bs-toggle="dropdown" aria-expanded="false">
 											<i class=""><img class="" src="{{ asset('icons/default.png') }}" alt=""/></i>
 										</a>
-										{% else %}
+									{% else %}
 										<a id="avatarUserForum" style="font-size: 12px;" data-bs-toggle="dropdown" aria-expanded="false">
 											<i class=""><img src=" {{ asset(topicComment.user.avatarUser) }}" alt=""></i>
 										</a>
@@ -146,22 +149,22 @@
 				</section>
 			</div>
 		{% endfor %}
-		{% else %}
-			<div class="container">
-				<div id="blockRight" class="col-md-4">
-					<div class="grid support-content" style="text-align: center;">
-						<div class="grid-body">
-							<p>Il n'y pas encore de commentaire.</p>
-						</div>
+	{% else %}
+		<div class="container">
+			<div id="blockRight" class="col-md-4">
+				<div class="grid support-content" style="text-align: center;">
+					<div class="grid-body">
+						<p>Il n'y pas encore de commentaire.</p>
 					</div>
 				</div>
 			</div>
+		</div>
 	{% endif %}
-			<i id="UptoPage" onclick="topFunction()" class="bi bi-arrow-up-square-fill"></i>
+	<i id="UptoPage" onclick="topFunction()" class="bi bi-arrow-up-square-fill"></i>
 
 {% endblock %}
 {% block footer %}
-	<footer class="text-center bg-light py-6 mt-4">
+	<footer class="text-center py-6 mt-4">
 		<div>
 			<img src="{{ asset('logoMugamax/logo_small_2.png') }}" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2">
 		</img>&copy; Mugamax - 2021 - All Right Reserved

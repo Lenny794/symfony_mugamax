@@ -25,8 +25,59 @@ p, strong, span{
 }
 
 body{
-    background-color: var(--background);
-} 
+    overflow-x: hidden;
+    color: var(--siteText);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: rgb(31, 34, 35);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background: url(../Medias/diego-ph-j_Bf6WSkT4w-unsplash.jpg) center no-repeat;
+    background-size: cover;
+    background-position-y: -11rem;
+    background-size: 90rem 104rem;
+}
+  @media only screen and (max-width: 1440px) and (min-width : 1168px) {
+    body {     
+      background-position-y: -11rem;
+      background-size: 90rem 124rem;       
+    }
+  }
+  @media only screen and (max-width: 1167px) and (min-width : 992px) {
+    body {     
+      background-position-y: -11rem;
+      background-size: 70rem 120rem;       
+    }
+  }
+  @media only screen and (max-width: 991px) and (min-width : 768px) {
+    body {     
+        background-position-y: -9rem;
+        background-size: 70rem 150rem;      
+    }
+  }
+  @media only screen and (max-width: 767px) and (min-width : 737px) {
+    body {     
+        background: url(../Medias/diego-ph-j_Bf6WSkT4w-unsplash-phone.jpg) center no-repeat;
+        background-position-y: 0rem;
+        background-size: 70rem 226rem;      
+    }
+  }
+  @media only screen and (max-width: 736px) and (min-width : 468px)  {
+    body {     
+      background: url(../Medias/diego-ph-j_Bf6WSkT4w-unsplash-phone.jpg) center no-repeat;
+      background-position-y: 0rem;
+      background-size: 70rem 262rem;   
+    }
+  }
+  @media only screen and (max-width: 467px)  {
+    body {     
+      background: url(../Medias/diego-ph-j_Bf6WSkT4w-unsplash-phone.jpg) center no-repeat;
+      background-position-y: 0rem;
+      background-size: 52rem 252rem; 
+    }
+  }
 
 .btn-primary{
     font-family: "Staatliches-Regular";

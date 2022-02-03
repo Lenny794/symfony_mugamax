@@ -89,7 +89,7 @@ class ActualityNewsController extends AbstractController
     }
 
     /**
-     * @Route("/actuality/{id}/edit/", name="actuality_comment_edit", methods={"GET","POST"}, requirements={"id":"\d+"})
+     * @Route("/actuality/comment/{id}/edit/", name="actuality_comment_edit", methods={"GET","POST"}, requirements={"id":"\d+"})
      */
     public function editComment(ActualityComment $actualityComment, Request $request, int $id): Response
     {
@@ -112,7 +112,8 @@ class ActualityNewsController extends AbstractController
         }
         return $this->renderForm('actuality_news/edit_comment.html.twig', [
             'actuality_news' => ['id' => $actualityComment->getId()],
-            'form' => $form
+            'form' => $form,
+            "returnActuality" => $actualityComment->getActualityNews()->getId()
         ]);
     }
 
