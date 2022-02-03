@@ -129,8 +129,50 @@
                                 </div>
                                 <!-- boîte droite 1 -->
                                 <div id="accProfilSettingRight" class="settings-right-block">
-                                    <!-- séparation 1 -->
-                                    <hr>
+                                    <div class="col-md-12">
+                                        <div class="white_shd full margin_bottom_30">
+                                            <div class="full graph_head">
+                                                <div class="heading1 margin_0">
+                                                    <h2>Liste des Utilisateurs</h2>
+                                                </div>
+                                            </div>
+                                            <div class="table_section padding_infor_info">
+                                                <div class="table-responsive">
+                                                    {% for user in user %}
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Action</th>
+                                                                    <th>Id</th>
+                                                                    <th>Roles</th>
+                                                                    <th>Prénom</th>
+                                                                    <th>Nom</th>
+                                                                    <th>Pays</th>
+                                                                    <th>Adresse mail</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <form method="post" action="{{ path('user_delete', {'id': user.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer cet utilisateur??');">
+                                                                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                                                                            <button class="btn btn-secondary">Supprimer</button>
+                                                                        </form>
+                                                                    </td>
+                                                                    <td>{{ user.id }}</td>
+                                                                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                                                                    <td>{{ user.firstname }}</td>
+                                                                    <td>{{ user.lastname }}</td>
+                                                                    <td>{{ user.country}}</td>
+                                                                    <td>{{ user.email }}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

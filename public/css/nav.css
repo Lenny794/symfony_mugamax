@@ -113,8 +113,6 @@
     }
 }
 
-
-
 /*********Onglet navigation*********/
 
 /*********Jeux*********/
@@ -558,7 +556,8 @@
 }
 #backHome{
     color: var(--siteText);
-    padding-left: 10px
+    padding-left: 10px;
+    line-height: 3rem;
 }
 #backHome:hover{
     color: var(--secondary);
@@ -675,17 +674,21 @@
 
 /******dashBoard****/
 #dashBoard{
-    color:var(--siteText);
-    font-size: 41px;
+    color: var(--siteText);
+    font-size: 34px;
     margin: auto;
+        margin-top: auto;
+        margin-left: auto;
     margin-top: auto;
     margin-left: auto;
     margin-left: auto;
     margin-left: 4px;
     margin-top: -6px;
     background: transparent;
+        background-color: transparent;
+        background-image: none;
     padding-left: 7px;
-    padding-top: 0px;
+    padding-top: 9px;
     padding-bottom: -8px;
     padding-right: 8px;
 }

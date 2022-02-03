@@ -91,26 +91,27 @@ class TopicController extends AbstractController
 
             return $this->redirectToRoute('topic_show', ['id' => $id], Response::HTTP_SEE_OTHER);
         }
+
         $form = $this->createForm(TopicCommentType::class, $topicComment);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) 
-        {
-            
+        { 
             $this->getDoctrine()->getManager()->flush();
             
             $this->addFlash('message', 'Votre commentaire a été modifier');
 
-            return $this->redirectToRoute('topic_show', ['id' => $id], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('topic_show', ['id' => $topicComment->getTopic()->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('topic_comment/edit.html.twig', [
-            'topicComment' => ['id' => $topicComment->getTopic()->getId()],
+            'topicComment' => ['id' => $topicComment->getId()],
             'form' => $form,
         ]);
     }
+    
     /**
-     * @Route("/forum/{id}/delete", name="topic_comment_delete", methods={"POST"})
+     * @Route("/forum/comment/{id}/delete", name="topic_comment_delete", methods={"POST"})
      */
     public function deleteTopicComment(Request $request, TopicComment $topicComment, int $id): Response
     {
@@ -120,7 +121,7 @@ class TopicController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('topic_show', ['id' => $id]);
+        return $this->redirectToRoute('topic_show', ['id' => $topicComment->getTopic()->getId()], Response::HTTP_SEE_OTHER);
     }
 
     /**

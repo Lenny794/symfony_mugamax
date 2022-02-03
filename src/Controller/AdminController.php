@@ -22,6 +22,7 @@ class AdminController extends AbstractController
     {
         return $this->render('admin/admin_dashboard.html.twig', [
             'users' => $userRepository->findAll(),
+            'user' => $userRepository->findAll(),
         ]);
     }
 
@@ -89,6 +90,6 @@ class AdminController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('user_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_dashboard', [], Response::HTTP_SEE_OTHER);
     }
 }

@@ -88,12 +88,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $topics;
 
     /**
-     * @ORM\OneToMany(targetEntity=TopicComment::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=TopicComment::class, mappedBy="user", cascade={"persist", "remove"}, orphanRemoval=true)))
      */
     private $topicComments;
 
     /**
-     * @ORM\OneToMany(targetEntity=ActualityComment::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=ActualityComment::class, mappedBy="user", cascade={"persist", "remove"}, orphanRemoval=true)))
      */
     private $actualityComments;
 

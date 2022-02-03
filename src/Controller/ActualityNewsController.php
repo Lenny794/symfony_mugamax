@@ -7,6 +7,7 @@ use App\Form\ActualityNewsType;
 use App\Entity\ActualityComment;
 use App\MesServices\HandleImage;
 use App\Form\ActualityCommentType;
+use App\Repository\ActualityCommentRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\ActualityNewsRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -110,7 +111,7 @@ class ActualityNewsController extends AbstractController
             return $this->redirectToRoute('actuality_news_show', ['id' => $actualityComment->getActualityNews()->getId()], Response::HTTP_SEE_OTHER);
         }
         return $this->renderForm('actuality_news/edit_comment.html.twig', [
-            'actuality_news' => ['id' => $actualityComment->getActualityNews()->getId()],
+            'actuality_news' => ['id' => $actualityComment->getId()],
             'form' => $form
         ]);
     }
@@ -145,9 +146,9 @@ class ActualityNewsController extends AbstractController
     }
 
     /**
-     * @Route("/actuality/{id}/delete", name="actuality_comment_delete", methods={"POST"})
+     * @Route("/actuality/comment/{id}/delete", name="actuality_comment_delete", methods={"POST"})
      */
-    public function deleteActualityComment(Request $request, ActualityComment $actualityComment): Response
+    public function deleteActualityComment(Request $request, ActualityComment $actualityComment, int $id): Response
     {
         if ($this->isCsrfTokenValid('delete' . $actualityComment->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -155,7 +156,7 @@ class ActualityNewsController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('actuality_comment_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('actuality_news_show', ['id' => $actualityComment->getActualityNews()->getId()], Response::HTTP_SEE_OTHER);
     }
 
     /**
