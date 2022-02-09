@@ -63,7 +63,7 @@ class UserController extends AbstractController
     }
     
     /**
-     * @Route("/{id}", name="user_delete", methods={"POST"})
+     * @Route("/profil/{id}/delete", name="user_delete", methods={"POST"})
      */
     public function delete(Request $request, User $user): Response
     {
@@ -73,7 +73,7 @@ class UserController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('user_index', [], Response::HTTP_SEE_OTHER);
     }
         
     /**
@@ -86,7 +86,7 @@ class UserController extends AbstractController
         ]);
     }
     /**
-       * @Route("/ecurity/edit", name="user_security_edit", methods={"GET","POST"})
+       * @Route("/security/edit", name="user_security_edit", methods={"GET","POST"})
        */
       public function editPasswordMail(Request $request): Response
       {

@@ -80,14 +80,21 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="user_delete", methods={"POST"})
+     * @Route("/admin/user/{id}/delete", name="user_delete", methods={"POST"})
      */
-    public function delete(Request $request, User $user): Response
+    public function deleteUser(Request $request, User $user): Response
     {
         if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();
+        }
+
+        $routeARediriger = $request->query->get('redirige');
+
+        if($routeARediriger)
+        {
+            return $this->redirectToRoute('admin_dashboard');
         }
 
         return $this->redirectToRoute('admin_dashboard', [], Response::HTTP_SEE_OTHER);
