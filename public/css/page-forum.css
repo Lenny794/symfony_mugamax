@@ -443,3 +443,9 @@ p .utilisateurTopic:hover{
     color:var(--secondary2);
     transition: .6s all;
 }
+
+#categoryLogo
+{
+    width: 25px;
+    max-width: 25px;
+}

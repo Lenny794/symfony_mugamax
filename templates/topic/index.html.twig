@@ -132,7 +132,7 @@
                                     <ul id="étiquetteBlockRight" class="list-group fa-padding">
                                         <li class="list-group-item" data-toggle="modal" data-target="#issue">
                                             <div class="media">
-                                                <img src=" {{ asset(topic.categoryTopic.imagePathUrl("id")) }}" style="contain;">
+                                                <img id="categoryLogo" src=" {{ asset(topic.categoryTopic.imagePathUrl("id")) }}" style="contain;">
                                                 <div class="media-body">
                                                     <a class="topicTitle" href="{{ path('topic_show',{'id':topic.id} ) }}"><strong>{{ topic.subjet }}</strong></a>
                                                     
