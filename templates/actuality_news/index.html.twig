@@ -66,15 +66,15 @@
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3">
                         <div class="card">
                             <div class="card-header">
-                                <img id="cardActualityHeader"class="imgCard" src=" {{ asset(actuality_news.image) }}" style="contain;" alt="">
+                                <a href="{{ path('actuality_news_show',{'id':actuality_news.id} ) }}"><img id="cardActualityHeader"class="imgCard" src=" {{ asset(actuality_news.image) }}" style="contain;" alt=""></a>
                             </div>
                             <div class="card-body text-wrap my-auto px-1 py-2">
-                                <h4> {{ actuality_news.titre }} </h4>
+                                <a id="showActu" href="{{ path('actuality_news_show',{'id':actuality_news.id} ) }}"><h4> {{ actuality_news.titre }} </h4></a>
                             </div><hr>
                             <div class="card-footer">
                                 <p class="publish"><i>Publié le : </i>{{ actuality_news.createdAt | date('d-m-Y') }} <i>par</i> {{ actuality_news.user("id") }}</p> 
                                 <div>
-                                    <a class="btn btn-primary mt-3"  href="{{ path('actuality_news_show',{'id':actuality_news.id} ) }}">Consulter</a>
+                                    {# <a class="btn btn-primary mt-3"  href="{{ path('actuality_news_show',{'id':actuality_news.id} ) }}">Consulter</a> #}
                                     {% if app.user %}
                                         {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
                                             <a class="btn btn-primary mt-3" href="{{ path('actuality_news_edit',{'id':actuality_news.id} ) }}">Modifier</a>

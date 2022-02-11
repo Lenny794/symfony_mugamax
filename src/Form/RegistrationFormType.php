@@ -26,8 +26,8 @@ class RegistrationFormType extends AbstractType
             ->add('gender', ChoiceType::class, array(
                 'label' => 'Genre',
                 'required' => false,
-                'expanded' => true,
-                'multiple' => false,
+                // 'expanded' => true,
+                // 'multiple' => false,
                 
                 'choices' => array (
                     'Homme' => 'Homme',
@@ -38,11 +38,6 @@ class RegistrationFormType extends AbstractType
             ->add('pseudo', TextType::class, [
                 'label' => 'Pseudo',
                 'required' => false,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Vous devez accepter les termes et conditions.',
-                    ]),
-                ],
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -77,27 +72,41 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('birthdate', BirthdayType::class, [
                 'label' => 'Date de naissance',
-                'required' => true,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Vous devez accepter les termes et conditions.',
-                    ]),
+                'required' => false,
+                'format' => 'dd-MM-yyyy',
+                'attr' => [
+                    'class' => 'form-control',
                 ],
+                'label_attr' => [
+                    'class' => 'col-sm-2 col-form-label'
+                ],
+                'empty_data' => array(
+                    'day' => date('1'), 'month' => date('1'), 'year' => date('2021'),  
+                ),
             ])
             ->add('country', CountryType::class, [
                 'label' => 'Pays',
-                'required' => false
-            ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'label' => 'Accepter les termes et conditions',
                 'required' => false,
-                'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Vous devez accepter les termes et conditions.',
-                    ]),
+                'preferred_choices' => ['FR'],
+                'attr' => [
+                    'class' => 'form-control',
                 ],
-            ]);
+                'label_attr' => [
+                    'class' => 'col-sm-2 col-form-label'
+                ],
+                'data' => 'FR'
+            ])
+            // ->add('agreeTerms', CheckboxType::class, [
+            //     'label' => 'Accepter les termes et conditions',
+            //     'required' => false,
+            //     'mapped' => false,
+            //     'constraints' => [
+            //         new IsTrue([
+            //             'message' => 'Vous devez accepter les termes et conditions.',
+            //         ]),
+            //     ],
+            // ])
+            ;
     }
     public function configureOptions(OptionsResolver $resolver)
     {

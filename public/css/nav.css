@@ -606,7 +606,19 @@
         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     } 
 }
-
+#searchBtn input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+#searchBtninput:placeholder-shown {
+    border: 1px solid #095484;
+  }
+  #searchBtninput {
+width: 90%;
+padding: 10px;
+margin: 5px;
+outline: none;
+}
 #buttonSearch{
     background-color: var(--secondary);
     color: var(--siteText);

@@ -228,6 +228,10 @@ body{
     border-left-width: 2.1px;
     border-left-style: solid;
 }
+#étiquetteBlockRight li
+{
+    background-color: var(--block2);
+}
 
 /* Topic */
 .list-group{
@@ -298,9 +302,7 @@ body{
     color: #111;
 }
     
-.support-content .info a:hover {
-    text-decoration: underline;
-}
+
     
 .support-content .info .fa {
     width: 1.5em;
@@ -428,11 +430,10 @@ color: var(--success3);
 }
 /* Publié par */
 p .utilisateurTopic{
-    color: var(--secondary2);
+    color: var(--siteText2);
+    text-decoration: none;
 }
-p .utilisateurTopic:hover{
-    color: var(--secondary);
-}
+
 .fa-comments{
     color: var(--siteText2);
 }

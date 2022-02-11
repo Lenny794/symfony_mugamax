@@ -88,7 +88,7 @@
 						<p>Vous devez être connecter pour ajouter un commentaire.</p>
 						<hr>
 						<a class="btn btn-link" href="{{ path('app_login') }}">Se connecter</a>
-						<hr>
+						<hr class="hrActu">
 						<a class="btn btn-primary" href="{{ path('app_register') }}">Créer un compte</a>
 					{% endif %}
 				</div>
@@ -106,7 +106,8 @@
 									<!-- Naviguer -->
 									<div class="col-md-3">
 										<div class="grid support">
-											<div id="blockLeft" class="grid-body"><hr>
+											<div id="blockLeft" class="grid-body">
+												<hr class="hrActu">
 												<h2 {% if app.user is same as actualityComment.user %} style="font-weight:bold;color:red" {% endif %}>{{ actualityComment.user.pseudo }}</h2>
 												{% if actualityComment.user.avatarUser is same as null %}
 													<a id="avatarUserForum" style="font-size: 12px;">
@@ -117,7 +118,7 @@
 														<i class=""><img style="max-width:55%" src=" {{ asset(actualityComment.user.avatarUser) }}" alt=""></i>
 													</a>
 												{% endif %}
-												<hr>
+												<hr class="hrActu">
 
 												<a style="color: var(--siteText1)">Pays :
 												</a>

@@ -176,7 +176,7 @@ p{
 }
 
 #myActuBlock{
-    background-color: var(--block2) !important;
+    background-color: #23292f9e !important;
     border-right-width: 2.1px;
     border-right-style: solid;
     border-radius: 2rem !important;
@@ -256,6 +256,17 @@ p{
     transform: scale(1.05) translateY(-2px);
     
 }
+
+#showActu
+{
+    text-decoration: none;
+    color: white;
+}
+#showActu:hover
+{
+    color: var(--secondary)
+}
+
 .text-wrap {
     white-space: normal !important;
 }
@@ -304,11 +315,11 @@ p{
 }
 
 #mondeBlock{
-    background-color: var(--block2) !important;
+    background-color: #23292f9e !important;
     border-right-width: 2.1px;
     border-right-style: solid;
     border-radius: 2rem !important;
-    border-color: var(--block-border);
+    border-color: var(--block-border) !important;
     border-bottom-width: 2.1px;
     border-bottom-style: solid;
     border-top-width: 2.1px;

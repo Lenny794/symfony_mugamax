@@ -194,6 +194,18 @@ body{
     border-left-style: solid;
     
 }
+@media only screen and (max-width: 767px) and (min-width : 468px)  {
+    #blockLeft {
+        position: relative;
+        top: 19rem;
+    }
+}
+  @media only screen and (max-width: 467px)  {
+    #blockLeft {
+        position: relative;
+        top: 19rem;
+    }
+}
 
 #blockRight{
     background-color: var(--block2);
@@ -207,8 +219,30 @@ body{
     border-top-style: solid;
     border-left-width: 2.1px;
     border-left-style: solid;  
-    margin-bottom: 33px; 
+    margin-bottom: 33px;
+    
+    flex: 0 0 auto;
+    width: 52%;
 }
+@media only screen and (max-width: 767px) and (min-width : 468px)  {
+    #blockRight {
+        flex: 0 0 auto;
+        width: 95%;
+        position: relative;
+        left: 2%;
+        top: -11rem;
+    }
+}
+  @media only screen and (max-width: 467px)  {
+    #blockRight {
+        flex: 0 0 auto;
+        width: 95%;
+        position: relative;
+        left: 2%;
+        top: -11rem;
+    }
+}
+
 #blockRight h2{
     margin-left: 20px;
 }
@@ -460,4 +494,79 @@ p .utilisateurTopic:hover{
     margin-right: -50px;
     border-radius: 1rem;
     margin-left: -6px;
+}
+
+
+#blockLeftUser {
+    padding: 15px 20px 15px 20px;
+    font-size: 0.9em;
+    line-height: 1.9em;
+    background-color: var(--block2);
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: var(--block-border);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+    
+}
+
+#blockRightUser{
+    background-color: var(--block2);
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: var(--block-border);
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;  
+    margin-bottom: 33px; 
+
+    flex: 0 0 auto;
+    width: 52%;
+}
+@media only screen and (max-width: 767px) and (min-width : 468px)  {
+    #blockRightUser {
+        flex: 0 0 auto;
+        width: 95%;
+        position: relative;
+        left: 2%;
+        top: -24px;
+    }
+  }
+  @media only screen and (max-width: 467px)  {
+    #blockRightUser {
+        flex: 0 0 auto;
+        width: 95%;
+        position: relative;
+        left: 2%;
+        top: -24px;
+    }
+  }
+
+
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
