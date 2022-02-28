@@ -104,37 +104,22 @@
                                     {{ form_start(form) }}
                                         <div id="fmContainerFluid" class="container-fluid">
                                             <div id="fmAccMainContainer" class="row">
-                                                <br>
-                                                <div id="divPseudo" class="col-xs-6 col-md-6">
-                                                    <div class="bi bi-person">Pseudo
-                                                        {{ form_row(form.pseudo, { 'attr': {'class': "span12",'placeholder': app.user.pseudo} } ) }}
-                                                    </div>
-                                                </div><br>
-
-                                                <div id="divPrénom" class="col-xs-6 col-md-6">Prénom
+                                                <div id="divAvatar" class="col-xs-6 col-md-6">
+                                                    <p class="avatarText">Avatar</p> 
                                                     <div>
-                                                        {{ form_row(form.firstname, { 'attr': {'class': "span12",'placeholder': app.user.firstname} } ) }}
+                                                        {% if app.user.avatarUser is same as null %}
+                                                            <a id="avatarUser" class="nav-link active" >
+                                                                <i class=""><img class="" src="{{ asset('icons/default.png') }}" alt=""/></i>
+                                                            </a>   
+                                                        {% else %}
+                                                            <a id="avatarUser" class="nav-link active" >
+                                                                <i class=""><img src=" {{ asset(app.user.avatarUser) }}" alt=""></i>
+                                                            </a>
+                                                        {% endif %}  
+                                                        {{ form_row(form.avatar_user) }}
                                                     </div>
                                                 </div>
-
-                                                <div id="divNom" class="col-xs-6 col-md-6">Nom
-                                                    <div>
-                                                        {{ form_row(form.lastname, { 'attr': {'class': "span12",'placeholder': app.user.lastname} } ) }}
-                                                    </div>
-                                                </div><br>
-
-                                                <div id="labelBirthay" class="col-xs-6 col-md-6" style="margin-left: -24px;">
-                                                    <i class="bi bi-calendar-date"></i>
-                                                    <div style="margin-left: 0px;padding-left: 0rem;">
-                                                        {{ form_row(form.birthdate, { 'attr': {'class': "span12",'placeholder': app.user.birthdate ? app.user.birthdate|date('d-m-Y') : '' } } ) }}
-                                                    </div>
-                                                </div><br>
-                                                <!-- **************Pays*************** -->
-                                                <div id="labelCountry" class="col-xs-6 col-md-4"><i class="fas fa-globe-americas"></i> Pays :
-                                                    <div>
-                                                        {{ form_row(form.country, { 'attr': {'class': "span12",'placeholder': app.user.country} } ) }}
-                                                    </div>
-                                                </div>
+                                               
                                                 <br>
                                                 <div class="row">
                                                     <div class="col-xs-6 col-md-6">
@@ -143,7 +128,6 @@
                                                     </div>
                                                 </div>
                                                 {{ form_end(form) }}
-                                               
                                             </div>
                                         </div>
                                     </form>

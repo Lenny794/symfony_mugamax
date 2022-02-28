@@ -3,11 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\EditPasswordType;
 use App\Form\UserType;
+use App\Form\EditMailType;
+use App\Form\EditAvatarType;
 use App\Form\EditProfilType;
+use App\Form\EditPasswordType;
 use App\MesServices\HandleAvatar;
-use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,12 +31,38 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/profil/edit", name="user_profil_edit", methods={"GET","POST"})
+     * @Route("/profil/edit/profil", name="user_profil_edit", methods={"GET","POST"})
      */
     public function editUser(Request $request,HandleAvatar $handleAvatar): Response
     {
         $user = $this->getUser();
         $form = $this->createForm(EditProfilType::class, $user);
+        $form->handleRequest($request);
+
+        $vintageImage = $user->getAvatarUser();
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            
+            $entityManager->flush();
+            
+            $this->addFlash('message', 'Profil mis à jour');
+            return $this->redirectToRoute('user_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('user/edit_index.html.twig', [
+           'user' => $user,
+           'form' => $form,
+        ]);
+    }
+
+    /**
+     * @Route("/profil/edit/avatar", name="user_avatar_edit", methods={"GET","POST"})
+     */
+    public function editAvatar(Request $request,HandleAvatar $handleAvatar): Response
+    {
+        $user = $this->getUser();
+        $form = $this->createForm(EditAvatarType::class, $user);
         $form->handleRequest($request);
 
         $vintageImage = $user->getAvatarUser();
@@ -56,7 +83,7 @@ class UserController extends AbstractController
             return $this->redirectToRoute('user_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('user/edit_index.html.twig', [
+        return $this->renderForm('user/edit_avatar.html.twig', [
            'user' => $user,
            'form' => $form,
         ]);
@@ -85,10 +112,11 @@ class UserController extends AbstractController
             
         ]);
     }
+    
     /**
-       * @Route("/security/edit", name="user_security_edit", methods={"GET","POST"})
+       * @Route("/security/edit/password", name="user_password_edit", methods={"GET","POST"})
        */
-      public function editPasswordMail(Request $request): Response
+      public function editPassword(Request $request): Response
       {
         $user = $this->getUser();
         $form = $this->createForm(EditPasswordType::class, $user);
@@ -103,9 +131,33 @@ class UserController extends AbstractController
             return $this->redirectToRoute('user_security', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('user/edit_pass_email.html.twig', [
+        return $this->renderForm('user/edit_password.html.twig', [
             'user' => $user,
             'form' => $form,
         ]);
-      }
+    }
+    /**
+       * @Route("/security/edit/mail", name="user_mail_edit", methods={"GET","POST"})
+       */
+      public function editMail(Request $request): Response
+      {
+        $user = $this->getUser();
+        $form = $this->createForm(EditMailType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            
+            $entityManager->flush();
+            
+            $this->addFlash('message', 'Profil mis à jour');
+            return $this->redirectToRoute('user_security', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('user/edit_mail.html.twig', [
+            'user' => $user,
+            'form' => $form,
+        ]);
+    }
+
 }

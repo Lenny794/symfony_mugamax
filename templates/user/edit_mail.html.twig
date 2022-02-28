@@ -83,11 +83,6 @@
                                                 id="spanSécurité" href="{{ path('user_security') }}">Sécurité</a>
                                         </div>
                                         <div id="subMenuSécurité" class="sub-menu slide-item">
-                                            <div id="tabChangePass" class="sub-title" data-scrollto="change-password"><a
-                                                    href="#accTitleTxtleft1">Changer le
-                                                    mot
-                                                    de passe</a>
-                                            </div>
                                             <div id="tabChangeEmail" class="sub-title acc-setting-menu-change-em"
                                                 data-scrollto="change-email"><a href="#accTitleTxtleft2">Changer
                                                     l’adresse courriel</a>
@@ -112,65 +107,39 @@
                                 <div id="accProfil" class="col-12">
                                     <!-- boîte Changer mot de Passe -->
                                     {{ form_start(form) }}
-                                    
-                                    <div id="accProfilSettingleft" class="settings-left-block">
-                                        <div id="accTitleTxtleft1" class="title-txt">Changer le mot de passe</div>
-                                    </div>
                                     <!-- boîte droite 1 -->
                                     <div id="accProfilSettingRight" class="settings-right-block">
-                                        <!-- séparation 1 -->
-                                        <hr>
                                         <form action="r" method="post" accept-charset="utf-8" class="form" role="form">
-                                            <div id="fmContainerFluid" class="container-fluid">
-                                                <div id="fmAccMainContainer" class="row">
-                                                    <div id="divConfirmPass" class="col-xs-6 col-md-5">
-                                                        <i class="fas fa-unlock-alt"></i>
-                                                        Nouveaux mot de Passe
-                                                        {{ form_row(form.plainPassword) }}
-                                                    </div>
-                                                    <div id="divConfirmPass" class="col-xs-6 col-md-5">
-                                                        Confirmer mot de passe
-                                                        <input type="password" name="confirm_password" value=""
-                                                            class="form-control input-lg"/>
-                                                    </div><br>
-                                                    <div class="maDiv1"></div>
-                                                    <!-- **************Changer Adresse E-mail*************** -->
-
-                                                    <!-- boîte gauche 2 Notification -->
-                                                    <div id="accProfilSettingleft" class="settings-left-block">
-                                                        <div id="accTitleTxtleft2" class="title-txt">Changer
-                                                            l’adresse courriel
-                                                        </div>
-                                                    </div>
-                                                    <!-- boîte droite 2 -->
-                                                    <div id="accProfilSettingRight" class="settings-right-block">
-                                                        <!-- séparation 2 -->
-                                                        <hr>
-                                                        <form action="r" method="post" accept-charset="utf-8"
-                                                            class="form" role="form">
-                                                            <div class="container-fluid">
-                                                                <div class="row">
-                                                                    <div class="col-xs-6 col-md-8">
-                                                                        <i class="fas fa-envelope"></i>
-                                                                        E-mail : 
-                                                                        {{ form_row(form.email, { 'attr': {'class': "span12",'placeholder': app.user.email} } ) }}<br>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <br>
+                                            <!-- **************Changer Adresse E-mail*************** -->
+                                            <!-- boîte gauche 2 Notification -->
+                                            <div id="accProfilSettingleft" class="settings-left-block">
+                                                <div id="accTitleTxtleft2" class="title-txt">Changer
+                                                    l’adresse courriel
+                                                </div>
+                                            </div>
+                                            <!-- boîte droite 2 -->
+                                            <div id="accProfilSettingRight" class="settings-right-block">
+                                                <!-- séparation 2 -->
+                                                <hr>
+                                                <div class="container-fluid">
                                                     <div class="row">
-                                                        <div class="col-xs-6 col-md-6">
-                                                            {{ form_row(form.Valider) }}
-                                                            <div class="maDiv1"></div>
+                                                        <div class="col-xs-6 col-md-8">
+                                                            <i class="fas fa-envelope"></i>
+                                                            E-mail : 
+                                                            {{ form_row(form.email, { 'attr': {'class': "span12",'placeholder': app.user.email} } ) }}<br>
                                                         </div>
                                                     </div>
-                                                    {{ form_end(form) }}
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-xs-6 col-md-6">
+                                                    {{ form_row(form.Valider) }}
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
+                                    {{ form_end(form) }}
                                 </div>
                             </div>
                         </div>

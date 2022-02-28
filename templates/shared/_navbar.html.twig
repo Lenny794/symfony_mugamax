@@ -1,7 +1,7 @@
 <div class="container flex-column flex-md-row justify-content-center">
 	<div id="navBlock" class="container-fluid">
 		<a href="{{ path('home') }}">
-			<img class="logo-menu" src="{{ asset('logoMugamax/logo_small_2.png') }}" alt=""/>
+			<img class="logo-menu" src="{{ asset('logoMugamax/logo_small_2.png') }}" alt="logo Mugamax.fr"/>
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -15,7 +15,6 @@
 							<li>
 								<a id="navJ1Ps4" class="nav-link active" aria-current="page" href="{{ path('public_category_detail',{'id': c.id}) }}">{{ c.name }}</a>
 							</li>
-							
 						{% endfor %}
 					</ul>
 				</li>
@@ -28,31 +27,31 @@
 				<li>
 					<a id="nav-forums" class="nav-link active" href="{{ path('topic_index') }}">Forums</a>
 				</li>
+				<li>
+					<a id="nav-aboutUs" class="nav-link active" href="{{ path('about_us') }}">À-propos</a>
+				</li>
 				{% if app.user %}
-					{% if app.user.roles[0] is same as "ROLE_ADMIN" %}
-						<li class="nav-item">
-							
-						</li>
-					{% endif %}
+				{% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+				<li class="nav-item"></li>
+				{% endif %}
 				{% else %}
-					<li id="navLiConnect" class="nav-item dropdown">
-						<a id="nav-connect" style="font-size: 12px;" class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Bienvenue, identifiez-vous<br><strong style="font-size: 14px;">Connecter-vous</strong>
-						</a>
+				<li id="navLiConnect" class="nav-item dropdown">
+					<a id="nav-connect" style="font-size: 12px;" class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Bienvenue, identifiez-vous<br><strong style="font-size: 14px;">Connecter-vous</strong>
+					</a>
 
-						<ul id="identifMyAccount" class="txtMyactu dropdown-menu active" aria-labelledby="navbarDropdown">
-							<li>
-								<a id="identifMyAccountButton" class="btn btn-primary" href="{{ path('app_login') }}">Identifiez-vous</a>
-							</li>
-						<div>
-							Nouvel utilisateur?
-							<a href="{{ path('app_register') }}">créer un compte</a>
-						</div>
-					</li>
-				</ul>
-			</li>
-		{% endif %}
-		{% if app.user %}
+					<ul id="identifMyAccount" class="txtMyactu dropdown-menu active" aria-labelledby="navbarDropdown">
+						<li>
+							<a id="identifMyAccountButton" class="btn btn-primary" href="{{ path('app_login') }}">Identifiez-vous</a>
+						</li>
+					<div>
+						Nouvel utilisateur?
+						<a href="{{ path('app_register') }}">créer un compte</a>
+					</div>
+				</li>
+			</ul>
+			{% endif %}
+			{% if app.user %}
 			<li id="userOnglet" class="nav-item dropdown">
 				{% if app.user.avatarUser is same as null %}
 					<a id="avatarUserNav" idstyle="font-size: 12px;" class="nav-link dropdown-toggle active" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class=""><img class="" src="{{ asset('icons/default.png') }}" alt=""/></i></a>
@@ -76,7 +75,8 @@
 					</li>
 				</ul>
 			</li>
-		{% endif %}
+			{% endif %}
+		<div>
 	</ul>
 	<form id="searchBtn" class="d-flex">
 		{# <a id="getBrightness" class="nav-link active" href="#">

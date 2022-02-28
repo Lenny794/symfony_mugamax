@@ -1,0 +1,123 @@
+:root{
+    --primary: #35416d;
+    --secondary: #1e90ff;
+    --secondary2:#0073b7;
+    --success: #d1383d;
+    --success2: #fa9c66;
+    --success3: #517379;
+    --sucesss4: #7c34b8;
+    --success5: #93d34a;
+    --success6: #517ad3;
+    --siteText1: #eeeeee;
+    --siteText2: #d1d1d1;
+    --background: #232728;
+    --background2: #3c3c3c;
+    --nav-block:#262f39;
+    --nav-block2:#23292f;
+    --nav-block-border:#3f4b57;
+  }
+  .row > * {
+
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+  
+  }
+  
+  @media only screen and (max-width: 767px){
+    .row > *  {
+      padding-right: calc(var(--bs-gutter-x) * .0);
+      padding-left: calc(var(--bs-gutter-x) * .0);
+      margin-bottom: 0px;
+      margin-top: 7%;
+    }  
+  }
+body{
+    background: url(../Medias/wes-hicks-QTVrSOYXazc-unsplash.jpg) center repeat;
+    background-size: cover;
+    background-position-y: -11rem;
+    background-size: 90rem 104rem;
+  }
+  @media only screen and (max-width: 1440px) and (min-width : 1168px) {
+    body {     
+      background-position-y: -11rem;
+      background-size: 90rem 104rem;       
+    }
+  }
+  @media only screen and (max-width: 1167px) and (min-width : 737px) {
+    body {     
+      background-position-y: -11rem;
+      background-size: 70rem 104rem;       
+    }
+  }
+  @media only screen and (max-width: 736px) and (min-width : 468px)  {
+    body {     
+      background: url(../Medias/wes-hicks-QTVrSOYXazc-unsplash.jpg) center no-repeat;
+      background-position-y: -14rem;
+      background-size: 46rem 128rem;     
+    }
+  }
+  @media only screen and (max-width: 467px)  {
+    body {     
+      background: url(../Medias/wes-hicks-QTVrSOYXazc-unsplash.jpg) center no-repeat;
+      background-position-y: -2rem;
+      background-size: 46rem 127rem;  
+    }
+  }
+.social-link 
+{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+  }
+  
+  .social-link:hover,
+  .social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+}
+
+.section-heading
+{
+  font-size: 55px;
+}
+@media only screen and (max-width: 575px)  {
+  .section-heading
+  {
+    font-size: 45px;
+    position: relative;
+    left: 3rem;
+  }
+}
+
+@media only screen and (max-width: 575px)  {
+  .fa-leaf
+  {
+    position: relative;
+    left: 2rem;
+  }
+}
+
+@media only screen and (max-width: 575px)  {
+  .titleLogo2
+  {
+    position: relative;
+    left: 4rem;
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 575px)  {
+  .titleAboutUs
+  {
+    position: relative;
+    left: 2rem;
+  }
+}

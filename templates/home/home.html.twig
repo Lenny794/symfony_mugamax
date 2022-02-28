@@ -113,7 +113,7 @@
                               <p class="mt30"><a href="{{ path('actuality_news_show',{'id':a.id} ) }}" class="btn btn-primary btn-red page-scroll">Voir +</a></p>
                           </div>
                           <div >
-                            <img id="cardShowHome" src=" {{ asset(a.image) }}" style="contain;" alt="">
+                            <img id="cardShowHome" src=" {{ asset(a.image) }}" style="contain;" alt="{{ a.titre }}">
                           </div>
                       </div>
                   {% endfor %}

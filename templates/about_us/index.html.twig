@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  {#{{ encore_entry_link_tags('app') }}#}
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" ntegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Icon Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  
+  <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/aboutUs.css') }}">
+    
+{% endblock %}
+
+
+{% block title %}Qui sommes-nous{% endblock %}
+
+{% block body %}
+
+<div class="bg-light">
+  <div class="container py-5">
+    <div class="row h-100 align-items-center py-5">
+      <div class="col-lg-6">
+        <h1 class="section-heading"><a href="{{ path('contact') }}">Qui <span class="theme-accent-color">sommes-nous</span></a></h1>
+        <p class="lead text-muted mb-0">Mugamax depuis 2021</p>
+        <p class="lead text-muted">Vitry-sur-Seine 94400, Ile-de-France</p>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block"><img src="{{ asset('logoMugamax/logo_small_2.png') }}" alt="" class="img-fluid"></div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white py-5">
+  <div class="container py-5">
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+        <h2 class="font-weight-light titleAboutUs">Mugamax</h2>
+        <p class="font-italic text-muted mb-4">Notre objectif est, d’accompagner les Utilisateurs du site pour permettre un bon environnement social.
+        Mugamax est un lieu de culture, d’échanges et d’information, notre action est dédiée aux évolutions du monde des technologies vidéoludiques, à ses enjeux et à ses pratiques, en se fondant sur une conviction : la communication joue un rôle clé dans la transformation et la performance économique, sociétale et environnementale de l’entreprise.</p>
+      </div>
+      <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="{{ asset('Medias/icons8-manette-100.png') }}" alt="" class="img-fluid mb-4 mb-lg-0"></div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-lg-5 px-5 mx-auto"><img class="titleLogo2" src="{{ asset('Medias/icons8-playstation-buttons-96.png') }}" alt="" class="img-fluid mb-4 mb-lg-0"></div>
+      <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
+        <h2 class="font-weight-light titleAboutUs">Notre stratégie</h2>
+        <p class="font-italic text-muted mb-4">l'entreprises Mugamax promeut la dimension stratégique de la communication dans l’accompagnement des évolutions de ses contenus et de leur environnement. De promouvoir un partenariat avec des Développeur de jeux et des entreprise du domaine technologique et médiatique en, mettant en place des stratégies pour promouvoir leurs produits à destination du grand public de part les différentes rubriques littéraires.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-light py-5">
+  <div class="container py-5">
+    <div class="row mb-4">
+      <div class="col-lg-5">
+        <h2 class="section-heading"><a href="{{ path('contact') }}">Notre <span class="theme-accent-color">équipe</span></a></h2>
+        <p class="font-italic text-muted"></p>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+      
+        <div class="bg-white rounded shadow-sm py-5 px-4">
+            <img class="" src="{{ asset('icons/default.png') }}" width="100" alt=""/>
+				
+            <h5 class="mb-0">Mugamax</h5><span class="small text-uppercase text-muted">Administrateur - Fondateur</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -368,6 +368,55 @@
     transition: 0.5s all;
 }
 
+/*********AboutUs*********/
+#nav-aboutUs{
+    color: var(--siteText);
+    line-height: 50px;
+    position: relative;
+    left: 8rem;
+}
+@media only screen and (max-width: 1199px) {
+    #nav-aboutUs{
+        left: 8rem;
+        position: relative;
+    }
+}
+@media only screen and (max-width: 1399px) and (min-width : 1200px) {
+    #nav-aboutUs {       
+        left: 8rem; 
+    }
+}
+@media only screen and (max-width: 1199px) and (min-width : 992px) {
+    #nav-aboutUs {      
+        left: 4px;
+    }
+}
+@media only screen and (max-width: 991px) and (min-width : 768px) {
+    #nav-aboutUs {
+        left: 10px;
+    }
+}
+@media only screen and (max-width: 767px) and (min-width : 510px) {
+    #nav-aboutUs {
+        left: 12px;
+    }
+}
+@media only screen and (max-width: 509px) and (min-width : 359px){
+    #nav-aboutUs {
+        left: 22px;
+    }  
+}
+@media only screen and (max-width: 560px){
+    #nav-aboutUs {
+        left: 10px;
+    }  
+}
+#nav-aboutUs:hover{
+    color: var(--secondary);
+    background-color: var(--background);
+    transition: 0.5s all;
+}
+
 /*********Se connecter*********/
 #identifMyAccount a{
     text-decoration:none;
@@ -384,31 +433,31 @@
 
 #navLiConnect
 {
-    left: 127px;
+    left: 10rem;
 }
 @media only screen and (max-width: 1199px) and (min-width : 992px) {
     #navLiConnect
     {
-        left: 1rem;
+        left: 3rem;
     }
 }
 @media only screen and (max-width: 991px) and (min-width : 768px) {
     #navLiConnect
     {
-        left: 1rem;
+        left: 3rem;
     }
 }
 @media only screen and (max-width: 767px) and (min-width : 510px) {
     #navLiConnect
     {
-        left: 1rem;
+        left: 3rem;
     }
 }
 @media only screen and (max-width: 509px){
     #navLiConnect
     {
         position: relative;
-        left: -3rem;
+        left: 3rem;
         width: 0rem; 
     }
 }
@@ -427,19 +476,21 @@
 }
 @media only screen and (max-width: 1199px) and (min-width : 992px) {
     #nav-connect{
-        left: 0rem;
+        left: -2rem;
         position: relative;
     }
 }
 @media only screen and (max-width: 991px) and (min-width : 768px) {
     #nav-connect {
-        left: 0rem;
+        left: -1rem;
         position: relative;
     }
 }
 @media only screen and (max-width: 767px) and (min-width : 510px) {
     #nav-connect {
-        left: 1rem;
+        top: 33px;
+        left: -157px;
+        width: 0rem;
         position: relative;
     }
 }
@@ -456,7 +507,8 @@
         margin-top: 50px;
         width: 8rem;
         position: relative;
-        left: -12.5rem;
+        left: -11.5rem;
+    }
     }
 }
 #nav-connect:hover{
@@ -472,22 +524,22 @@
 }
 @media only screen and (max-width: 1199px) and (min-width : 992px) {
     #identifMyAccount {
-        top: 58px;
-        left: -0rem;
+        top: 66px;
+        left: -2rem;
         width: 0rem;
     }
 }
 @media only screen and (max-width: 991px) and (min-width : 768px) {
     #identifMyAccount {
-        top: 57px;
-        left: 0px;
+        top: 65px;
+        left: -21px;
         width: 0rem;
     }
 }
 @media only screen and (max-width: 767px) and (min-width : 510px) {
     #identifMyAccount {
-        top: 60px;
-        left: 14px;
+        top: 100px;
+        left: -175px;
         width: 0rem;
     }
 }
@@ -920,21 +972,21 @@ outline: none;
 }
 
 #userOnglet{
-    left: 420px;
+    left: 400px;
 }
 @media only screen and (max-width: 1440px) and (min-width : 1400px) {
     #userOnglet {     
-        left: 515px;   
+        left: 490px;   
     }
 }
 @media only screen and (max-width: 1399px) and (min-width : 1200px) {
     #userOnglet {       
-        left: 341px; 
+        left: 310px; 
     }
 }
 @media only screen and (max-width: 1199px) and (min-width : 992px) {
     #userOnglet {      
-        left: 130px;
+        left: 100px;
     }
 }
 @media only screen and (max-width: 991px) and (min-width : 768px) {
@@ -945,7 +997,7 @@ outline: none;
 }
 @media only screen and (max-width: 767px) and (min-width : 510px) {
     #userOnglet {
-        left: 56px;
+        left: 20px;
         margin-top: 4rem;
     }
 }
@@ -969,25 +1021,23 @@ outline: none;
 
 @media only screen and (max-width: 991px) and (min-width : 768px) {
     #navbarSupportedContent {
-        margin-left: 7rem;
-        border-radius: 2rem;
         position: relative;
-        left: -3rem;
         top: 1rem;
-        border: solid var(--darkreader-border--block-border) !important;
-        border-top-color: currentcolor;
-        border-right-color: currentcolor;
-        border-bottom-color: currentcolor;
-        border-left-color: currentcolor;
-        border-left-width: 1px !important;
-        border-left-style: solid;
-        border-bottom-width: 1px !important;
-        border-bottom-style: solid;
-        border-right-width: 1px !important;
+        border-radius: 2rem;
+        border-right-width: 1.1px;
         border-right-style: solid;
-        border-top-width: 1px !important;
+        border-radius: 2rem;
+        border-bottom-width: 1.1px;
+        border-bottom-style: solid;
+        border-top-width: 1.1px;
         border-top-style: solid;
-        background: var(--darkreader-bg--block2) !important;  
+        border-left-width: 1.1px;
+        border-left-style: solid;
+        border-color: #3f4b57;
+        background-color: var(--background);
+        border-color: var(--nav-block-border);
+        left: -1rem;
+        width: 20rem;   
     }  
 }
 @media only screen and (max-width: 767px){

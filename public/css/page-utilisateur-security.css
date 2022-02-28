@@ -185,7 +185,7 @@ body{
 
 #containerParam3NotifSecu{
     margin-bottom: -48px;
-    padding-bottom: 10rem;
+    padding-bottom: 17rem;
     margin-top: -24px;
     flex: 0 0 auto;
     width: 66.66666667%;
@@ -198,12 +198,12 @@ body{
 }
 @media only screen and (max-width: 1440px) and (min-width : 1200px) {
     #containerParam3NotifSecu {     
-        padding-bottom: 10rem;
+        padding-bottom: 20rem;
     }
 }
 @media only screen and (max-width: 1199px) and (min-width : 768px) {
     #containerParam3NotifSecu {     
-        padding-bottom: 18rem;
+        padding-bottom: 20rem;
     }
 }
 @media only screen and (max-width: 767px) {
