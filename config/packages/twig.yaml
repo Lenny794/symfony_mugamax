@@ -5,6 +5,7 @@ twig:
         categoryNewsRepository: "@App\\Repository\\CategoryNewsRepository"
         actualityNewsRepository: "@App\\Repository\\ActualityNewsRepository"
         topicRepository: "@App\\Repository\\TopicRepository"
+        videoRepository: "@App\\Repository\\VideoRepository"
 
 when@test:
     twig:

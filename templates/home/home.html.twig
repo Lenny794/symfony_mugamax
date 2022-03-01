@@ -90,36 +90,34 @@
         <div class="master-wrapper">
           <!-- Navigation -->
         
-          <section id="welcome" class="">
-              <div class="section-inner">
-
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-lg-12 text-center mb100">                        
-                              <h2 class="section-heading">Les <span class="theme-accent-color">Dernières</span> Actualités</h2>
-                              <hr class="thin-hr">
-                              <h3 class="section-subheading secondary-font">Informer vous ici nos dernières actualité.</h3>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div>
-                          <h2 class="mb30">Actualité <span class="theme-accent-color">Du Jour</span></h2>
-                  {% for a in actualityNewsRepository.findAll() | slice(2) | reverse  %}
-                      <div class="container homeCardActu">
-                          <div class="col-md-5 col-md-offset-1">
-                              <h4 class="mb50">{{ a.titre }}</h4>
-                              <p class="lead">{{a.content[:50] ~ (a.content | length > 50 ? '...') }}</p>
-                              <p class="mt30"><a href="{{ path('actuality_news_show',{'id':a.id} ) }}" class="btn btn-primary btn-red page-scroll">Voir +</a></p>
-                          </div>
-                          <div >
-                            <img id="cardShowHome" src=" {{ asset(a.image) }}" style="contain;" alt="{{ a.titre }}">
-                          </div>
-                      </div>
-                  {% endfor %}
-                  </div>
-              </div>
-          </section>
+        <section id="welcome" class="">
+            <div class="section-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center mb100">                        
+                            <h2 class="section-heading">Les <span class="theme-accent-color">Dernières</span> Actualités</h2>
+                            <hr class="thin-hr">
+                            <h3 class="section-subheading secondary-font">Informer vous ici nos dernières actualité.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                <h2 class="mb30">Actualité <span class="theme-accent-color">Du Jour</span></h2>
+                {% for a in actualityNewsRepository.findAll() | slice(0,3) | reverse  %}
+                    <div class="container homeCardActu">
+                        <div class="col-md-5 col-md-offset-1">
+                            <h4 class="mb50">{{ a.titre }}</h4>
+                            <p class="lead">{{a.content[:50] ~ (a.content | length > 50 ? '...') }}</p>
+                            <p class="mt30"><a href="{{ path('actuality_news_show',{'id':a.id} ) }}" class="btn btn-primary btn-red page-scroll">Voir +</a></p>
+                        </div>
+                        <div >
+                            <img class="cardShowHome" src=" {{ asset(a.image) }}" style="contain;" alt="{{ a.titre }}">
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </section>
           <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg10.jpg" data-speed="0.8">
               <div class="section-inner">
                   <div class="container">
@@ -129,6 +127,18 @@
                               <hr class="thin-hr">
                               <h3 class="section-subheading secondary-font">Regarder les dernières vidéos.</h3>
                           </div>
+                            {% for v in videoRepository.findAll() | slice(0,3) | reverse  %}
+                            <div class="container homeCardActu">
+                                <div class="col-md-5 col-md-offset-1">
+                                    <h4 class="mb50">{{ v.name }}</h4>
+                                    <p class="publish"><i>Publié le : </i>{{ v.createdAt | date('d-m-Y') }} <i>par</i> {{ v.user("id") }}</p>
+                                    <p class="mt30"><a href="{{ path('video_show',{'id':v.id} ) }}" class="btn btn-primary btn-red page-scroll">Voir +</a></p>
+                                </div>
+                                <div>
+                                    <video class="cardShowHome" src=" {{ asset(v.image) }}" style="contain" alt="Image de {{ v.name }}"></video>
+                                </div>
+                            </div>
+                            {% endfor %}
                       </div>
                   </div>
                   <div class="container">

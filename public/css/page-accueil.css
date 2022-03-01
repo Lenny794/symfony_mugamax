@@ -98,7 +98,7 @@ body{
   }  
 }
 
-#cardShowHome
+.cardShowHome
 {
   width: 15rem;
   max-height: 390px !important;

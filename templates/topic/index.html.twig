@@ -129,7 +129,7 @@
                             <!-- Fin Nouvelle Étiquettes -->
                             <div class="row">
                                 <!-- Commence Nouvelle Étiquettes -->
-                                    {% for topic in topics %}
+                                    {% for topic in topics  | reverse%}
                                 <div class="col-md-12">
                                     <ul id="étiquetteBlockRight" class="list-group fa-padding">
                                         <li class="list-group-item" data-toggle="modal" data-target="#issue">
