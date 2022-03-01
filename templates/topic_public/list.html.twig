@@ -32,9 +32,9 @@
                             <h2>Naviguer</h2>
                             <hr>
                             <ul>
-                                <li class="active"><a href="{{ path('topic_index') }}" id="navOnglet1" class="navOnglet">Communauté</a></li>
+                                <li class="active"><a href="{{ path('topic_index') }}"class="navOnglet">Communauté</a></li>
                                 {% if app.user %}
-                                <li><a href="{{ path('public_topic_list') }}" class="navOnglet">Mes posts</a></li>
+                                <li><a href="{{ path('public_topic_list') }}" id="navOnglet2" class="navOnglet">Mes posts</a></li>
                                 {# <li><a href="#" class="navOnglet">Mes commentaires</a></li> #}
                                 {% endif %}
                             </ul>
@@ -130,6 +130,7 @@
                             <div class="row">
                                 <!-- Commence Nouvelle Étiquettes -->
                                     {% for topic in topics %}
+                                    {% if app.user is same as topic.user %}
                                 <div class="col-md-12">
                                     <ul id="étiquetteBlockRight" class="list-group fa-padding">
                                         <li class="list-group-item" data-toggle="modal" data-target="#issue">
@@ -154,6 +155,7 @@
                                             </div><br>                                          
                                         </li>
                                         </div>
+                                            {% endif %}
                                             {% else %}
                                                 <tr>
                                                     <td colspan="6">Aucun enregistrement trouvé</td>

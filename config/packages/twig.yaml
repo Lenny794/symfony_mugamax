@@ -4,6 +4,7 @@ twig:
     globals:
         categoryNewsRepository: "@App\\Repository\\CategoryNewsRepository"
         actualityNewsRepository: "@App\\Repository\\ActualityNewsRepository"
+        topicRepository: "@App\\Repository\\TopicRepository"
 
 when@test:
     twig:

@@ -78,6 +78,36 @@ body{
       background-size: 52rem 252rem; 
     }
   }
+
+#navOnglet1
+{
+    color: var(--success) !important;    
+}
+#navOnglet1:hover
+{
+    color: #c73333 !important;    
+}
+
+.navOnglet
+{
+    color: var(--siteText1);
+    width: 8rem;  
+}
+.navOnglet:hover
+{
+    color: var(--secondary);
+    width: 8rem;    
+}
+
+#navOnglet2
+{
+    color: var(--success) !important;   
+}
+#navOnglet2:hover
+{
+    color: #c73333 !important;    
+}
+
 .btn-primary{
     font-family: "Staatliches-Regular";
     background-color: var(--secondary2) !important;
@@ -302,7 +332,6 @@ body{
     color: #111;
 }
     
-
     
 .support-content .info .fa {
     width: 1.5em;
