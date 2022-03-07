@@ -1003,7 +1003,6 @@ section h3.section-subheading {
 /*-----------------------------------------------------------------------------------*/
 @media screen and (min-width: 992px) {
     body {
-        padding-top: 30px;
         padding-left: 30px;
         padding-right: 30px;
     }
