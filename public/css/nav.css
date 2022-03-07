@@ -500,7 +500,7 @@
         position: relative;
     }
 }
-@media only screen and (max-width: 560px){
+@media only screen and (max-width: 460px){
     #nav-connect {
         margin-bottom: 5px;
         margin-right: 0px;
@@ -508,7 +508,6 @@
         width: 8rem;
         position: relative;
         left: -11.5rem;
-    }
     }
 }
 #nav-connect:hover{
@@ -1069,4 +1068,9 @@ outline: none;
         padding-top: 26px;
         width: 19rem;
     }  
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url(../icons/9104209_hamburger_menu_navigation_navbar_icon.png);
+    font-size: 2rem;
 }

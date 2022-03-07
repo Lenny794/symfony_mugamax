@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{#{{ encore_entry_link_tags('app') }}#}
+
+	<!-- Bootstrap CSS -->
+	<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!-- Icon Bootstrap -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+	<link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/page-faq.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/font.css') }}">
+{% endblock %}
+
+
+{% block title %}CGU/Termes et conditions
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-12 pa-0">
+            <div class="faq-search-wrap bg-teal-light-3">
+                <div class="container">
+                    <h1 class="display-5 text-white mb-20">Conditions générales d'utilisation du site</h1><p>Parcourez par catégorie ci-dessous</p>
+                </div>
+            </div>
+            <div class="container mt-sm-60 mt-30">
+                <div class="hk-row">
+                    <div class="col-xl-4">
+                        <div class="card">
+                            <h6 class="card-header">
+                                Category
+                            </h6>
+                            <ul class="list-group list-group-flush">
+                                <li id="ongletActive" class="list-group-item d-flex align-items-center">
+                                    <a href="{{ path('c_g_u') }}"><i class="bi bi-brightness-high-fill"></i> <span class="badge badge-light badge-pill ml-15"></span> Termes et conditions</a>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center ongletInactive">
+                                    <a href="{{ path('c_g_u_pdc') }}"><i class="bi bi-unlock"></i><span class="badge badge-light badge-pill ml-15"></span> Politique de confidentialité</a>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center ongletInactive">
+                                    <a href="{{ path('c_g_u_doc') }}"><i class="bi bi-journal-check"></i><span class="badge badge-light badge-pill ml-15"></span> Documentation</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-8">
+                        <div class="card card-lg">
+                            <h3 class="card-header border-bottom-0">
+                                Termes et Conditions
+                            </h3>
+                            <div class="accordion accordion-type-2 accordion-flush" id="accordion_2">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between activestate">
+                                        <h4>La propriété intellectuelle</h4>
+                                    </div>
+                                    <div id="collapse_1i" class="collapse show" data-parent="#accordion_2" role="tabpanel">
+                                        <div class="card-body pa-15">Les marques, logos, signes ainsi que tous les contenus du site (textes, images, son...) font l'objet d'une protection par le Code de la propriété intellectuelle et plus particulièrement par le droit d'auteur.
+                                        </div>
+                                        <div class="card-body pa-15">L'Utilisateur doit solliciter l'autorisation préalable du site pour toute reproduction, publication, copie des différents contenus. Il s'engage à une utilisation des contenus du site dans un cadre strictement privé, toute utilisation à des fins commerciales et publicitaires est strictement interdite. Toute représentation totale ou partielle de ce site par quelque procédé que ce soit, sans l’autorisation expresse de l’exploitant du site Internet constituerait une contrefaçon sanctionnée par l’article L 335-2 et suivants du Code de la propriété intellectuelle. Il est rappelé conformément à l’article L122-5 du Code de propriété intellectuelle que l’Utilisateur qui reproduit, copie ou publie le contenu protégé doit citer l’auteur et sa source.
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header d-flex justify-content-between activestate">
+                                            <h4>Accès au site</h4>
+                                        </div>
+                                        <div id="collapse_1i" class="collapse show" data-parent="#accordion_2" role="tabpanel">
+                                            <div class="card-body pa-15">Le site Mugamax.fr permet à l'Utilisateur un accès gratuit aux services suivants :   
+                                            </div>
+                                            <div class="card-body pa-15">
+                                                - La consultation des articles de la rubrique actualité.
+                                            </div>
+                                            <div class="card-body pa-15">
+                                                - La consultation des vidéos mise en ligne.
+                                            </div>
+                                            <div class="card-body pa-15">
+                                                - La consultation des différents topic de la communauté dans l'espace forums
+                                            </div>
+                                            <div class="card-body pa-15">
+                                                - La possibilité de rédiger des commentaires (option seuleument réserver aux Utilisateurs insrit)
+                                            </div>
+                                            <div class="card-body pa-15">
+                                                - Le site est accessible gratuitement en tout lieu à tout Utilisateur ayant un accès à Internet.
+                                            </div>
+                                            <div class="card-body pa-15">
+                                                Tous les frais supportés par l'Utilisateur pour accéder au service (matériel informatique, logiciels, connexion Internet, etc.) sont à sa charge.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header d-flex justify-content-between activestate">
+                                            <h4>Responsabilité</h4>
+                                        </div>
+                                        <div id="collapse_1i" class="collapse show" data-parent="#accordion_2" role="tabpanel">
+                                            <div class="card-body pa-15">Les sources des informations diffusées sur le site Mugamax.fr sont réputées fiables mais le site ne garantit pas qu’il soit exempt de défauts, d’erreurs ou d’omissions. Les informations communiquées sont présentées à titre indicatif et général sans valeur contractuelle. Malgré des mises à jour régulières, le site Mugamax.fr ne peut être tenu responsable de la modification des dispositions administratives et juridiques survenant après la publication. De même, le site ne peut être tenue responsable de l’utilisation et de l’interprétation de l’information contenue dans ce site.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header d-flex justify-content-between activestate">
+                                            <h4>Les droits et les obligations de l’utilisateur</h4>
+                                        </div>
+                                        <div id="collapse_1i" class="collapse show" data-parent="#accordion_2" role="tabpanel">
+                                            <div class="card-body pa-15">L'Utilisateur s'assure de garder son mot de passe secret. Toute divulgation du mot de passe, quelle que soit sa forme, est interdite. Il assume les risques liés à l'utilisation de son identifiant et mot de passe. Le site décline toute responsabilité.
+                                            </div>
+                                            <div class="card-body pa-15">Le site Mugamax.fr ne peut être tenu pour responsable d’éventuels virus qui pourraient infecter l’ordinateur ou tout matériel informatique de l’Internaute, suite à une utilisation, à l’accès, ou au téléchargement provenant de ce site. La responsabilité du site ne peut être engagée en cas de force majeure ou du fait imprévisible et insurmontable d'un tiers.
+                                            </div>
+                                            <div class="card-body pa-15">Tout contenu mis en ligne par l'Utilisateur est de sa seule responsabilité. L'Utilisateur s'engage à ne pas mettre en ligne de contenus pouvant porter atteinte aux intérêts de tierces personnes. Tout recours en justice engagé par un tiers lésé contre le site sera pris en charge par l'Utilisateur. Le contenu de l'Utilisateur peut être à tout moment et pour n'importe quelle raison supprimé ou modifié par le site, sans préavis.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header d-flex justify-content-between activestate">
+                                            <h4>Les conditions d’utilisation du forum</h4>
+                                        </div>
+                                        <div id="collapse_1i" class="collapse show" data-parent="#accordion_2" role="tabpanel">
+                                            <div class="card-body pa-15">Le site permet aux membres de publier (topic sur l'espace forum: œuvres personnelles, commentaires sous articles...). Dans ses publications, le membre s’engage à respecter les règles de la Netiquette (règles de bonne conduite de l’internet) et les règles de droit en vigueur. Le site peut exercer une modération sur les publications et se réserve le droit de refuser leur mise en ligne, sans avoir à s’en justifier auprès du membre.
+                                            </div>
+                                            <div class="card-body pa-15">Le membre reste titulaire de l’intégralité de ses droits de propriété intellectuelle. Mais en publiant une publication sur le site, il cède à la société éditrice le droit non exclusif et gratuit de représenter, reproduire, adapter, modifier, diffuser et distribuer sa publication, directement ou par un tiers autorisé, dans le monde entier, sur tout support (numérique ou physique), pour la durée de la propriété intellectuelle.
+                                            </div>
+                                            <div class="card-body pa-15">Le Membre cède notamment le droit d'utiliser sa publication sur internet et sur les réseaux de téléphonie mobile. La société éditrice s'engage à faire figurer le nom du membre à proximité de chaque utilisation de sa publication. Tout contenu mis en ligne par l'Utilisateur est de sa seule responsabilité. L'Utilisateur s'engage à ne pas mettre en ligne de contenus pouvant porter atteinte aux intérêts de tierces personnes.
+                                            </div>
+                                            <div class="card-body pa-15">Tout recours en justice engagé par un tiers lésé contre le site sera pris en charge par l'Utilisateur. Le contenu de l'Utilisateur peut être à tout moment et pour n'importe quelle raison supprimé ou modifié par le site, sans préavis.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="maDiv2"></div>
+{% endblock %}

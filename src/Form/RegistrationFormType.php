@@ -96,16 +96,16 @@ class RegistrationFormType extends AbstractType
                 ],
                 'data' => 'FR'
             ])
-            // ->add('agreeTerms', CheckboxType::class, [
-            //     'label' => 'Accepter les termes et conditions',
-            //     'required' => false,
-            //     'mapped' => false,
-            //     'constraints' => [
-            //         new IsTrue([
-            //             'message' => 'Vous devez accepter les termes et conditions.',
-            //         ]),
-            //     ],
-            // ])
+            ->add('agreeTerms', CheckboxType::class, [
+                'label' => 'Accepter les termes et conditions',
+                'required' => false,
+                'mapped' => false,
+                'constraints' => [
+                    new IsTrue([
+                        'message' => 'Je reconnais avoir lu et compris les CGU et je les accepte',
+                    ]),
+                ],
+            ])
             ;
     }
     public function configureOptions(OptionsResolver $resolver)

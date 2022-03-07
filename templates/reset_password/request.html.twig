@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+	{#{{ encore_entry_link_tags('app') }}#}
+
+	<!-- Bootstrap CSS -->
+	<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!-- Icon Bootstrap -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+	<link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/font.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/user_contact.css') }}">
+{% endblock %}
+
+{% block title %}réinitialisez votre mot de passe{% endblock %}
+
+{% block body %}
+<div class="container my-4">
+    <div id="blockLeftAndRight" class="row">
+        <div id="login" class="col-md-6 mt-4">
+            {% for flashError in app.flashes('reset_password_error') %}
+                <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+            {% endfor %}
+            <h1>Réinitialisez votre mot de passe</h1>
+
+            {{ form_start(requestForm) }}
+                <div>
+                    <small>
+                        Entrez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe. 
+                    </small>
+                </div>
+                <br>
+                {{ form_row(requestForm.email) }}
+                <br>
+                <button class="btn btn-primary">Envoyer</button>
+            {{ form_end(requestForm) }}
+            <br><br>
+        </div>
+    </div>
+</div>
+{% endblock %}

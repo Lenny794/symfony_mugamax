@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{#{{ encore_entry_link_tags('app') }}#}
+
+	<!-- Bootstrap CSS -->
+	<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!-- Icon Bootstrap -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+	<link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/page-faq.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/font.css') }}">
+{% endblock %}
+
+
+{% block title %}CGU/Politique de confidentialité
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-12 pa-0">
+            <div class="faq-search-wrap bg-teal-light-3">
+                <div class="container">
+                    <h1 class="display-5 text-white mb-20">Conditions générales d'utilisation du site</h1><p>Parcourez par catégorie ci-dessous</p>
+                </div>
+            </div>
+            <div class="container mt-sm-60 mt-30">
+                <div class="hk-row">
+                    <div class="col-xl-4">
+                        <div class="card">
+                            <h6 class="card-header">
+                                Category
+                            </h6>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex align-items-center ongletInactive">
+                                    <a href="{{ path('c_g_u') }}"><i class="bi bi-brightness-high-fill"></i> <span class="badge badge-light badge-pill ml-15"></span> Termes et conditions</a>
+                                </li>
+                                <li id="ongletActive" class="list-group-item d-flex align-items-center">
+                                    <a href="{{ path('c_g_u_pdc') }}"><i class="bi bi-unlock"></i><span class="badge badge-light badge-pill ml-15"></span> Politique de confidentialité</a>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center ongletInactive">
+                                    <a href="{{ path('c_g_u_doc') }}"><i class="bi bi-journal-check"></i><span class="badge badge-light badge-pill ml-15"></span> Documentation</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-8">
+                        <div class="card card-lg">
+                            <h3 class="card-header border-bottom-0">
+                                Politique de confidentialité
+                            </h3>
+                            <div class="accordion accordion-type-2 accordion-flush" id="accordion_2">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between activestate">
+                                        <h4>Données personnelles</h4>
+                                    </div>
+                                    <div id="collapse_1i" class="collapse show" data-parent="#accordion_2" role="tabpanel">
+                                        <div class="card-body pa-15">Le site est exempté de déclaration à la Commission Nationale Informatique et Libertés (CNIL) dans la mesure où il ne collecte aucune donnée concernant les utilisateurs.
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header d-flex justify-content-between activestate">
+                                            <h4>Cookies</h4>
+                                        </div>
+                                        <div id="collapse_1i" class="collapse show" data-parent="#accordion_2" role="tabpanel">
+                                            <div class="card-body pa-15">Les cookies sont de petits fichiers stockés temporairement sur le disque dur de l’ordinateur de l’Utilisateur par votre navigateur et qui sont nécessaires à l’utilisation du site (Indiquer le nom du site). Les cookies ne contiennent pas d’information personnelle et ne peuvent pas être utilisés pour identifier quelqu’un. Un cookie contient un identifiant unique, généré aléatoirement et donc anonyme. Certains cookies expirent à la fin de la visite de l’Utilisateur, d’autres restent.
+                                            </div>
+                                            <div class="card-body pa-15">
+                                            L’information contenue dans les cookies est utilisée pour améliorer le site, par exemple en :
+                                            </div>
+                                            <div class="card-body pa-15">
+                                            • permettant à un service de reconnaître l’appareil de l’Utilisateur, pour qu’il n’ait pas à donner les mêmes informations à plusieurs reprises, par exemple remplir un formulaire ou une enquête.
+                                            </div>
+                                            <div class="card-body pa-15">
+                                            • mémorisant que vous l’Utilisateur a déjà donné ses identifiant et mot de passe, pour ne pas avoir à le refaire à chaque nouvelle page.
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="maDiv2"></div>
+{% endblock %}

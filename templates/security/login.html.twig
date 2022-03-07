@@ -41,18 +41,20 @@
 					<h2>Se connecter</h2>
 					<form action="r" method="post" accept-charset="utf-8" class="form" role="form">
 						<div class="row">
-							<div class="col-xs-6 col-md-6">
+							<div class="">
+								<p>Pseudo</p>
 								<input type="text" value="{{ last_username }}" name="pseudo" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
 							</div>
 						</div><br>
-						<div class="col-xs-6 col-md-6">
+						<div class="">
+							<p>Mot de passe</p>
 							<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 						</div><br>
 						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-						<button id="loginButton" class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Se
-														                            connecter
+						<button id="loginButton" class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Se connecter
 						</button>
 					</form>
+					<p><a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié ?</a></p>
 				</div>
 			</div>
 		</div>

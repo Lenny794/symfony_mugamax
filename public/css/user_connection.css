@@ -97,23 +97,27 @@ body{
     border-top-style: solid;
     border-left-width: 2.1px;
     border-left-style: solid;
-    margin-bottom: 411px;
     margin-top: 1.5rem;
     padding-top: 15px;
+    margin-bottom: 9rem;
+    width: 40rem;
 }
 @media only screen and (max-width: 1440px) and (min-width : 1158px) {
     #login {
-        margin-bottom: 411px;
+        margin-bottom: 9rem;
+        width: 40rem;
     }
 }
 @media only screen and (max-width: 1157px) and (min-width : 992px) {
     #login {
-        margin-bottom: 413px;
+        margin-bottom: 9rem;
+        width: 40rem;
     }
 }
 @media only screen and (max-width: 766px) {
     #login {
-        margin-bottom: 408px;
+        margin-bottom: 9rem;
+        width: 40rem;
     }
 }
 
@@ -138,5 +142,65 @@ body{
 @media only screen and (max-width: 767px) {
     #loginButton {
         margin-bottom: 20px;
+    }
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#blockLeftAndRight
+{
+    width: 40rem;
+    position: relative;
+    left: 19rem;
+}
+@media only screen and (max-width: 1440px) and (min-width : 1200px) {
+    #blockLeftAndRight
+    {
+        width: 40rem;
+        position: relative;
+        left: 19rem;
+    }
+}
+@media only screen and (max-width: 1199px) and (min-width : 992px) {
+    #blockLeftAndRight
+    {
+        width: 40rem;
+        position: relative;
+        left: 9rem;
+    }
+}
+@media only screen and (max-width: 991px) and (min-width : 768px) {
+    #blockLeftAndRight
+    {
+        width: 40rem;
+        position: relative;
+        left: 2rem;
+    }
+}
+@media only screen and (max-width: 767px) and (min-width : 510px) {
+    #blockLeftAndRight
+    {
+        width: 30rem;
+        position: relative;
+        left: 0rem;
+    }
+}
+@media only screen and (max-width: 509px) and (min-width : 359px){
+    #blockLeftAndRight
+    {
+        width: 21rem;
+        position: relative;
+        left: 4rem;
+    }
+}
+@media only screen and (max-width: 460px){
+    #blockLeftAndRight
+    {
+        width: 21rem;
+        position: relative;
+        left: 2rem;
     }
 }

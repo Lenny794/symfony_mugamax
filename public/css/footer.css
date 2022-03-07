@@ -42,7 +42,7 @@ footer.container{
     border-left-width: 1.1px;
     border-left-style: solid;
     border-color: #3f4b57;
-    background-color: var(--background);
+    background-color: #2327288a;
     border-color: var(--nav-block-border); 
       
 }
@@ -158,4 +158,9 @@ color: var(--siteText1);
     transition: transform 500ms ease-in-out;
     color: #55a1ec;
     
+}
+
+.footerTitle
+{
+    color: rgba(255, 255, 255, 0.849) !important;
 }

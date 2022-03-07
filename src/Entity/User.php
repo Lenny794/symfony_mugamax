@@ -107,6 +107,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $videos;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
+
     public function __construct()
     {
         $this->actualityNews = new ArrayCollection();
@@ -447,6 +452,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $video->setUser(null);
             }
         }
+
+        return $this;
+    }
+    
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
 
         return $this;
     }
