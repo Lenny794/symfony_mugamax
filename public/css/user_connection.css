@@ -188,7 +188,7 @@ p {
         left: 0rem;
     }
 }
-@media only screen and (max-width: 509px) and (min-width : 359px){
+@media only screen and (max-width: 509px) and (min-width : 360px){
     #blockLeftAndRight
     {
         width: 21rem;
@@ -196,11 +196,11 @@ p {
         left: 4rem;
     }
 }
-@media only screen and (max-width: 460px){
+@media only screen and (max-width: 359px){
     #blockLeftAndRight
     {
         width: 21rem;
         position: relative;
-        left: 2rem;
+        left: 1rem;
     }
 }

@@ -62,14 +62,29 @@ footer.container{
     flex: 0 0 auto;
     width: 50%;    
 }
+
 #Réseaux-Sociaux h5{
     width: 9rem;
 }
+@media only screen and (max-width: 575px)
+{
+    #Réseaux-Sociaux h5{
+        font-size: 13pt;
+    }
+}
+
 
 #À-Venir h5
 {
     width: 9rem;   
 }
+@media only screen and (max-width: 575px)
+{
+    #À-Venir h5{
+        font-size: 13pt;
+    }
+}
+
 
 #À-Propos{
     margin-bottom: 0px;
@@ -77,9 +92,17 @@ footer.container{
     flex: 0 0 auto;
     width: 50%;    
 }
+
 #À-Propos h5{
     width: 9rem;
 }
+@media only screen and (max-width: 575px)
+{
+    #À-Propos h5{
+        font-size: 13pt;
+    }
+}
+
 
 @media only screen and (max-width: 575px)
 {
@@ -192,6 +215,13 @@ color: var(--siteText1);
     color: rgba(255, 255, 255, 0.849) !important;
     width: 20rem;
 }
+@media only screen and (max-width: 575px)  {
+    .footerTitle
+    {
+        font-size: 9pt;
+    }
+}
+
 
 @media only screen and (max-width: 575px)  {
     #footerBlock
