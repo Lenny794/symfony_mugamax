@@ -91,7 +91,16 @@ html, body, input, textarea, select, button {
     text-align: center; 
     justify-content: center;
 }
-
+.card-body h4
+{
+    color: var(--siteText1);
+    font-size: 100%;
+    max-width: 100%;
+}
+.card-footer p
+{
+    font-size: 10pt;
+}
 h2{
     font-size: 20px;
     color: var(--siteText);
@@ -137,7 +146,22 @@ p{
     font-size: 95%;
     margin-top: 12px;
     text-align: left;
+    position: relative;
 }
+@media only screen and (max-width: 767px) and (min-width : 510px) {
+    .txtMyactu{
+        font-size: 94%;
+        width: 20rem;
+        left: -1rem;
+    }
+}
+@media only screen and (max-width: 509px) and (min-width : 460px){
+    .txtMyactu{
+        font-size: 94%;
+        width: 20rem;
+    }
+}
+
 #myActu{
     margin-left: 5rem;
     margin-right: 5rem;
@@ -173,6 +197,10 @@ p{
 
 .bg-light{
     background-color: transparent !important;
+}
+
+#signUp {
+    background-color: #262f39b3 !important;
 }
 
 #myActuBlock{
@@ -227,6 +255,7 @@ p{
     box-shadow: 0 0 5px 0 transparent !important;
     border: 1px solid transparent !important;
 }
+
 .card {
     background-color: var(--background);
     margin: 5px;
@@ -234,6 +263,13 @@ p{
     padding: 8px 2px 0;
     box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
 }
+@media only screen and (max-width: 575px) 
+{
+    .card {
+        margin: 30px;
+    }
+}
+
 #cardShow{
     width:44rem;
     max-height: 390px !important;
@@ -313,6 +349,32 @@ p{
     border-left-style: solid;  
     margin-bottom: 33px;
 }
+@media only screen and (max-width: 1199px) and (min-width : 992px) {
+    #à-ProposBlock {
+        width: 19rem;
+    }
+}
+@media only screen and (max-width: 991px) and (min-width : 768px) {
+    #à-ProposBlock {
+        width: 17rem;
+    }
+}
+@media only screen and (max-width: 767px) and (min-width : 510px) {
+    #à-ProposBlock {
+        width: 26rem;
+    }
+}
+@media only screen and (max-width: 509px) and (min-width : 460px){
+    #à-ProposBlock {
+        width: 26rem;
+    }
+}
+@media only screen and (max-width: 459px){
+    #à-ProposBlock {
+
+    }
+}
+
 
 #mondeBlock{
     background-color: #23292f9e !important;

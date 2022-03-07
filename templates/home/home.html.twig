@@ -107,11 +107,11 @@
                 <div>
                 <h2 class="mb30">Actualité <span class="theme-accent-color">Du Jour</span></h2>
                 {% for a in actualityNewsRepository.findAll() | slice(0,3) | reverse  %}
-                    <div class="container homeCardActu">
+                    <div id="homeCardActuDiv1" class="container homeCardActu">
                         <div class="col-md-5 col-md-offset-1">
                             <h4 class="mb50">{{ a.titre }}</h4>
                             <p class="lead">{{a.content[:50] ~ (a.content | length > 50 ? '...') }}</p>
-                            <p class="mt30"><a href="{{ path('actuality_news_show',{'id':a.id} ) }}" class="btn btn-primary btn-red page-scroll">Voir +</a></p>
+                            <div class="mt30"><a href="{{ path('actuality_news_show',{'id':a.id} ) }}" class="btn btn-primary btn-red page-scroll">Voir +</a></div>
                         </div>
                         <div >
                             <img class="cardShowHome" src=" {{ asset(a.image) }}" style="contain;" alt="{{ a.titre }}">
@@ -131,11 +131,11 @@
                               <h3 class="section-subheading secondary-font">Regarder les dernières vidéos.</h3>
                           </div>
                             {% for v in videoRepository.findAll() | slice(0,3) | reverse  %}
-                            <div class="container homeCardActu">
+                            <div id="homeCardActuDiv2" class="container homeCardActu">
                                 <div class="col-md-5 col-md-offset-1">
                                     <h4 class="mb50">{{ v.name }}</h4>
                                     <p class="publish"><i>Publié le : </i>{{ v.createdAt | date('d-m-Y') }} <i>par</i> {{ v.user("id") }}</p>
-                                    <p class="mt30"><a href="{{ path('video_show',{'id':v.id} ) }}" class="btn btn-primary btn-red page-scroll">Voir +</a></p>
+                                    <div class="mt30"><a href="{{ path('video_show',{'id':v.id} ) }}" class="btn btn-primary btn-red page-scroll">Voir +</a></div>
                                 </div>
                                 <div>
                                     <video class="cardShowHome" src=" {{ asset(v.image) }}" style="contain" alt="Image de {{ v.name }}"></video>

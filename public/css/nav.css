@@ -401,15 +401,17 @@
         left: 12px;
     }
 }
-@media only screen and (max-width: 509px) and (min-width : 359px){
+
+@media only screen and (max-width: 509px) and (min-width : 460px){
     #nav-aboutUs {
-        left: 22px;
-    }  
+        left: 12px;
+    } 
 }
-@media only screen and (max-width: 560px){
+@media only screen and (max-width: 459px){
     #nav-aboutUs {
-        left: 10px;
-    }  
+        left: -247px;
+        top: 3rem;
+    } 
 }
 #nav-aboutUs:hover{
     color: var(--secondary);
@@ -494,22 +496,25 @@
         position: relative;
     }
 }
-@media only screen and (max-width: 509px) and (min-width : 359px){
+
+@media only screen and (max-width: 509px) and (min-width : 460px){
     #nav-connect {
-        left: -7rem;
+        left: -10rem;
         position: relative;
+        top: 2rem;
     }
 }
-@media only screen and (max-width: 460px){
+@media only screen and (max-width: 459px){
     #nav-connect {
         margin-bottom: 5px;
         margin-right: 0px;
         margin-top: 50px;
         width: 8rem;
         position: relative;
-        left: -11.5rem;
+        left: -13.5rem;
     }
 }
+
 #nav-connect:hover{
     background-color: var(--secondary);
     transition: 0.5s all;
@@ -542,16 +547,16 @@
         width: 0rem;
     }
 }
-@media only screen and (max-width: 509px) and (min-width : 459px){
+@media only screen and (max-width: 509px) and (min-width : 460px){
     #identifMyAccount {
         top: 104px;
-        left: -114px;
+        left: -168px;
     }
 }
-@media only screen and (max-width: 560px){
+@media only screen and (max-width: 459px){
     #identifMyAccount {
         top: 104px;
-        left: -202px;
+        left: -240px;
         width: 1rem;
     }
 }
@@ -610,6 +615,16 @@
     padding-left: 10px;
     line-height: 3rem;
 }
+@media only screen and (max-width: 575px)
+{
+    #backHome{
+        color: var(--siteText);
+        padding-left: 10px;
+        line-height: 3rem;
+        width: 9rem;
+    }
+}
+
 #backHome:hover{
     color: var(--secondary);
     background-color: var(--background);
@@ -785,6 +800,7 @@ outline: none;
     padding-top: 9px;
     padding-bottom: -8px;
     padding-right: 8px;
+    line-height: 3.6rem;
 }
 #dashBoard:hover{
     color:var(--secondary);
@@ -994,21 +1010,39 @@ outline: none;
         top: 1rem;
     }
 }
-@media only screen and (max-width: 767px) and (min-width : 510px) {
+@media only screen and (max-width: 767px) and (min-width : 550px) {
     #userOnglet {
-        left: 20px;
+        left: 3rem;
+        top: 1rem;
+    }
+}
+@media only screen and (max-width: 549px) and (min-width : 520px) {
+    #userOnglet {
+        left: -30px;
         margin-top: 4rem;
     }
 }
-@media only screen and (max-width: 509px) and (min-width : 359px){
+@media only screen and (max-width: 519px) and (min-width : 480px) {
     #userOnglet {
-        left: 22px;
+        left: -20px;
+        margin-top: 4rem;
+    }
+}
+@media only screen and (max-width: 479px) and (min-width : 460px){
+    #userOnglet {
+        left: -40px;
         margin-top: 3rem;
     }  
 }
-@media only screen and (max-width: 560px){
+@media only screen and (max-width: 459px) and (min-width : 360px){
     #userOnglet {
-        left: -3rem;
+        left: -100px;
+        margin-top: 3rem;
+    }  
+}
+@media only screen and (max-width: 359px){
+    #userOnglet {
+        left: -100px;
         margin-top: 3rem;
     }  
 }

@@ -20,7 +20,30 @@ body{
     font-size: 100%;
     background-color: var(--login_background1);
 }
+.card
+{
+    background-color: var(--nav-block) !important;
+    border-right-width: 2.1px;
+    border-right-style: solid;
+    border-radius: 2rem;
+    border-color: #3f4b57;
+    border-bottom-width: 2.1px;
+    border-bottom-style: solid;
+    border-top-width: 2.1px;
+    border-top-style: solid;
+    border-left-width: 2.1px;
+    border-left-style: solid;
+    padding-top: 15px;    
+}
 
+.card-body
+{
+    background-color: var(--nav-block-border);   
+}
+.card-body h4
+{
+    color: var(--siteText1);
+}
 /* logo du site */
 #logoSite{
     height: 38px;

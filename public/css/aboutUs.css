@@ -91,11 +91,20 @@ body{
 @media only screen and (max-width: 575px)  {
   .section-heading
   {
-    font-size: 45px;
+    font-size: 39px;
     position: relative;
     left: 3rem;
+    width: 19rem;
   }
 }
+@media only screen and (max-width: 575px)  {
+  #blockHeading p
+  {
+    font-size: 15px;
+    width: 18rem;
+  }
+}
+
 
 @media only screen and (max-width: 575px)  {
   .fa-leaf
@@ -119,5 +128,6 @@ body{
   {
     position: relative;
     left: 2rem;
+    width: 15rem;
   }
 }
